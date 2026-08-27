@@ -1,7 +1,23 @@
 main:
   - name: INTRODUCTION
-    url: /#introduction
+    identifier: introduction
+    url: /introduction/
     weight: 10
+
+  - name: About Lab
+    parent: introduction
+    url: /introduction/#about
+    weight: 11
+
+  - name: Equipment
+    parent: introduction
+    url: /introduction/#equipment
+    weight: 12
+
+  - name: Contact
+    parent: introduction
+    url: /introduction/#contact
+    weight: 13
 
   - name: PROFESSOR
     url: /professor/
