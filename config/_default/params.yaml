@@ -30,7 +30,7 @@ hugoblox:
   # THEME
   # Color and visual design system
   # ────────────────────────────────────────────────────────────────────────────
-    theme:
+  theme:
     mode: light
     pack: "default"
     colors:
