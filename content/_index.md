@@ -22,7 +22,7 @@ sections:
         gradient_mesh:
           enable: true
 
-   - block: resume-biography-3
+  - block: resume-biography-3
     id: professor
     content:
       username: kyung-eun-lee
