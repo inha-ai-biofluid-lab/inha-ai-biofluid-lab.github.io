@@ -1,5 +1,5 @@
 ---
-Hide sample conference paper
+draft: true
 title: "An example journal article"
 authors:
 - me
