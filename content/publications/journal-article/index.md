@@ -1,4 +1,5 @@
 ---
+Hide sample conference paper
 title: "An example journal article"
 authors:
 - me
