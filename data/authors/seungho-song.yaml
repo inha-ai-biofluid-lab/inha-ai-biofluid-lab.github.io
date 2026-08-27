@@ -1,0 +1,26 @@
+schema: hugoblox/author/v1
+slug: seungho-song
+is_owner: false
+weight: 70
+
+name:
+  display: Seungho Song
+  given: Seungho
+  family: Song
+  alternate: 송승호
+  pronunciation: ''
+  pronouns: ''
+
+postnominals: []
+role: Integrated B.S.-M.S. Student
+
+affiliations:
+  - name: Inha University
+
+user_groups:
+  - Undergraduate Researchers
+
+links:
+  - icon: at-symbol
+    url: mailto:thdtmdgh7929@inha.edu
+    label: Email

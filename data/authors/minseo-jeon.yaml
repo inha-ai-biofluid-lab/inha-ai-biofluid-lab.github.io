@@ -1,0 +1,26 @@
+schema: hugoblox/author/v1
+slug: minseo-jeon
+is_owner: false
+weight: 20
+
+name:
+  display: Minseo Jeon
+  given: Minseo
+  family: Jeon
+  alternate: 전민서
+  pronunciation: ''
+  pronouns: ''
+
+postnominals: []
+role: M.S. Student
+
+affiliations:
+  - name: Inha University
+
+user_groups:
+  - Graduate Students
+
+links:
+  - icon: at-symbol
+    url: mailto:mseo0113@inha.edu
+    label: Email

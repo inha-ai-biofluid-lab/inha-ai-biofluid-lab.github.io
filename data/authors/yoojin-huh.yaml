@@ -1,0 +1,26 @@
+schema: hugoblox/author/v1
+slug: yoojin-huh
+is_owner: false
+weight: 60
+
+name:
+  display: Yoojin Huh
+  given: Yoojin
+  family: Huh
+  alternate: 허유진
+  pronunciation: ''
+  pronouns: ''
+
+postnominals: []
+role: M.S. Student
+
+affiliations:
+  - name: Inha University
+
+user_groups:
+  - Graduate Students
+
+links:
+  - icon: at-symbol
+    url: mailto:huhyoo1216@inha.edu
+    label: Email

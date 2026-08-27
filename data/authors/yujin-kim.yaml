@@ -1,0 +1,26 @@
+schema: hugoblox/author/v1
+slug: yujin-kim
+is_owner: false
+weight: 30
+
+name:
+  display: Yujin Kim
+  given: Yujin
+  family: Kim
+  alternate: 김유진
+  pronunciation: ''
+  pronouns: ''
+
+postnominals: []
+role: M.S. Student
+
+affiliations:
+  - name: Inha University
+
+user_groups:
+  - Graduate Students
+
+links:
+  - icon: at-symbol
+    url: mailto:abcdef6629@inha.edu
+    label: Email

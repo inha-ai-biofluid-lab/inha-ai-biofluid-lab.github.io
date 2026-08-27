@@ -1,0 +1,26 @@
+schema: hugoblox/author/v1
+slug: yujin-jeon
+is_owner: false
+weight: 40
+
+name:
+  display: Yujin Jeon
+  given: Yujin
+  family: Jeon
+  alternate: 전유진
+  pronunciation: ''
+  pronouns: ''
+
+postnominals: []
+role: M.S. Student
+
+affiliations:
+  - name: Inha University
+
+user_groups:
+  - Graduate Students
+
+links:
+  - icon: at-symbol
+    url: mailto:yesyujin@inha.edu
+    label: Email

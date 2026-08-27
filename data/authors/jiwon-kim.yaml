@@ -1,0 +1,26 @@
+schema: hugoblox/author/v1
+slug: jiwon-kim
+is_owner: false
+weight: 90
+
+name:
+  display: Jiwon Kim
+  given: Jiwon
+  family: Kim
+  alternate: 김지원
+  pronunciation: ''
+  pronouns: ''
+
+postnominals: []
+role: Undergraduate Researcher
+
+affiliations:
+  - name: Inha University
+
+user_groups:
+  - Undergraduate Researchers
+
+links:
+  - icon: at-symbol
+    url: mailto:dnjsrhkd7515@inha.edu
+    label: Email

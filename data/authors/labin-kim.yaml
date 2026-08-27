@@ -1,0 +1,26 @@
+schema: hugoblox/author/v1
+slug: labin-kim
+is_owner: false
+weight: 10
+
+name:
+  display: Labin Kim
+  given: Labin
+  family: Kim
+  alternate: 김라빈
+  pronunciation: ''
+  pronouns: ''
+
+postnominals: []
+role: Ph.D. Student
+
+affiliations:
+  - name: Inha University
+
+user_groups:
+  - Graduate Students
+
+links:
+  - icon: at-symbol
+    url: mailto:enabio@inha.edu
+    label: Email

@@ -1,0 +1,26 @@
+schema: hugoblox/author/v1
+slug: younghyun-kim
+is_owner: false
+weight: 80
+
+name:
+  display: Younghyun Kim
+  given: Younghyun
+  family: Kim
+  alternate: 김영현
+  pronunciation: ''
+  pronouns: ''
+
+postnominals: []
+role: Integrated B.S.-M.S. Student
+
+affiliations:
+  - name: Inha University
+
+user_groups:
+  - Undergraduate Researchers
+
+links:
+  - icon: at-symbol
+    url: mailto:yhk0702123@inha.edu
+    label: Email
