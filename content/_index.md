@@ -46,7 +46,39 @@ sections:
       avatar:
         size: medium
         shape: rounded
+    
+  - block: focus-areas
+    id: quick-links
+    content:
+      title: 'Quick Links'
+      subtitle: 'Explore Our Laboratory'
+      items:
+        - name: 'Publications'
+          description: 'Explore journal articles and conference presentations.'
+          icon: 'hero/document-text'
+          url: '#publications'
+          gradient: 'from-blue-500 to-cyan-400'
 
+        - name: 'Research'
+          description: 'Discover our current research areas and projects.'
+          icon: 'hero/beaker'
+          url: '#research'
+          gradient: 'from-cyan-500 to-teal-400'
+
+        - name: 'Notice'
+          description: 'View laboratory announcements and recent news.'
+          icon: 'hero/megaphone'
+          url: '#board'
+          gradient: 'from-indigo-500 to-blue-400'
+
+        - name: 'Contact'
+          description: 'Find our laboratory location and contact information.'
+          icon: 'hero/map-pin'
+          url: '#contact'
+          gradient: 'from-violet-500 to-cyan-400'
+    design:
+      layout: cards
+    
   - block: markdown
     id: members
     content:
