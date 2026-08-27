@@ -29,7 +29,8 @@ main:
     weight: 30
 
   - name: PUBLICATIONS
-    url: /#publications
+    identifier: publications
+    url: /publications/
     weight: 40
 
   - name: RESEARCH
