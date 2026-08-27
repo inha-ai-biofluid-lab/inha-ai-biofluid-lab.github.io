@@ -33,7 +33,8 @@ main:
     weight: 40
 
   - name: RESEARCH
-    url: /#research
+    identifier: research
+    url: /research/
     weight: 50
 
   - name: BOARD
