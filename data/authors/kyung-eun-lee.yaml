@@ -1,0 +1,31 @@
+schema: hugoblox/author/v1
+slug: kyung-eun-lee
+is_owner: false
+
+name:
+  display: Kyung Eun Lee
+  given: Kyung Eun
+  family: Lee
+  alternate: 이경은
+  pronunciation: ''
+  pronouns: ''
+
+postnominals: []
+
+role: Associate Professor, Department of Mechanical Engineering
+
+bio: |
+  Kyung Eun Lee is an Associate Professor in the Department of Mechanical
+  Engineering at Inha University.
+
+  **Office:** Room 2N280A, Inha University  
+  **Tel:** +82-32-860-7375  
+  **Email:** bfmec@inha.ac.kr
+
+affiliations:
+  - name: Inha University
+
+links:
+  - icon: at-symbol
+    url: mailto:bfmec@inha.ac.kr
+    label: Email
