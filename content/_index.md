@@ -22,17 +22,21 @@ sections:
         gradient_mesh:
           enable: true
 
-  - block: markdown
+   - block: resume-biography-3
     id: professor
     content:
-      title: 'Professor'
-      subtitle: 'About Professor'
-      text: |-
-        교수님의 성함, 사진, 학력, 연구 분야 및 연락처가 들어갈 영역입니다.
-
-        세부 정보는 교수님께 확인한 후 추가합니다.
+      username: kyung-eun-lee
+      text: ''
+      headings:
+        about: 'Professor'
+        education: ''
+        interests: ''
     design:
-      columns: '1'
+      name:
+        size: md
+      avatar:
+        size: medium
+        shape: rounded
 
   - block: markdown
     id: members
