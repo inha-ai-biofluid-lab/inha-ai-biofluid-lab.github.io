@@ -1,6 +1,6 @@
 ---
 title: ''
-summary: ''
+summary: 'AI / Bio Fluid Engineering Laboratory at Inha University'
 type: landing
 
 sections:
@@ -12,8 +12,7 @@ sections:
       text: |-
         **AI바이오유체공학연구실**
 
-        We investigate biofluid phenomena through computational,
-        experimental, and data-driven approaches.
+        Computational · Experimental · Data-Driven Biofluid Engineering
       primary_action:
         text: 'Research Areas'
         url: '/research/'
@@ -31,142 +30,30 @@ sections:
         gradient_mesh:
           enable: true
 
-  - block: resume-biography-3
-    id: professor
-    content:
-      username: kyung-eun-lee
-      text: ''
-      headings:
-        about: 'Professor'
-        education: ''
-        interests: ''
-    design:
-      name:
-        size: md
-      avatar:
-        size: medium
-        shape: rounded
-    
-  - block: focus-areas
-    id: quick-links
-    content:
-      title: 'Quick Links'
-      subtitle: 'Explore Our Laboratory'
-      items:
-        - name: 'Publications'
-          description: 'Explore journal articles and conference presentations.'
-          icon: 'hero/document-text'
-          url: '/publications/'
-          gradient: 'from-blue-500 to-cyan-400'
-
-        - name: 'Research'
-          description: 'Discover our current research areas and projects.'
-          icon: 'hero/beaker'
-          url: '/research/'
-          gradient: 'from-cyan-500 to-teal-400'
-
-        - name: 'Notice'
-          description: 'View laboratory announcements and recent news.'
-          icon: 'hero/megaphone'
-          url: '/board/#notice'
-          gradient: 'from-indigo-500 to-blue-400'
-
-        - name: 'Contact'
-          description: 'Find our laboratory location and contact information.'
-          icon: 'hero/map-pin'
-          url: '/introduction/#contact'
-          gradient: 'from-violet-500 to-cyan-400'
-    design:
-      layout: cards
-    
   - block: markdown
-    id: members
+    id: overview
     content:
-      title: 'Members'
-      subtitle: 'Our Team'
+      title: 'About Laboratory'
       text: |-
-        대학원생, 학부연구생 및 졸업생 정보를 소개합니다.
+        **AI바이오유체공학연구실**
 
-        [View all members →](/members/)
+        The AI / Bio Fluid Engineering Laboratory at Inha University
+        investigates biological flow phenomena through computational,
+        experimental, and data-driven approaches.
+
+        인하대학교 AI바이오유체공학연구실은 생체유동 현상을 이해하고
+        공학 및 의생명 분야에 적용하기 위한 연구를 수행합니다.
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:0.75rem;margin-top:2rem;">
+          <a href="/professor/" style="display:block;padding:0.9rem;background:#0B3A63;color:white;text-align:center;text-decoration:none;border-radius:0.5rem;font-weight:600;">Professor</a>
+          <a href="/members/" style="display:block;padding:0.9rem;background:#0B3A63;color:white;text-align:center;text-decoration:none;border-radius:0.5rem;font-weight:600;">Members</a>
+          <a href="/research/" style="display:block;padding:0.9rem;background:#0B3A63;color:white;text-align:center;text-decoration:none;border-radius:0.5rem;font-weight:600;">Research</a>
+          <a href="/publications/" style="display:block;padding:0.9rem;background:#0B3A63;color:white;text-align:center;text-decoration:none;border-radius:0.5rem;font-weight:600;">Publications</a>
+          <a href="/board/" style="display:block;padding:0.9rem;background:#0B3A63;color:white;text-align:center;text-decoration:none;border-radius:0.5rem;font-weight:600;">Board</a>
+          <a href="/introduction/#contact" style="display:block;padding:0.9rem;background:#0B3A63;color:white;text-align:center;text-decoration:none;border-radius:0.5rem;font-weight:600;">Contact</a>
+        </div>
     design:
       columns: '1'
-
-  - block: markdown
-    id: publications
-    content:
-      title: 'Publications'
-      subtitle: 'Selected Publications'
-      text: |-
-        연구실의 국제학술지 논문, 국내학술지 논문 및 학회 발표 실적을
-        정리합니다.
-
-        [View all publications →](/publications/)
-    design:
-      columns: '1'
-
-  - block: focus-areas
-    id: research
-    content:
-      title: 'Research'
-      subtitle: 'Research Areas'
-      text: 'We study biological flow phenomena using computational and data-driven approaches.'
-      items:
-        - name: 'Biofluid Mechanics'
-          description: 'Investigation of fluid-mechanical phenomena in biological systems.'
-          icon: 'hero/beaker'
-          gradient: 'from-blue-500 to-cyan-400'
-
-        - name: 'Cardiovascular Hemodynamics'
-          description: 'Analysis of blood flow and vascular hemodynamics in cardiovascular systems.'
-          icon: 'hero/heart'
-          gradient: 'from-cyan-500 to-teal-400'
-
-        - name: 'Computational Fluid Dynamics'
-          description: 'Numerical modeling and simulation of complex biological flows.'
-          icon: 'hero/cpu-chip'
-          gradient: 'from-indigo-500 to-blue-400'
-
-        - name: 'AI-Driven Engineering'
-          description: 'Application of artificial intelligence and data-driven methods to engineering problems.'
-          icon: 'hero/sparkles'
-          gradient: 'from-violet-500 to-cyan-400'
-    design:
-      layout: cards
-
-  - block: markdown
-    id: board
-    content:
-      title: 'Board'
-      subtitle: 'Notice and News'
-      text: |-
-        연구실 공지사항, 연구 성과, 학회 참석 및 연구실 소식을 게시합니다.
-
-        [View notices and news →](/board/)
-    design:
-      columns: '1'
-
-  - block: markdown
-    id: contact
-    content:
-      title: 'Contact'
-      subtitle: 'Visit Our Laboratory'
-      text: |-
-        **AI / Bio Fluid Engineering Laboratory**  
-        Department of Mechanical Engineering, Inha University
-
-        **Address**  
-        100 Inha-ro, Michuhol-gu, Incheon, Republic of Korea
-
-        **Professor's Office**  
-        Room 2N280A
-
-        **Tel**  
-        [+82-32-860-7375](tel:+82328607375)
-
-        **Email**  
-        [bfmec@inha.ac.kr](mailto:bfmec@inha.ac.kr)
-
-        [More contact information →](/introduction/#contact)
-    design:
-      columns: '1'
+      spacing:
+        padding: ['3rem', '1rem', '3rem', '1rem']
 ---
