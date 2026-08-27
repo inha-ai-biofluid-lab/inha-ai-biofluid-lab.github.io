@@ -1,89 +1,35 @@
 {{ $photo := resources.Get "media/authors/kyung-eun-lee.png" }}
+About
 
-<div class="lab-home-shell">
-  <div class="lab-home-professor">
-    <div class="lab-home-heading">
-      <p class="lab-home-eyebrow">About</p>
-      <h1>Professor</h1>
-      <p class="lab-home-kicker">교수소개</p>
-      <a class="lab-home-more" href="/professor/">
-        MORE VIEW <span aria-hidden="true">→</span>
-      </a>
-    </div>
+Professor
+교수소개
 
-    <div class="lab-home-photo">
-      {{ with $photo }}
-        {{ $processed := .Fit "420x420 Center webp q90" }}
-        <img src="{{ $processed.RelPermalink }}"
-             width="{{ $processed.Width }}"
-             height="{{ $processed.Height }}"
-             alt="Professor Kyung Eun Lee">
-      {{ else }}
-        <div class="lab-home-photo-fallback">K</div>
-      {{ end }}
-    </div>
+MORE VIEW →
+{{ with $photo }} {{ $processed := .Fit "420x420 Center webp q90" }} Professor Kyung Eun Lee {{ else }}
+K
+{{ end }}
+Professor
 
-    <div class="lab-home-profile">
-      <p class="lab-home-profile-label">Professor</p>
-      <h2>Kyung Eun Lee</h2>
-      <p class="lab-home-profile-ko">이경은 부교수</p>
+Kyung Eun Lee
+이경은 부교수
 
-      <ul class="lab-home-contact-list">
-        <li>
-          <strong>Affiliation</strong>
-          <span>Department of Mechanical Engineering, Inha University</span>
-        </li>
-        <li>
-          <strong>Office</strong>
-          <span>Room 2N280A</span>
-        </li>
-        <li>
-          <strong>Tel</strong>
-          <a href="tel:+82328607375">+82-32-860-7375</a>
-        </li>
-        <li>
-          <strong>Email</strong>
-          <a href="mailto:bfmec@inha.ac.kr">bfmec@inha.ac.kr</a>
-        </li>
-      </ul>
-    </div>
-  </div>
+AffiliationDepartment of Mechanical Engineering, Inha University
+OfficeRoom 2N280A
+Tel+82-32-860-7375
+Emailbfmec@inha.ac.kr
+NOTICE
++
+No notices have been posted yet.
+View Board →
+01 Publications 논문 및 학술 발표 → 02 Research 주요 연구 분야 → 03 Map to Lab 연구실 위치 안내 →
+About
 
-  <div class="lab-home-lower">
-    <div class="lab-home-notice">
-      <div class="lab-home-lower-title">
-        <h2>NOTICE</h2>
-        <a href="/board/#notice" aria-label="View all notices">+</a>
-      </div>
+Laboratory
+연구실 소개 MORE VIEW →
+AI바이오유체공학연구실은 생체 시스템에서 발생하는 유체역학적 현상을 이해하고, 이를 공학 및 의료 문제 해결에 활용하기 위한 연구를 수행합니다. 전산유체역학(CFD), 실험적 분석, 데이터 기반 및 인공지능 기법을 결합하여 다양한 생체유동을 분석하고 예측합니다.
 
-      <div class="lab-home-empty-notice">
-        No notices have been posted yet.
-      </div>
+정량적인 유동 분석과 모델링을 바탕으로 생체유체공학의 기초 원리를 규명하고, 정확하고 효율적인 공학적·의료적 해법을 제시하는 것을 목표로 합니다.
 
-      <a class="lab-home-text-link" href="/board/">View Board →</a>
-    </div>
+The AI / Bio Fluid Engineering Laboratory investigates fluid-mechanical phenomena in biological systems and applies this knowledge to engineering and biomedical problems. We integrate computational fluid dynamics, experimental analysis, data-driven methods, and artificial intelligence to analyze and predict complex biofluid flows.
 
-    <nav class="lab-home-quick-links" aria-label="Laboratory quick links">
-      <a href="/publications/">
-        <span class="lab-home-card-number">01</span>
-        <strong>Publications</strong>
-        <small>논문 및 학술 발표</small>
-        <span class="lab-home-card-arrow">→</span>
-      </a>
-
-      <a href="/research/">
-        <span class="lab-home-card-number">02</span>
-        <strong>Research</strong>
-        <small>주요 연구 분야</small>
-        <span class="lab-home-card-arrow">→</span>
-      </a>
-
-      <a href="/introduction/#contact">
-        <span class="lab-home-card-number">03</span>
-        <strong>Map to Lab</strong>
-        <small>연구실 위치 안내</small>
-        <span class="lab-home-card-arrow">→</span>
-      </a>
-    </nav>
-  </div>
-</div>
+Through quantitative flow analysis and modeling, we aim to advance the fundamental understanding of biofluid mechanics and develop accurate and efficient engineering and biomedical solutions.
