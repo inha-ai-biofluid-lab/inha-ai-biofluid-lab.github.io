@@ -59,7 +59,7 @@ sections:
     design:
       columns: '1'
 
-    - block: focus-areas
+  - block: focus-areas
     id: research
     content:
       title: 'Research'
