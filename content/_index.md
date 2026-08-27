@@ -154,7 +154,8 @@ sections:
         **AI Biofluid Engineering Laboratory**  
         Department of Mechanical Engineering  
         Inha University
+
+        [Contact and directions →](/introduction/#contact)
     design:
       columns: '1'
-            [Contact and directions →](/introduction/#contact)
 ---
