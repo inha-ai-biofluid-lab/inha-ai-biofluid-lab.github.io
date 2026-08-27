@@ -14,4 +14,15 @@ sections:
       columns: '1'
       spacing:
         padding: ['1.25rem', '0', '1.5rem', '0']
+
+  - block: markdown
+    id: about-laboratory
+    content:
+      title: ''
+      text: |-
+        {{< lab-about >}}
+    design:
+      columns: '1'
+      spacing:
+        padding: ['0', '0', '1.5rem', '0']
 ---
