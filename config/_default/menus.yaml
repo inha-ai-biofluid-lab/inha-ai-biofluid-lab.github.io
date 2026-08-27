@@ -28,6 +28,21 @@ main:
     url: /members/
     weight: 30
 
+  - name: Graduate Students
+    parent: members
+    url: /members/#graduate-students
+    weight: 31
+
+  - name: Undergraduate
+    parent: members
+    url: /members/#undergraduate-researchers
+    weight: 32
+
+  - name: Alumni
+    parent: members
+    url: /members/#alumni
+    weight: 33
+
   - name: PUBLICATIONS
     identifier: publications
     url: /publications/
