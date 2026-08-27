@@ -18,23 +18,56 @@ sections:
           enable: true
 
   - block: team-showcase
+    id: graduate-students
     content:
-      title: 'Our Team'
-      subtitle: 'Laboratory Members'
-      text: 'Member profiles will be added and updated regularly.'
+      title: 'Graduate Students'
+      subtitle: 'Our Team'
       user_groups:
         - Graduate Students
+      sort_by: weight
+      sort_ascending: true
+    design:
+      show_role: true
+      show_organizations: false
+      show_interests: false
+      show_social: true
+      show_empty_groups: false
+      align: center
+      max_columns: 3
+
+  - block: team-showcase
+    id: undergraduate-researchers
+    content:
+      title: 'Undergraduate Researchers'
+      subtitle: 'Our Team'
+      user_groups:
         - Undergraduate Researchers
+      sort_by: weight
+      sort_ascending: true
+    design:
+      show_role: true
+      show_organizations: false
+      show_interests: false
+      show_social: true
+      show_empty_groups: false
+      align: center
+      max_columns: 3
+
+  - block: team-showcase
+    id: alumni
+    content:
+      title: 'Alumni'
+      subtitle: 'Former Members'
+      user_groups:
         - Alumni
       sort_by: weight
       sort_ascending: true
     design:
       show_role: true
       show_organizations: false
-      show_interests: true
-      max_interests: 3
-      show_social: true
+      show_interests: false
+      show_social: false
       show_empty_groups: true
       align: center
-      max_columns: 4
+      max_columns: 3
 ---
