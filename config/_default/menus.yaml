@@ -39,5 +39,21 @@ main:
     weight: 50
 
   - name: BOARD
-    url: /#board
+    identifier: board
+    url: /board/
     weight: 60
+
+  - name: Notice
+    parent: board
+    url: /board/#notice
+    weight: 61
+
+  - name: News
+    parent: board
+    url: /board/#news
+    weight: 62
+
+  - name: Gallery
+    parent: board
+    url: /board/#gallery
+    weight: 63
