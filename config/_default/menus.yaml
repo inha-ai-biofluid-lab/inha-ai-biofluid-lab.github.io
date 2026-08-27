@@ -24,7 +24,8 @@ main:
     weight: 20
 
   - name: MEMBERS
-    url: /#members
+    identifier: members
+    url: /members/
     weight: 30
 
   - name: PUBLICATIONS
