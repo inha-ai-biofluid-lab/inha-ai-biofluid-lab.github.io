@@ -4,21 +4,30 @@ summary: ''
 type: landing
 
 sections:
-  - block: markdown
+  - block: hero
     id: introduction
     content:
+      eyebrow: 'Department of Mechanical Engineering · Inha University'
       title: 'AI / Bio Fluid Engineering Laboratory'
-      subtitle: 'Department of Mechanical Engineering · Inha University'
       text: |-
         **AI바이오유체공학연구실**
 
-        Welcome to the AI Biofluid Engineering Laboratory at Inha University.
-
-        We investigate biofluid phenomena through computational, experimental,
-        and data-driven approaches.
+        We investigate biofluid phenomena through computational,
+        experimental, and data-driven approaches.
+      primary_action:
+        text: 'Research Areas'
+        url: '#research'
+        icon: 'beaker'
+        style: 'gradient'
+      secondary_action:
+        text: 'Meet Our Team'
+        url: '#members'
+        icon: 'user-group'
+        style: 'ghost'
     design:
-      columns: '1'
+      css_class: 'dark'
       background:
+        color: '#0B2C4D'
         gradient_mesh:
           enable: true
 
