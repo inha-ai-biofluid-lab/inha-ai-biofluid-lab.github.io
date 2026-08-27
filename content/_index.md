@@ -59,18 +59,34 @@ sections:
     design:
       columns: '1'
 
-  - block: markdown
+    - block: focus-areas
     id: research
     content:
       title: 'Research'
       subtitle: 'Research Areas'
-      text: |-
-        - Biofluid Mechanics
-        - Computational Fluid Dynamics
-        - Cardiovascular Hemodynamics
-        - Artificial Intelligence in Engineering
+      text: 'We study biological flow phenomena using computational and data-driven approaches.'
+      items:
+        - name: 'Biofluid Mechanics'
+          description: 'Investigation of fluid-mechanical phenomena in biological systems.'
+          icon: 'hero/beaker'
+          gradient: 'from-blue-500 to-cyan-400'
+
+        - name: 'Cardiovascular Hemodynamics'
+          description: 'Analysis of blood flow and vascular hemodynamics in cardiovascular systems.'
+          icon: 'hero/heart'
+          gradient: 'from-cyan-500 to-teal-400'
+
+        - name: 'Computational Fluid Dynamics'
+          description: 'Numerical modeling and simulation of complex biological flows.'
+          icon: 'hero/cpu-chip'
+          gradient: 'from-indigo-500 to-blue-400'
+
+        - name: 'AI-Driven Engineering'
+          description: 'Application of artificial intelligence and data-driven methods to engineering problems.'
+          icon: 'hero/sparkles'
+          gradient: 'from-violet-500 to-cyan-400'
     design:
-      columns: '1'
+      layout: cards
 
   - block: markdown
     id: board
