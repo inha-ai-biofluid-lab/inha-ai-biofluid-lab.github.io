@@ -151,11 +151,22 @@ sections:
       title: 'Contact'
       subtitle: 'Visit Our Laboratory'
       text: |-
-        **AI Biofluid Engineering Laboratory**  
-        Department of Mechanical Engineering  
-        Inha University
+        **AI / Bio Fluid Engineering Laboratory**  
+        Department of Mechanical Engineering, Inha University
 
-        [Contact and directions →](/introduction/#contact)
+        **Address**  
+        100 Inha-ro, Michuhol-gu, Incheon, Republic of Korea
+
+        **Professor's Office**  
+        Room 2N280A
+
+        **Tel**  
+        [+82-32-860-7375](tel:+82328607375)
+
+        **Email**  
+        [bfmec@inha.ac.kr](mailto:bfmec@inha.ac.kr)
+
+        [More contact information →](/introduction/#contact)
     design:
       columns: '1'
 ---
