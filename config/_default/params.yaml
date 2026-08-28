@@ -115,7 +115,7 @@ hugoblox:
     style: minimal # minimal | columns | centered
     language_switcher: false
     # Custom footer text (HTML supported)
-    text: ""
+    text: "<strong>AI / Bio Fluid Engineering Laboratory</strong><br>Department of Mechanical Engineering, Inha University · Room 2N280A<br>+82-32-860-7375 · bfmec@inha.ac.kr"
 
   # ────────────────────────────────────────────────────────────────────────────
   # COPYRIGHT
