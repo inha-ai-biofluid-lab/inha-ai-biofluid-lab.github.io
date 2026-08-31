@@ -1,0 +1,51 @@
+{{ define "main" }}
+
+<main class="abfe-board-single">
+
+  <header class="abfe-board-single__header">
+    <div class="abfe-board-single__header-inner">
+
+      <a
+        class="abfe-board-single__back"
+        href="{{ "/board/" | relLangURL }}"
+      >
+        ← BACK TO BOARD
+      </a>
+
+      <div class="abfe-board-single__category">
+        {{ with .Params.board_type }}
+          {{ upper . }}
+        {{ else }}
+          NEWS
+        {{ end }}
+      </div>
+
+      <h1>{{ .Title }}</h1>
+
+      <time
+        class="abfe-board-single__date"
+        datetime="{{ .Date.Format "2006-01-02" }}"
+      >
+        {{ .Date.Format "2006.01.02" }}
+      </time>
+
+    </div>
+  </header>
+
+  <div class="abfe-board-single__content">
+
+    <article class="abfe-board-single__article">
+      {{ .Content }}
+    </article>
+
+    <div class="abfe-board-single__footer">
+      <a href="{{ "/board/" | relLangURL }}">
+        ← BOARD 목록으로 돌아가기
+      </a>
+    </div>
+
+  </div>
+
+</main>
+
+{{ end }}
