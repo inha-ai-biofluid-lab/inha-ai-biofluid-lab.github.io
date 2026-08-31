@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="AI Biofluid Engineering Laboratory">
+  <rect width="512" height="512" rx="96" fill="#0B2C4D"></rect>
+
+  <circle cx="407" cy="101" r="34" fill="#61F0E5"></circle>
+
+  <text x="256" y="262" text-anchor="middle" fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-size="205" font-weight="800" letter-spacing="-14">
+    AI
+  </text>
+
+  <text x="256" y="418" text-anchor="middle" fill="#61F0E5" font-family="Arial, Helvetica, sans-serif" font-size="145" font-weight="750" letter-spacing="-5">
+    Bio
+  </text>
+</svg>
