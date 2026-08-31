@@ -3,6 +3,9 @@ title: ''
 summary: 'News and notices from the AI / Bio Fluid Engineering Laboratory'
 type: landing
 
+cascade:
+  share: false
+
 sections:
   - block: markdown
     id: lab-board
