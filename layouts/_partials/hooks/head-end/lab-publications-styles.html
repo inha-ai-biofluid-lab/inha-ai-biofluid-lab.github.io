@@ -1,0 +1,210 @@
+<style>
+  .abfe-publications {
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    background: #ffffff;
+    color: #10243b;
+  }
+
+  /* 상단 제목 영역 */
+  .abfe-publications__hero {
+    padding: 110px max(24px, calc((100vw - 1180px) / 2));
+    background:
+      radial-gradient(circle at 85% 20%, rgba(27, 174, 177, 0.2), transparent 28%),
+      radial-gradient(circle at 10% 85%, rgba(40, 111, 170, 0.18), transparent 30%),
+      #081d33;
+    color: #ffffff;
+  }
+
+  .abfe-publications__eyebrow {
+    margin-bottom: 22px;
+    color: #27c1bd;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+  }
+
+  .abfe-publications__hero h1 {
+    max-width: 760px;
+    margin: 0;
+    color: #ffffff;
+    font-size: clamp(2.7rem, 6vw, 5.2rem);
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -0.045em;
+  }
+
+  .abfe-publications__hero p {
+    max-width: 650px;
+    margin: 28px 0 0;
+    color: rgba(255, 255, 255, 0.76);
+    font-size: 1.05rem;
+    line-height: 1.8;
+  }
+
+  /* 논문 목록 전체 */
+  .abfe-publications__content {
+    max-width: 1180px;
+    min-height: 420px;
+    margin: 0 auto;
+    padding: 90px 24px 120px;
+  }
+
+  .abfe-publications__year {
+    display: grid;
+    grid-template-columns: 150px minmax(0, 1fr);
+    gap: 45px;
+    padding: 0 0 70px;
+  }
+
+  .abfe-publications__year + .abfe-publications__year {
+    padding-top: 70px;
+    border-top: 1px solid #dce4ea;
+  }
+
+  .abfe-publications__year > h2 {
+    margin: 0;
+    color: #0b2c4d;
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 1;
+  }
+
+  .abfe-publications__list {
+    border-top: 2px solid #0b2c4d;
+  }
+
+  /* 개별 논문 */
+  .abfe-publication {
+    display: grid;
+    grid-template-columns: 54px minmax(0, 1fr);
+    gap: 24px;
+    padding: 32px 0;
+    border-bottom: 1px solid #dce4ea;
+  }
+
+  .abfe-publication__number {
+    padding-top: 5px;
+    color: #16a4a4;
+    font-size: 0.76rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+  }
+
+  .abfe-publication__body h3 {
+    margin: 0;
+    font-size: clamp(1.15rem, 2vw, 1.48rem);
+    font-weight: 750;
+    line-height: 1.45;
+  }
+
+  .abfe-publication__body h3 a {
+    color: #10243b;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .abfe-publication__body h3 a:hover {
+    color: #159b9d;
+  }
+
+  .abfe-publication__authors {
+    margin: 13px 0 0;
+    color: #4f6071;
+    font-size: 0.94rem;
+    line-height: 1.65;
+  }
+
+  .abfe-publication__journal {
+    margin: 5px 0 0;
+    color: #71808e;
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  .abfe-publication__links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin-top: 18px;
+  }
+
+  .abfe-publication__links a {
+    color: #0b7285;
+    font-size: 0.74rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-decoration: none;
+  }
+
+  .abfe-publication__links a:hover {
+    color: #16a4a4;
+  }
+
+  /* 논문이 아직 없을 때 */
+  .abfe-publications__empty {
+    max-width: 720px;
+    padding: 70px 0;
+    border-top: 2px solid #0b2c4d;
+    border-bottom: 1px solid #dce4ea;
+  }
+
+  .abfe-publications__empty span {
+    color: #159b9d;
+    font-size: 0.76rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+  }
+
+  .abfe-publications__empty h2 {
+    margin: 22px 0 16px;
+    color: #10243b;
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    font-weight: 800;
+    line-height: 1.2;
+  }
+
+  .abfe-publications__empty p {
+    margin: 0;
+    color: #657586;
+    line-height: 1.8;
+  }
+
+  /* 모바일 */
+  @media (max-width: 800px) {
+    .abfe-publications__hero {
+      padding-top: 80px;
+      padding-bottom: 80px;
+    }
+
+    .abfe-publications__content {
+      padding-top: 65px;
+      padding-bottom: 90px;
+    }
+
+    .abfe-publications__year {
+      display: block;
+      padding-bottom: 55px;
+    }
+
+    .abfe-publications__year + .abfe-publications__year {
+      padding-top: 55px;
+    }
+
+    .abfe-publications__year > h2 {
+      margin-bottom: 25px;
+    }
+  }
+
+  @media (max-width: 520px) {
+    .abfe-publication {
+      grid-template-columns: 38px minmax(0, 1fr);
+      gap: 12px;
+      padding: 26px 0;
+    }
+
+    .abfe-publications__hero h1 {
+      font-size: 2.55rem;
+    }
+  }
+</style>
