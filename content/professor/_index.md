@@ -24,7 +24,7 @@ sections:
       title: 'Contact Information'
       subtitle: ''
       text: |-
-        **Kyung Eun Lee, Associate Professor**  
+        **Kyung Eun Lee, Professor**  
         Department of Mechanical Engineering, Inha University
 
         **Office:** Room 2N280A  
