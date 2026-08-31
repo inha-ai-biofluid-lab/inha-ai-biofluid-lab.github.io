@@ -1,0 +1,107 @@
+<section class="abfe-publications">
+
+  <div class="abfe-publications__hero">
+    <div class="abfe-publications__eyebrow">04 — PUBLICATIONS</div>
+    <h1>Research Publications</h1>
+    <p>
+      AI / Bio Fluid Engineering Laboratory의 연구 성과와
+      학술 논문을 소개합니다.
+    </p>
+  </div>
+
+  {{ $publications := where site.RegularPages "Section" "publications" }}
+  {{ $publications = $publications.ByDate.Reverse }}
+
+  <div class="abfe-publications__content">
+
+    {{ if gt (len $publications) 0 }}
+
+      {{ range $publications.GroupByDate "2006" }}
+        <section class="abfe-publications__year">
+
+          <h2>{{ .Key }}</h2>
+
+          <div class="abfe-publications__list">
+            {{ range .Pages }}
+              <article class="abfe-publication">
+
+                <div class="abfe-publication__number">
+                  {{ printf "%02d" .Weight }}
+                </div>
+
+                <div class="abfe-publication__body">
+
+                  <h3>
+                    <a href="{{ .RelPermalink }}">
+                      {{ .Title }}
+                    </a>
+                  </h3>
+
+                  {{ with .Params.authors }}
+                    <p class="abfe-publication__authors">
+                      {{ range $index, $author := . }}
+                        {{ if gt $index 0 }}, {{ end }}
+
+                        {{ $authorData := index site.Data.authors $author }}
+
+                        {{ if $authorData }}
+                          {{ with $authorData.name.display }}
+                            {{ . }}
+                          {{ else }}
+                            {{ $author }}
+                          {{ end }}
+                        {{ else }}
+                          {{ $author }}
+                        {{ end }}
+                      {{ end }}
+                    </p>
+                  {{ end }}
+
+                  {{ with .Params.publication }}
+                    <p class="abfe-publication__journal">
+                      {{ . | markdownify }}
+                    </p>
+                  {{ end }}
+
+                  <div class="abfe-publication__links">
+                    <a href="{{ .RelPermalink }}">DETAILS →</a>
+
+                    {{ with .Params.doi }}
+                      {{ $doiURL := . }}
+                      {{ if not (hasPrefix . "http") }}
+                        {{ $doiURL = printf "https://doi.org/%s" . }}
+                      {{ end }}
+
+                      <a
+                        href="{{ $doiURL }}"
+                        target="_blank"
+                        rel="noopener"
+                      >
+                        DOI ↗
+                      </a>
+                    {{ end }}
+                  </div>
+
+                </div>
+              </article>
+            {{ end }}
+          </div>
+
+        </section>
+      {{ end }}
+
+    {{ else }}
+
+      <div class="abfe-publications__empty">
+        <span>PUBLICATION LIST</span>
+        <h2>Publication list is being updated.</h2>
+        <p>
+          최신 논문 목록을 정리하고 있습니다.<br>
+          연구 성과는 순차적으로 업데이트될 예정입니다.
+        </p>
+      </div>
+
+    {{ end }}
+
+  </div>
+</section>
