@@ -90,7 +90,7 @@ hugoblox:
   header:
     enable: true
     # Header style variant
-    style: centered # navbar | navbar-simple | minimal
+    style: minimal # navbar | navbar-simple | minimal
     # Stick to top on scroll
     sticky: true
     # Menu alignment
@@ -112,7 +112,7 @@ hugoblox:
   # ────────────────────────────────────────────────────────────────────────────
   footer:
     # Footer style variant
-    style: minimal # minimal | columns | centered
+    style: centered # minimal | columns | centered
     language_switcher: false
     # Custom footer text (HTML supported)
     text: "<strong>AI / Bio Fluid Engineering Laboratory</strong><br>Department of Mechanical Engineering, Inha University · Room 2N280A<br>+82-32-860-7375 · bfmec@inha.ac.kr"
