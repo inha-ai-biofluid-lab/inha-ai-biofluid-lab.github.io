@@ -1,0 +1,230 @@
+<style>
+  .abfe-board {
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    background: #ffffff;
+    color: #10243b;
+  }
+
+  .abfe-board__hero {
+    padding: 110px max(24px, calc((100vw - 1180px) / 2));
+    background:
+      radial-gradient(circle at 85% 20%, rgba(27, 174, 177, 0.2), transparent 28%),
+      radial-gradient(circle at 10% 85%, rgba(40, 111, 170, 0.18), transparent 30%),
+      #081d33;
+    color: #ffffff;
+  }
+
+  .abfe-board__eyebrow {
+    margin-bottom: 22px;
+    color: #27c1bd;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+  }
+
+  .abfe-board__hero h1 {
+    max-width: 800px;
+    margin: 0;
+    color: #ffffff;
+    font-size: clamp(2.7rem, 6vw, 5.2rem);
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -0.045em;
+  }
+
+  .abfe-board__hero p {
+    max-width: 650px;
+    margin: 28px 0 0;
+    color: rgba(255, 255, 255, 0.76);
+    font-size: 1.05rem;
+    line-height: 1.8;
+  }
+
+  .abfe-board__content {
+    max-width: 1180px;
+    min-height: 450px;
+    margin: 0 auto;
+    padding: 90px 24px 120px;
+  }
+
+  .abfe-board__heading {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 42px;
+  }
+
+  .abfe-board__heading span {
+    color: #159b9d;
+    font-size: 0.76rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+  }
+
+  .abfe-board__heading h2 {
+    margin: 12px 0 0;
+    color: #10243b;
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-weight: 800;
+    line-height: 1.1;
+  }
+
+  .abfe-board__categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .abfe-board__categories span {
+    padding: 8px 13px;
+    border: 1px solid #ced9e2;
+    border-radius: 100px;
+    color: #536575;
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+  }
+
+  .abfe-board__list {
+    border-top: 2px solid #0b2c4d;
+  }
+
+  .abfe-board-item {
+    display: grid;
+    grid-template-columns: 48px 92px minmax(0, 1fr) 105px 28px;
+    align-items: center;
+    gap: 20px;
+    padding: 27px 0;
+    border-bottom: 1px solid #dce4ea;
+    transition: background-color 0.2s ease;
+  }
+
+  .abfe-board-item:hover {
+    background: #f5f9fb;
+  }
+
+  .abfe-board-item__number {
+    color: #94a3af;
+    font-size: 0.75rem;
+    font-weight: 700;
+  }
+
+  .abfe-board-item__category {
+    color: #159b9d;
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+  }
+
+  .abfe-board-item__body h3 {
+    margin: 0;
+    font-size: 1.05rem;
+    font-weight: 750;
+    line-height: 1.45;
+  }
+
+  .abfe-board-item__body h3 a {
+    color: #10243b;
+    text-decoration: none;
+  }
+
+  .abfe-board-item__body h3 a:hover {
+    color: #159b9d;
+  }
+
+  .abfe-board-item__body p {
+    margin: 7px 0 0;
+    color: #71808e;
+    font-size: 0.86rem;
+    line-height: 1.6;
+  }
+
+  .abfe-board-item time {
+    color: #7b8996;
+    font-size: 0.78rem;
+    text-align: right;
+  }
+
+  .abfe-board-item__arrow {
+    color: #159b9d;
+    font-size: 1.15rem;
+    text-decoration: none;
+    transition: transform 0.2s ease;
+  }
+
+  .abfe-board-item__arrow:hover {
+    color: #0b7285;
+    transform: translateX(4px);
+  }
+
+  .abfe-board__empty {
+    padding: 70px 0;
+    border-top: 2px solid #0b2c4d;
+    border-bottom: 1px solid #dce4ea;
+  }
+
+  .abfe-board__empty > span {
+    color: #159b9d;
+    font-size: 0.76rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+  }
+
+  .abfe-board__empty h2 {
+    margin: 22px 0 16px;
+    color: #10243b;
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    font-weight: 800;
+  }
+
+  .abfe-board__empty p {
+    margin: 0;
+    color: #657586;
+    line-height: 1.8;
+  }
+
+  @media (max-width: 800px) {
+    .abfe-board__hero {
+      padding-top: 80px;
+      padding-bottom: 80px;
+    }
+
+    .abfe-board__content {
+      padding-top: 65px;
+      padding-bottom: 90px;
+    }
+
+    .abfe-board__heading {
+      display: block;
+    }
+
+    .abfe-board__categories {
+      margin-top: 25px;
+    }
+
+    .abfe-board-item {
+      grid-template-columns: 72px minmax(0, 1fr) 25px;
+      gap: 13px;
+    }
+
+    .abfe-board-item__number,
+    .abfe-board-item time {
+      display: none;
+    }
+  }
+
+  @media (max-width: 520px) {
+    .abfe-board__hero h1 {
+      font-size: 2.55rem;
+    }
+
+    .abfe-board-item {
+      grid-template-columns: minmax(0, 1fr) 24px;
+    }
+
+    .abfe-board-item__category {
+      grid-column: 1 / -1;
+    }
+  }
+</style>
