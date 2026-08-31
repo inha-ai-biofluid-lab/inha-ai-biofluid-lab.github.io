@@ -1,0 +1,88 @@
+<section class="abfe-board">
+
+  <div class="abfe-board__hero">
+    <div class="abfe-board__eyebrow">05 — BOARD</div>
+    <h1>Laboratory Board</h1>
+    <p>
+      연구실 공지사항과 새로운 소식, 연구 활동을 소개합니다.
+    </p>
+  </div>
+
+  {{ $posts := where site.RegularPages "Section" "board" }}
+  {{ $posts = $posts.ByDate.Reverse }}
+
+  <div class="abfe-board__content">
+
+    <div class="abfe-board__heading">
+      <div>
+        <span>LABORATORY UPDATES</span>
+        <h2>News &amp; Notices</h2>
+      </div>
+
+      <div class="abfe-board__categories">
+        <span>NOTICE</span>
+        <span>NEWS</span>
+        <span>GALLERY</span>
+      </div>
+    </div>
+
+    {{ if gt (len $posts) 0 }}
+
+      <div class="abfe-board__list">
+        {{ range $index, $post := first 12 $posts }}
+          <article class="abfe-board-item">
+
+            <div class="abfe-board-item__number">
+              {{ printf "%02d" (add $index 1) }}
+            </div>
+
+            <div class="abfe-board-item__category">
+              {{ with .Params.board_type }}
+                {{ upper . }}
+              {{ else }}
+                NEWS
+              {{ end }}
+            </div>
+
+            <div class="abfe-board-item__body">
+              <h3>
+                <a href="{{ .RelPermalink }}">
+                  {{ .Title }}
+                </a>
+              </h3>
+
+              {{ with .Params.summary }}
+                <p>{{ . }}</p>
+              {{ end }}
+            </div>
+
+            <time datetime="{{ .Date.Format "2006-01-02" }}">
+              {{ .Date.Format "2006.01.02" }}
+            </time>
+
+            <a
+              class="abfe-board-item__arrow"
+              href="{{ .RelPermalink }}"
+              aria-label="{{ .Title }}"
+            >
+              →
+            </a>
+
+          </article>
+        {{ end }}
+      </div>
+
+    {{ else }}
+
+      <div class="abfe-board__empty">
+        <span>NO POSTS YET</span>
+        <h2>새로운 소식을 준비하고 있습니다.</h2>
+        <p>
+          연구실 공지사항과 연구 활동이 이곳에 업데이트될 예정입니다.
+        </p>
+      </div>
+
+    {{ end }}
+
+  </div>
+</section>
