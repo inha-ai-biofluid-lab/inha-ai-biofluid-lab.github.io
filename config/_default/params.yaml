@@ -6,7 +6,21 @@
 # ══════════════════════════════════════════════════════════════════════════════
 hugoblox:
   schema: "2.0"
+  header:
+    enable: true
+    style: navbar
+    sticky: true
+    align: center
 
+    search: false
+    theme_toggle: false
+    theme_picker: false
+    language_switcher: false
+
+    cta:
+      enable: false
+      text: ""
+      url: ""
   # ────────────────────────────────────────────────────────────────────────────
   # IDENTITY
   # Site-level branding (for people/profiles, use the author system in content/authors/)
@@ -87,24 +101,7 @@ hugoblox:
   # HEADER
   # Site header and navigation bar
   # ────────────────────────────────────────────────────────────────────────────
-  header:
-    enable: true
-    # Header style variant
-    style: navbar # navbar | navbar-simple | minimal
-    # Stick to top on scroll
-    sticky: true
-    # Menu alignment
-    align: center # left | center | right
-    # Feature toggles
-    search: false
-    theme_toggle: false
-    theme_picker: false
-    language_switcher: false
-    # Call-to-action button
-    cta:
-      enable: false
-      text: ""
-      url: ""
+
 
   # ────────────────────────────────────────────────────────────────────────────
   # FOOTER
