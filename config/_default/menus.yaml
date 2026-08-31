@@ -19,56 +19,57 @@ main:
     url: /introduction/#contact
     weight: 13
 
-  - name: PROFESSOR
-    url: /professor/
-    weight: 20
-
   - name: MEMBERS
     identifier: members
     url: /members/
-    weight: 30
+    weight: 20
+
+  - name: Professor
+    parent: members
+    url: /professor/
+    weight: 21
 
   - name: Graduate Students
     parent: members
-    url: /members/#graduate-students
-    weight: 31
+    url: /members/graduate-students/
+    weight: 22
 
   - name: Undergraduate
     parent: members
-    url: /members/#undergraduate-researchers
-    weight: 32
+    url: /members/undergraduate/
+    weight: 23
 
   - name: Alumni
     parent: members
-    url: /members/#alumni
-    weight: 33
+    url: /members/alumni/
+    weight: 24
+
+  - name: RESEARCH
+    identifier: research
+    url: /research/
+    weight: 30
 
   - name: PUBLICATIONS
     identifier: publications
     url: /publications/
     weight: 40
 
-  - name: RESEARCH
-    identifier: research
-    url: /research/
-    weight: 50
-
   - name: BOARD
     identifier: board
     url: /board/
-    weight: 60
+    weight: 50
 
   - name: Notice
     parent: board
     url: /board/#notice
-    weight: 61
+    weight: 51
 
   - name: News
     parent: board
     url: /board/#news
-    weight: 62
+    weight: 52
 
   - name: Gallery
     parent: board
     url: /board/#gallery
-    weight: 63
+    weight: 53
