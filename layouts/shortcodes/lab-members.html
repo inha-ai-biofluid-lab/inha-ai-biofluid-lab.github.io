@@ -1,0 +1,205 @@
+{{ $professor := index site.Data.authors "kyung-eun-lee" }}
+
+<div class="abfe-members-page">
+
+  <!-- Page heading -->
+  <section class="abfe-members-heading">
+    <p>05 · MEMBERS</p>
+    <h1>함께하는 사람들</h1>
+    <span>
+      Meet the researchers of the AI / Bio Fluid Engineering Laboratory.
+    </span>
+  </section>
+
+  <!-- Professor -->
+  <section id="professor" class="abfe-members-section">
+    <div class="abfe-members-section-title">
+      <p>PRINCIPAL INVESTIGATOR</p>
+      <h2>Professor</h2>
+    </div>
+
+    <article class="abfe-professor-profile">
+      <div class="abfe-professor-photo">
+        {{ with resources.GetMatch "media/authors/kyung-eun-lee.*" }}
+          <img
+            src="{{ .RelPermalink }}"
+            alt="Professor Kyung Eun Lee"
+          >
+        {{ else }}
+          <div class="abfe-member-placeholder professor-placeholder">
+            <span>ABFE</span>
+          </div>
+        {{ end }}
+      </div>
+
+      <div class="abfe-professor-information">
+        <p class="abfe-professor-label">Associate Professor</p>
+
+        <h3>
+          이경은
+          <span>Kyung Eun Lee</span>
+        </h3>
+
+        <p class="abfe-professor-affiliation">
+          Department of Mechanical Engineering<br>
+          Inha University
+        </p>
+
+        <div class="abfe-professor-details">
+          <div>
+            <span>OFFICE</span>
+            <strong>Room 2N280A, Inha University</strong>
+          </div>
+
+          <div>
+            <span>TELEPHONE</span>
+            <a href="tel:+82328607375">+82-32-860-7375</a>
+          </div>
+
+          <div>
+            <span>EMAIL</span>
+            <a href="mailto:bfmec@inha.ac.kr">bfmec@inha.ac.kr</a>
+          </div>
+
+          <div>
+            <span>RESEARCH</span>
+            <strong>Biofluid Mechanics · AI-based CFD · Medical Twin</strong>
+          </div>
+        </div>
+
+        <a class="abfe-member-profile-link" href="/professor/">
+          View Professor Profile →
+        </a>
+      </div>
+    </article>
+  </section>
+
+  <!-- Graduate students -->
+  <section id="graduate-students" class="abfe-members-section">
+    <div class="abfe-members-section-title member-group-title">
+      <div>
+        <p>GRADUATE RESEARCHERS</p>
+        <h2>대학원생</h2>
+      </div>
+      <span>6 Members</span>
+    </div>
+
+    <div class="abfe-member-grid">
+      {{ $graduateStudents := slice
+        "labin-kim"
+        "minseo-jeon"
+        "yujin-kim"
+        "yujin-jeon"
+        "kyung-hoon-lee"
+        "yoojin-huh"
+      }}
+
+      {{ range $graduateStudents }}
+        {{ $slug := . }}
+        {{ $person := index site.Data.authors $slug }}
+
+        <article class="abfe-member-card">
+          <div class="abfe-member-photo">
+            {{ with resources.GetMatch (printf "media/authors/%s.*" $slug) }}
+              <img
+                src="{{ .RelPermalink }}"
+                alt="{{ $person.name.display }}"
+              >
+            {{ else }}
+              <div class="abfe-member-placeholder">
+                <span>ABFE</span>
+              </div>
+            {{ end }}
+          </div>
+
+          <div class="abfe-member-card-copy">
+            <p>{{ $person.role }}</p>
+
+            <h3>
+              {{ $person.name.alternate }}
+              <span>{{ $person.name.display }}</span>
+            </h3>
+
+            {{ range $person.links }}
+              {{ if hasPrefix .url "mailto:" }}
+                <a href="{{ .url }}">
+                  {{ strings.TrimPrefix "mailto:" .url }}
+                </a>
+              {{ end }}
+            {{ end }}
+          </div>
+        </article>
+      {{ end }}
+    </div>
+  </section>
+
+  <!-- Undergraduate researchers -->
+  <section id="undergraduate" class="abfe-members-section">
+    <div class="abfe-members-section-title member-group-title">
+      <div>
+        <p>UNDERGRADUATE RESEARCHERS</p>
+        <h2>학부연구생</h2>
+      </div>
+      <span>3 Members</span>
+    </div>
+
+    <div class="abfe-member-grid">
+      {{ $undergraduateStudents := slice
+        "seungho-song"
+        "younghyun-kim"
+        "jiwon-kim"
+      }}
+
+      {{ range $undergraduateStudents }}
+        {{ $slug := . }}
+        {{ $person := index site.Data.authors $slug }}
+
+        <article class="abfe-member-card">
+          <div class="abfe-member-photo">
+            {{ with resources.GetMatch (printf "media/authors/%s.*" $slug) }}
+              <img
+                src="{{ .RelPermalink }}"
+                alt="{{ $person.name.display }}"
+              >
+            {{ else }}
+              <div class="abfe-member-placeholder">
+                <span>ABFE</span>
+              </div>
+            {{ end }}
+          </div>
+
+          <div class="abfe-member-card-copy">
+            <p>{{ $person.role }}</p>
+
+            <h3>
+              {{ $person.name.alternate }}
+              <span>{{ $person.name.display }}</span>
+            </h3>
+
+            {{ range $person.links }}
+              {{ if hasPrefix .url "mailto:" }}
+                <a href="{{ .url }}">
+                  {{ strings.TrimPrefix "mailto:" .url }}
+                </a>
+              {{ end }}
+            {{ end }}
+          </div>
+        </article>
+      {{ end }}
+    </div>
+  </section>
+
+  <!-- Alumni -->
+  <section id="alumni" class="abfe-members-section abfe-alumni-section">
+    <div class="abfe-members-section-title">
+      <p>ALUMNI</p>
+      <h2>졸업생</h2>
+    </div>
+
+    <div class="abfe-alumni-empty">
+      <span>Alumni information will be updated.</span>
+      <p>졸업생 정보는 추후 업데이트할 예정입니다.</p>
+    </div>
+  </section>
+
+</div>
