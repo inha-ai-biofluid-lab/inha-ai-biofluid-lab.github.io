@@ -4,20 +4,25 @@ main:
     url: /introduction/
     weight: 10
 
-  - name: About Lab
+  - name: About Laboratory
     parent: introduction
     url: /introduction/#about
     weight: 11
 
-  - name: Equipment
+  - name: Research Areas
+    parent: introduction
+    url: /introduction/#research-areas
+    weight: 12
+
+  - name: Capabilities
     parent: introduction
     url: /introduction/#equipment
-    weight: 12
+    weight: 13
 
   - name: Contact
     parent: introduction
     url: /introduction/#contact
-    weight: 13
+    weight: 14
 
   - name: MEMBERS
     identifier: members
