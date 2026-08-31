@@ -26,19 +26,14 @@ hugoblox:
   # Site-level branding (for people/profiles, use the author system in content/authors/)
   # ────────────────────────────────────────────────────────────────────────────
   identity:
-    # Site name - shown in navbar, footer, copyright, and browser title by default
-    name: "AI/Biofluid Lab"
-    # Legal entity for copyright notices (defaults to name if not set)
+    name: "AI / Bio Fluid Engineering Laboratory"
     organization: "Inha University"
-    # Schema.org type for structured data
-    type: organization # person | organization | local_business
-    # Short tagline displayed on your site
+    type: organization
     tagline: "AI Biofluid Engineering Laboratory at Inha University"
-    # Site meta description for search engines and social sharing
-    description: "Official website of the AI Biofluid Engineering Laboratory at Inha University."
-    # Social accounts (used for meta tags like Twitter Cards)
+    description: "Official website of the AI / Bio Fluid Engineering Laboratory, Department of Mechanical Engineering, Inha University."
+
     social:
-      twitter: "" # Twitter/X handle for Twitter Cards (without @)
+      twitter: ""
 
   # ────────────────────────────────────────────────────────────────────────────
   # THEME
@@ -131,7 +126,7 @@ hugoblox:
   # ────────────────────────────────────────────────────────────────────────────
   seo:
     # Browser tab title override (defaults to identity.name if not set)
-    title: "AI / Bio Fluid Engineering Laboratory"
+    title: "AI / Bio Fluid Engineering Laboratory | Inha University"
     # For local_business identity type only
     location:
       address:
