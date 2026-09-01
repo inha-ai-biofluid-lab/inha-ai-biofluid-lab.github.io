@@ -1,0 +1,332 @@
+<style>
+  .abfe-visit,
+  .abfe-visit * {
+    box-sizing: border-box;
+  }
+
+  .abfe-visit {
+    width: 100vw;
+    max-width: 100vw;
+    margin-left: calc(50% - 50vw);
+    border-top: 1px solid #d8e2e9;
+    background: #f7f9fb;
+    color: #10243b;
+  }
+
+  .abfe-visit__inner {
+    width: min(1180px, calc(100% - 48px));
+    margin: 0 auto;
+    padding: 90px 0 110px;
+  }
+
+  /* 제목 */
+  .abfe-visit__header {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(340px, 1.1fr);
+    align-items: end;
+    gap: clamp(45px, 8vw, 115px);
+    margin-bottom: 50px;
+  }
+
+  .abfe-visit__header > div > p,
+  .abfe-visit__section-label {
+    margin: 0 0 14px;
+    color: #0b8f96;
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.15em;
+  }
+
+  .abfe-visit__header h2 {
+    margin: 0;
+    color: #10243b;
+    font-size: clamp(2.2rem, 4.5vw, 4.2rem);
+    font-weight: 820;
+    line-height: 1.1;
+    letter-spacing: -0.05em;
+    word-break: keep-all;
+  }
+
+  .abfe-visit__introduction {
+    max-width: 600px;
+    margin: 0;
+    color: #64768a;
+    font-size: 0.94rem;
+    line-height: 1.85;
+  }
+
+  /* 지도 */
+  .abfe-visit__map {
+    overflow: hidden;
+    border: 1px solid #d2dee6;
+    background: #ffffff;
+  }
+
+  .abfe-visit__map iframe {
+    display: block;
+    width: 100%;
+    height: 460px;
+    border: 0;
+  }
+
+  .abfe-visit__map-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    min-height: 82px;
+    padding: 18px 25px;
+    border-top: 1px solid #d8e2e9;
+  }
+
+  .abfe-visit__map-footer > div:first-child {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .abfe-visit__map-footer strong {
+    color: #10243b;
+    font-size: 0.9rem;
+    font-weight: 780;
+  }
+
+  .abfe-visit__map-footer span {
+    color: #718195;
+    font-size: 0.76rem;
+  }
+
+  .abfe-visit__map-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 12px 22px;
+  }
+
+  .abfe-visit__map-links a {
+    color: #0b7285;
+    font-size: 0.72rem;
+    font-weight: 780;
+    letter-spacing: 0.035em;
+    text-decoration: none;
+  }
+
+  .abfe-visit__map-links a:hover {
+    color: #12a5a5;
+  }
+
+  /* 한글·영문 정보 */
+  .abfe-visit__information {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px;
+    margin-top: 72px;
+  }
+
+  .abfe-visit__info-card {
+    padding: 36px 38px 32px;
+    border-top: 3px solid #0b2c4d;
+    background: #ffffff;
+  }
+
+  .abfe-visit__info-card--ko {
+    border-top-color: #27c1bd;
+  }
+
+  .abfe-visit__info-card h3 {
+    margin: 0 0 30px;
+    color: #10243b;
+    font-size: clamp(1.45rem, 2.4vw, 2rem);
+    font-weight: 800;
+    line-height: 1.25;
+  }
+
+  .abfe-visit__info-card dl,
+  .abfe-visit__info-card dd {
+    margin: 0;
+  }
+
+  .abfe-visit__info-card dl {
+    border-top: 1px solid #d7e1e8;
+  }
+
+  .abfe-visit__info-card dl > div {
+    display: grid;
+    grid-template-columns: 105px minmax(0, 1fr);
+    gap: 22px;
+    padding: 17px 0;
+    border-bottom: 1px solid #d7e1e8;
+  }
+
+  .abfe-visit__info-card dt {
+    color: #0b7285;
+    font-size: 0.67rem;
+    font-weight: 800;
+    line-height: 1.65;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .abfe-visit__info-card dd {
+    color: #31475c;
+    font-size: 0.84rem;
+    font-weight: 560;
+    line-height: 1.7;
+  }
+
+  /* 교통안내 */
+  .abfe-visit__directions {
+    margin-top: 82px;
+    padding-top: 65px;
+    border-top: 1px solid #d2dee6;
+  }
+
+  .abfe-visit__directions > header {
+    margin-bottom: 36px;
+  }
+
+  .abfe-visit__directions h3 {
+    margin: 0;
+    color: #10243b;
+    font-size: clamp(1.9rem, 3.5vw, 3rem);
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -0.04em;
+  }
+
+  .abfe-visit__direction-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    border-top: 2px solid #0b2c4d;
+  }
+
+  .abfe-visit__direction {
+    display: grid;
+    grid-template-columns: 45px minmax(0, 1fr);
+    gap: 20px;
+    min-height: 320px;
+    padding: 34px 35px 38px 10px;
+    border-bottom: 1px solid #d2dee6;
+  }
+
+  .abfe-visit__direction + .abfe-visit__direction {
+    padding-left: 35px;
+    border-left: 1px solid #d2dee6;
+  }
+
+  .abfe-visit__direction-number {
+    padding-top: 4px;
+    color: #0b8f96;
+    font-size: 0.68rem;
+    font-weight: 850;
+    letter-spacing: 0.1em;
+  }
+
+  .abfe-visit__direction-type {
+    margin: 0 0 12px !important;
+    color: #0b8f96 !important;
+    font-size: 0.68rem !important;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+  }
+
+  .abfe-visit__direction h4 {
+    margin: 0 0 25px;
+    color: #10243b;
+    font-size: 1.2rem;
+    font-weight: 780;
+  }
+
+  .abfe-visit__direction p {
+    margin: 0 0 17px;
+    color: #617286;
+    font-size: 0.84rem;
+    line-height: 1.8;
+    word-break: keep-all;
+  }
+
+  .abfe-visit__direction p[lang="en"] {
+    color: #7b8997;
+    font-size: 0.78rem;
+  }
+
+  /* 태블릿 */
+  @media (max-width: 900px) {
+    .abfe-visit__header {
+      grid-template-columns: 1fr;
+      gap: 22px;
+    }
+
+    .abfe-visit__information {
+      grid-template-columns: 1fr;
+    }
+
+    .abfe-visit__direction-list {
+      grid-template-columns: 1fr;
+    }
+
+    .abfe-visit__direction {
+      min-height: 0;
+    }
+
+    .abfe-visit__direction + .abfe-visit__direction {
+      padding-left: 10px;
+      border-left: 0;
+    }
+  }
+
+  /* 모바일 */
+  @media (max-width: 600px) {
+    .abfe-visit__inner {
+      width: calc(100% - 36px);
+      padding: 65px 0 80px;
+    }
+
+    .abfe-visit__header {
+      margin-bottom: 35px;
+    }
+
+    .abfe-visit__header h2 {
+      font-size: 2.65rem;
+    }
+
+    .abfe-visit__map iframe {
+      height: 340px;
+    }
+
+    .abfe-visit__map-footer {
+      align-items: flex-start;
+      flex-direction: column;
+      padding: 19px;
+    }
+
+    .abfe-visit__map-links {
+      justify-content: flex-start;
+    }
+
+    .abfe-visit__information {
+      gap: 20px;
+      margin-top: 50px;
+    }
+
+    .abfe-visit__info-card {
+      padding: 29px 22px 25px;
+    }
+
+    .abfe-visit__info-card dl > div {
+      grid-template-columns: 82px minmax(0, 1fr);
+      gap: 14px;
+    }
+
+    .abfe-visit__directions {
+      margin-top: 60px;
+      padding-top: 50px;
+    }
+
+    .abfe-visit__direction {
+      grid-template-columns: 31px minmax(0, 1fr);
+      gap: 12px;
+      padding: 27px 5px;
+    }
+  }
+</style>
