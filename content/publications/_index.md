@@ -10,6 +10,9 @@ sections:
       title: ''
       text: |-
         {{< lab-publications >}}
+
+        {{< lab-selected-publications >}}
+
     design:
       columns: '1'
       spacing:
