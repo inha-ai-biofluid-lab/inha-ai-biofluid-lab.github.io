@@ -12,6 +12,8 @@ sections:
         {{< lab-home-v2 >}}
 
         {{< lab-about >}}
+
+        {{< lab-home-research >}}
     design:
       columns: '1'
       spacing:
