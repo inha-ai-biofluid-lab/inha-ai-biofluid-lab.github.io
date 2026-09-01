@@ -1,0 +1,21 @@
+<style>
+  /* Members 페이지의 교수 사진만 축소 */
+  #professor img[src*="kyung-eun-lee"] {
+    display: block !important;
+    width: 300px !important;
+    max-width: 100% !important;
+    height: auto !important;
+    max-height: 430px !important;
+    margin-right: auto !important;
+    margin-left: auto !important;
+    object-fit: contain !important;
+    object-position: center bottom !important;
+  }
+
+  @media (max-width: 700px) {
+    #professor img[src*="kyung-eun-lee"] {
+      width: 250px !important;
+      max-height: 360px !important;
+    }
+  }
+</style>
