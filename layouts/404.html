@@ -1,0 +1,50 @@
+{{ define "main" }}
+
+<main class="abfe-404">
+
+  <div class="abfe-404__background" aria-hidden="true">
+    <span class="abfe-404__orbit abfe-404__orbit--one"></span>
+    <span class="abfe-404__orbit abfe-404__orbit--two"></span>
+    <span class="abfe-404__glow"></span>
+  </div>
+
+  <div class="abfe-404__inner">
+
+    <p class="abfe-404__code">ERROR 404</p>
+
+    <h1>Page not found.</h1>
+
+    <p class="abfe-404__message">
+      요청하신 페이지를 찾을 수 없습니다.<br>
+      주소가 변경되었거나 페이지가 이동되었을 수 있습니다.
+    </p>
+
+    <div class="abfe-404__actions">
+      <a
+        class="abfe-404__button abfe-404__button--primary"
+        href="{{ "/" | relLangURL }}"
+      >
+        Go to Homepage
+        <span aria-hidden="true">→</span>
+      </a>
+
+      <a
+        class="abfe-404__button abfe-404__button--secondary"
+        href="{{ "/research/" | relLangURL }}"
+      >
+        Explore Research
+      </a>
+    </div>
+
+    <nav class="abfe-404__links" aria-label="Main pages">
+      <a href="{{ "/introduction/" | relLangURL }}">Introduction</a>
+      <a href="{{ "/members/" | relLangURL }}">Members</a>
+      <a href="{{ "/publications/" | relLangURL }}">Publications</a>
+      <a href="{{ "/board/" | relLangURL }}">Board</a>
+    </nav>
+
+  </div>
+
+</main>
+
+{{ end }}
