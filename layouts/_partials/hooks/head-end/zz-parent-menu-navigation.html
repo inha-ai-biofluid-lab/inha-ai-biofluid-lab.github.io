@@ -1,32 +1,49 @@
 <script>
-document.addEventListener('DOMContentLoaded', function () {
-  const parentMenuRoutes = {
-    'INTRODUCTION': '/introduction/#about',
-    'MEMBERS': '/members/#professor'
-  };
+(function () {
+  function setupParentMenuNavigation() {
+    const destinations = {
+      INTRODUCTION: '/introduction/#about',
+      MEMBERS: '/members/#professor'
+    };
 
-  document.querySelectorAll('header a').forEach(function (link) {
-    const menuName = link.textContent
-      .replace(/\s+/g, ' ')
-      .trim()
-      .toUpperCase();
+    const menuLinks = document.querySelectorAll(
+      'nav a, .navbar a, [role="navigation"] a'
+    );
 
-    Object.entries(parentMenuRoutes).forEach(function ([name, destination]) {
-      if (!menuName.startsWith(name)) return;
+    menuLinks.forEach(function (link) {
+      const label = link.textContent
+        .replace(/\s+/g, ' ')
+        .trim()
+        .toUpperCase();
 
-      link.addEventListener(
-        'click',
-        function (event) {
-          /* 모바일에서는 기존 드롭다운 동작 유지 */
-          if (window.innerWidth < 992) return;
+      Object.entries(destinations).forEach(function ([menuName, destination]) {
+        if (!label.startsWith(menuName)) return;
+        if (link.dataset.parentNavigationReady === 'true') return;
 
-          event.preventDefault();
-          event.stopImmediatePropagation();
-          window.location.href = destination;
-        },
-        true
-      );
+        link.dataset.parentNavigationReady = 'true';
+        link.setAttribute('href', destination);
+
+        link.addEventListener(
+          'click',
+          function (event) {
+            /* 데스크톱에서는 드롭다운을 고정하지 않고 바로 이동 */
+            if (window.matchMedia('(min-width: 992px)').matches) {
+              event.preventDefault();
+              event.stopPropagation();
+              event.stopImmediatePropagation();
+              window.location.assign(destination);
+            }
+          },
+          true
+        );
+      });
     });
-  });
-});
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setupParentMenuNavigation);
+  } else {
+    setupParentMenuNavigation();
+  }
+})();
 </script>
