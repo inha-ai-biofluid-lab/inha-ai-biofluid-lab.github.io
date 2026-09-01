@@ -10,6 +10,8 @@ sections:
       title: ''
       text: |-
         {{< lab-introduction >}}
+
+        {{< lab-visit >}}
     design:
       columns: '1'
       spacing:
