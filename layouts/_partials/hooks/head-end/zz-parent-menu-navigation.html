@@ -6,38 +6,51 @@
       MEMBERS: '/members/#professor'
     };
 
-    const menuLinks = document.querySelectorAll(
-      'nav a, .navbar a, [role="navigation"] a'
-    );
+    document
+      .querySelectorAll('nav span[role="button"]')
+      .forEach(function (button) {
+        const label = button.textContent
+          .replace(/\s+/g, ' ')
+          .trim()
+          .toUpperCase();
 
-    menuLinks.forEach(function (link) {
-      const label = link.textContent
-        .replace(/\s+/g, ' ')
-        .trim()
-        .toUpperCase();
+        const destination = destinations[label];
 
-      Object.entries(destinations).forEach(function ([menuName, destination]) {
-        if (!label.startsWith(menuName)) return;
-        if (link.dataset.parentNavigationReady === 'true') return;
+        if (!destination) return;
+        if (button.dataset.parentNavigationReady === 'true') return;
 
-        link.dataset.parentNavigationReady = 'true';
-        link.setAttribute('href', destination);
+        button.dataset.parentNavigationReady = 'true';
 
-        link.addEventListener(
+        button.addEventListener(
           'click',
           function (event) {
-            /* 데스크톱에서는 드롭다운을 고정하지 않고 바로 이동 */
-            if (window.matchMedia('(min-width: 992px)').matches) {
-              event.preventDefault();
-              event.stopPropagation();
-              event.stopImmediatePropagation();
-              window.location.assign(destination);
-            }
+            /*
+             * 메뉴 글자를 누르면 해당 페이지로 이동합니다.
+             * 화살표를 직접 누르면 기존 하위 메뉴가 열립니다.
+             */
+            if (event.target.closest('svg')) return;
+
+            event.preventDefault();
+            event.stopPropagation();
+            event.stopImmediatePropagation();
+
+            window.location.href = destination;
+          },
+          true
+        );
+
+        button.addEventListener(
+          'keydown',
+          function (event) {
+            if (event.key !== 'Enter') return;
+
+            event.preventDefault();
+            event.stopPropagation();
+            window.location.href = destination;
           },
           true
         );
       });
-    });
   }
 
   if (document.readyState === 'loading') {
