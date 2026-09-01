@@ -1,0 +1,273 @@
+<style>
+  /* 첫 화면 콘텐츠 등장 */
+  @keyframes abfe-home-fade-up {
+    from {
+      opacity: 0;
+      transform: translate3d(0, 24px, 0);
+    }
+
+    to {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  @keyframes abfe-home-visual-enter {
+    from {
+      opacity: 0;
+      transform: translate3d(35px, 0, 0) scale(0.96);
+    }
+
+    to {
+      opacity: 1;
+      transform: translate3d(0, 0, 0) scale(1);
+    }
+  }
+
+  /* 배경 유선 이동 */
+  @keyframes abfe-home-flow-one {
+    from {
+      transform: translate3d(0, 0, 0) rotate(-18deg) scale(1);
+    }
+
+    to {
+      transform: translate3d(-6%, 3%, 0) rotate(-13deg) scale(1.04);
+    }
+  }
+
+  @keyframes abfe-home-flow-two {
+    from {
+      transform: translate3d(0, 0, 0) rotate(-18deg) scale(1);
+    }
+
+    to {
+      transform: translate3d(-4%, -3%, 0) rotate(-22deg) scale(1.06);
+    }
+  }
+
+  @keyframes abfe-home-flow-three {
+    from {
+      transform: translate3d(0, 0, 0) rotate(-18deg) scale(1);
+    }
+
+    to {
+      transform: translate3d(-7%, 2%, 0) rotate(-10deg) scale(1.03);
+    }
+  }
+
+  /* 배경 빛 이동 */
+  @keyframes abfe-home-glow-drift-one {
+    from {
+      transform: translate3d(0, 0, 0) scale(1);
+      opacity: 0.75;
+    }
+
+    to {
+      transform: translate3d(-55px, 35px, 0) scale(1.08);
+      opacity: 1;
+    }
+  }
+
+  @keyframes abfe-home-glow-drift-two {
+    from {
+      transform: translate3d(0, 0, 0) scale(1);
+    }
+
+    to {
+      transform: translate3d(45px, -30px, 0) scale(1.1);
+    }
+  }
+
+  /* 오른쪽 궤도 회전 */
+  @keyframes abfe-home-orbit-one {
+    from {
+      transform: rotate(24deg) scaleY(0.55);
+    }
+
+    to {
+      transform: rotate(384deg) scaleY(0.55);
+    }
+  }
+
+  @keyframes abfe-home-orbit-two {
+    from {
+      transform: rotate(-31deg) scaleY(0.7);
+    }
+
+    to {
+      transform: rotate(-391deg) scaleY(0.7);
+    }
+  }
+
+  @keyframes abfe-home-orbit-three {
+    from {
+      transform: rotate(70deg) scaleY(0.63);
+    }
+
+    to {
+      transform: rotate(430deg) scaleY(0.63);
+    }
+  }
+
+  /* 중심부 맥동 */
+  @keyframes abfe-home-core-pulse {
+    0%,
+    100% {
+      transform: translate(-50%, -50%) scale(1);
+      box-shadow:
+        0 0 70px rgba(39, 193, 189, 0.13),
+        inset 0 0 30px rgba(39, 193, 189, 0.07);
+    }
+
+    50% {
+      transform: translate(-50%, -50%) scale(1.035);
+      box-shadow:
+        0 0 105px rgba(39, 193, 189, 0.24),
+        inset 0 0 42px rgba(39, 193, 189, 0.13);
+    }
+  }
+
+  /* 키워드 부유 */
+  @keyframes abfe-home-float {
+    0%,
+    100% {
+      transform: translate3d(0, 0, 0);
+    }
+
+    50% {
+      transform: translate3d(0, -8px, 0);
+    }
+  }
+
+  /* 작은 입자 이동 */
+  @keyframes abfe-home-particles {
+    from {
+      background-position:
+        0 0,
+        20px 35px,
+        45px 10px;
+    }
+
+    to {
+      background-position:
+        35px -45px,
+        75px 5px,
+        10px 65px;
+    }
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .abfe-home-v2__copy > * {
+      opacity: 0;
+      animation: abfe-home-fade-up 0.75s ease-out forwards;
+    }
+
+    .abfe-home-v2__copy > :nth-child(1) {
+      animation-delay: 0.08s;
+    }
+
+    .abfe-home-v2__copy > :nth-child(2) {
+      animation-delay: 0.18s;
+    }
+
+    .abfe-home-v2__copy > :nth-child(3) {
+      animation-delay: 0.31s;
+    }
+
+    .abfe-home-v2__copy > :nth-child(4) {
+      animation-delay: 0.43s;
+    }
+
+    .abfe-home-v2__copy > :nth-child(5) {
+      animation-delay: 0.54s;
+    }
+
+    .abfe-home-v2__visual {
+      opacity: 0;
+      animation: abfe-home-visual-enter 1.15s ease-out 0.25s forwards;
+    }
+
+    .abfe-home-v2__flow--one {
+      animation: abfe-home-flow-one 18s ease-in-out infinite alternate;
+    }
+
+    .abfe-home-v2__flow--two {
+      animation: abfe-home-flow-two 23s ease-in-out infinite alternate;
+    }
+
+    .abfe-home-v2__flow--three {
+      animation: abfe-home-flow-three 27s ease-in-out infinite alternate;
+    }
+
+    .abfe-home-v2__glow--one {
+      animation: abfe-home-glow-drift-one 12s ease-in-out infinite alternate;
+    }
+
+    .abfe-home-v2__glow--two {
+      animation: abfe-home-glow-drift-two 15s ease-in-out infinite alternate;
+    }
+
+    .abfe-home-v2__orbit--one {
+      animation: abfe-home-orbit-one 26s linear infinite;
+    }
+
+    .abfe-home-v2__orbit--two {
+      animation: abfe-home-orbit-two 34s linear infinite;
+    }
+
+    .abfe-home-v2__orbit--three {
+      animation: abfe-home-orbit-three 42s linear infinite;
+    }
+
+    .abfe-home-v2__visual-core {
+      animation: abfe-home-core-pulse 5.5s ease-in-out infinite;
+    }
+
+    .abfe-home-v2__keyword--cfd {
+      animation: abfe-home-float 4.8s ease-in-out infinite;
+    }
+
+    .abfe-home-v2__keyword--twin {
+      animation: abfe-home-float 5.7s ease-in-out 0.8s infinite;
+    }
+
+    .abfe-home-v2__keyword--data {
+      animation: abfe-home-float 5.2s ease-in-out 1.4s infinite;
+    }
+
+    .abfe-home-v2__visual-fallback::after {
+      position: absolute;
+      inset: 5%;
+      z-index: -1;
+      border-radius: 50%;
+      opacity: 0.42;
+      background-image:
+        radial-gradient(circle, rgba(97, 240, 229, 0.75) 0 1px, transparent 1.8px),
+        radial-gradient(circle, rgba(255, 255, 255, 0.45) 0 1px, transparent 1.6px),
+        radial-gradient(circle, rgba(39, 193, 189, 0.55) 0 1.2px, transparent 2px);
+      background-position:
+        0 0,
+        20px 35px,
+        45px 10px;
+      background-size:
+        75px 75px,
+        105px 105px,
+        135px 135px;
+      content: "";
+      animation: abfe-home-particles 18s linear infinite;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .abfe-home-v2 *,
+    .abfe-home-v2 *::before,
+    .abfe-home-v2 *::after {
+      animation: none !important;
+    }
+
+    .abfe-home-v2__copy > *,
+    .abfe-home-v2__visual {
+      opacity: 1 !important;
+    }
+  }
+</style>
