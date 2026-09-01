@@ -1,0 +1,168 @@
+<style>
+/* Board category filters */
+.abfe-board__categories span {
+  cursor: pointer;
+  user-select: none;
+  transition:
+    color 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.abfe-board__categories span:hover,
+.abfe-board__categories span.is-active {
+  color: #22b8c7 !important;
+}
+
+.abfe-board__categories span.is-active {
+  text-decoration: underline;
+  text-underline-offset: 6px;
+}
+
+.abfe-board-filter-empty {
+  display: none;
+  padding: 55px 20px;
+  border-top: 1px solid rgba(17, 40, 61, 0.18);
+  border-bottom: 1px solid rgba(17, 40, 61, 0.18);
+  color: #708090;
+  text-align: center;
+}
+
+.abfe-board-filter-empty.is-visible {
+  display: block;
+}
+</style>
+
+<script>
+(function () {
+  function setupBoardFilter() {
+    const categoryContainer = document.querySelector(
+      '.abfe-board__categories'
+    );
+
+    const boardItems = Array.from(
+      document.querySelectorAll('.abfe-board-item')
+    );
+
+    if (!categoryContainer || boardItems.length === 0) return;
+    if (categoryContainer.dataset.filterReady === 'true') return;
+
+    categoryContainer.dataset.filterReady = 'true';
+
+    /* 전체 게시물을 다시 볼 수 있도록 ALL 항목 자동 추가 */
+    const allFilter = document.createElement('span');
+    allFilter.textContent = 'ALL';
+    categoryContainer.prepend(allFilter);
+
+    const filterButtons = Array.from(
+      categoryContainer.querySelectorAll('span')
+    );
+
+    const emptyMessage = document.createElement('div');
+    emptyMessage.className = 'abfe-board-filter-empty';
+    emptyMessage.textContent =
+      'There are no posts in this category yet.';
+    
+    const lastItem = boardItems[boardItems.length - 1];
+    lastItem.insertAdjacentElement('afterend', emptyMessage);
+
+    function applyFilter(filterName, updateAddress) {
+      const selectedFilter = filterName.toUpperCase();
+      let visibleCount = 0;
+
+      boardItems.forEach(function (item) {
+        const categoryElement = item.querySelector(
+          '.abfe-board-item__category'
+        );
+
+        const itemCategory = categoryElement
+          ? categoryElement.textContent.trim().toUpperCase()
+          : '';
+
+        const shouldDisplay =
+          selectedFilter === 'ALL' ||
+          itemCategory.includes(selectedFilter);
+
+        item.hidden = !shouldDisplay;
+
+        if (shouldDisplay) {
+          visibleCount += 1;
+        }
+      });
+
+      filterButtons.forEach(function (button) {
+        const isSelected =
+          button.textContent.trim().toUpperCase() === selectedFilter;
+
+        button.classList.toggle('is-active', isSelected);
+        button.setAttribute('aria-pressed', String(isSelected));
+      });
+
+      emptyMessage.classList.toggle(
+        'is-visible',
+        visibleCount === 0
+      );
+
+      if (updateAddress) {
+        if (selectedFilter === 'ALL') {
+          history.replaceState(
+            null,
+            '',
+            window.location.pathname + window.location.search
+          );
+        } else {
+          history.replaceState(
+            null,
+            '',
+            '#' + selectedFilter.toLowerCase()
+          );
+        }
+      }
+    }
+
+    filterButtons.forEach(function (button) {
+      button.setAttribute('role', 'button');
+      button.setAttribute('tabindex', '0');
+
+      button.addEventListener('click', function () {
+        applyFilter(button.textContent.trim(), true);
+      });
+
+      button.addEventListener('keydown', function (event) {
+        if (event.key !== 'Enter' && event.key !== ' ') return;
+
+        event.preventDefault();
+        applyFilter(button.textContent.trim(), true);
+      });
+    });
+
+    /* 상단 드롭다운의 #notice, #news, #gallery 주소도 작동 */
+    const initialFilter = window.location.hash
+      .replace('#', '')
+      .toUpperCase();
+
+    if (['NOTICE', 'NEWS', 'GALLERY'].includes(initialFilter)) {
+      applyFilter(initialFilter, false);
+    } else {
+      applyFilter('ALL', false);
+    }
+
+    window.addEventListener('hashchange', function () {
+      const hashFilter = window.location.hash
+        .replace('#', '')
+        .toUpperCase();
+
+      if (['NOTICE', 'NEWS', 'GALLERY'].includes(hashFilter)) {
+        applyFilter(hashFilter, false);
+      } else {
+        applyFilter('ALL', false);
+      }
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setupBoardFilter);
+  } else {
+    setupBoardFilter();
+  }
+})();
+</script>
