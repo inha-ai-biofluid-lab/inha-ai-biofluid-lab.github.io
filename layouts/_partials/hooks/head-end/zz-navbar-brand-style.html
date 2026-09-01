@@ -1,18 +1,3 @@
-/* Center the navigation menu relative to the entire screen */
-@media (min-width: 992px) {
-  #navbar-main .container-xl {
-    position: relative !important;
-  }
-
-  #navbar-main .navbar-nav {
-    position: absolute !important;
-    top: 50% !important;
-    left: 50% !important;
-    margin: 0 !important;
-    transform: translate(-50%, -50%) !important;
-  }
-}
-
 <style>
 /* Navbar laboratory branding */
 .navbar-brand {
@@ -42,7 +27,22 @@
   letter-spacing: 0.14em;
 }
 
-/* Hide the full name when the screen becomes narrow */
+/* Center navigation on desktop */
+@media (min-width: 992px) {
+  #navbar-main .container-xl {
+    position: relative !important;
+  }
+
+  #navbar-main .navbar-nav {
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    margin: 0 !important;
+    transform: translate(-50%, -50%) !important;
+  }
+}
+
+/* Hide the full name on narrower screens */
 @media (max-width: 1050px) {
   .navbar-brand::after {
     display: none;
