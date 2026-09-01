@@ -1,0 +1,96 @@
+{{ $original := resources.Get "media/gallery/graduate-2026.jpg" }}
+
+<section class="abfe-gallery">
+  {{ with $original }}
+    {{ $optimized := .Resize "1600x webp q85" }}
+
+    <figure class="abfe-gallery__item">
+      <a href="{{ .RelPermalink }}" target="_blank">
+        <img
+          src="{{ $optimized.RelPermalink }}"
+          width="{{ $optimized.Width }}"
+          height="{{ $optimized.Height }}"
+          alt="AI / Bio Fluid Engineering Laboratory graduate students in 2026"
+          loading="lazy"
+        >
+      </a>
+
+      <figcaption>
+        <strong>Graduate Students</strong>
+        <span>2026</span>
+      </figcaption>
+    </figure>
+  {{ else }}
+    <p class="abfe-gallery__error">
+      Gallery image could not be loaded.
+    </p>
+  {{ end }}
+</section>
+
+<style>
+.abfe-gallery {
+  max-width: 1100px;
+  margin: 50px auto;
+}
+
+.abfe-gallery__item {
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid #d8e1e8;
+  background: #ffffff;
+}
+
+.abfe-gallery__item a {
+  display: block;
+  overflow: hidden;
+  background: #eaf1f5;
+}
+
+.abfe-gallery__item img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform 0.5s ease;
+}
+
+.abfe-gallery__item a:hover img {
+  transform: scale(1.015);
+}
+
+.abfe-gallery__item figcaption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px 24px;
+}
+
+.abfe-gallery__item figcaption strong {
+  color: #11283d;
+  font-size: 17px;
+}
+
+.abfe-gallery__item figcaption span {
+  color: #1baebd;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+}
+
+.abfe-gallery__error {
+  padding: 30px;
+  color: #9b4d4d;
+  text-align: center;
+  border: 1px solid #e2c8c8;
+}
+
+@media (max-width: 640px) {
+  .abfe-gallery {
+    margin: 30px auto;
+  }
+
+  .abfe-gallery__item figcaption {
+    padding: 16px 18px;
+  }
+}
+</style>
