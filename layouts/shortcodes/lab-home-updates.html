@@ -1,0 +1,194 @@
+{{ $boardPosts := where site.RegularPages "Section" "board" }}
+{{ $boardPosts = $boardPosts.ByDate.Reverse }}
+
+<section class="abfe-home-updates">
+  <div class="abfe-home-updates__inner">
+
+    <header class="abfe-home-updates__header">
+      <div>
+        <p>LABORATORY UPDATES</p>
+        <h2>연구실의 새로운 소식</h2>
+      </div>
+
+      <a href="/board/">
+        View All Board →
+      </a>
+    </header>
+
+    <div class="abfe-home-updates__list">
+      {{ range $index, $post := first 3 $boardPosts }}
+        <a class="abfe-home-update" href="{{ $post.RelPermalink }}">
+          <span class="abfe-home-update__number">
+            {{ printf "%02d" (add $index 1) }}
+          </span>
+
+          <div class="abfe-home-update__content">
+            <div class="abfe-home-update__meta">
+              {{ with $post.Params.categories }}
+                <span>{{ index . 0 | upper }}</span>
+              {{ else }}
+                <span>NEWS</span>
+              {{ end }}
+
+              <time datetime="{{ $post.Date.Format "2006-01-02" }}">
+                {{ $post.Date.Format "2006.01.02" }}
+              </time>
+            </div>
+
+            <h3>{{ $post.Title }}</h3>
+
+            {{ with $post.Params.summary }}
+              <p>{{ . }}</p>
+            {{ end }}
+          </div>
+
+          <span class="abfe-home-update__arrow">→</span>
+        </a>
+      {{ else }}
+        <div class="abfe-home-updates__empty">
+          새로운 소식을 준비하고 있습니다.
+        </div>
+      {{ end }}
+    </div>
+
+  </div>
+</section>
+
+<style>
+.abfe-home-updates {
+  padding: 100px 30px;
+  color: #ffffff;
+  background: #071c2f;
+}
+
+.abfe-home-updates__inner {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.abfe-home-updates__header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+.abfe-home-updates__header p {
+  margin: 0 0 12px;
+  color: #26c3c8;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+}
+
+.abfe-home-updates__header h2 {
+  margin: 0;
+  color: #ffffff;
+  font-size: clamp(34px, 4vw, 52px);
+  font-weight: 800;
+}
+
+.abfe-home-updates__header > a {
+  flex-shrink: 0;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.abfe-home-updates__list {
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.abfe-home-update {
+  display: grid;
+  grid-template-columns: 60px minmax(0, 1fr) 40px;
+  gap: 24px;
+  align-items: center;
+  padding: 28px 5px;
+  color: inherit;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+  text-decoration: none;
+  transition:
+    background-color 0.2s ease,
+    padding 0.2s ease;
+}
+
+.abfe-home-update:hover {
+  padding-right: 15px;
+  padding-left: 15px;
+  color: inherit;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.abfe-home-update__number {
+  color: #26c3c8;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.abfe-home-update__meta {
+  display: flex;
+  gap: 18px;
+  margin-bottom: 8px;
+  color: #8da0b2;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.abfe-home-update__meta span {
+  color: #26c3c8;
+}
+
+.abfe-home-update h3 {
+  margin: 0;
+  color: #ffffff;
+  font-size: clamp(18px, 2vw, 24px);
+  font-weight: 750;
+}
+
+.abfe-home-update p {
+  margin: 8px 0 0;
+  color: #9babb9;
+  font-size: 14px;
+  line-height: 1.6;
+  word-break: keep-all;
+}
+
+.abfe-home-update__arrow {
+  color: #26c3c8;
+  font-size: 20px;
+  text-align: right;
+}
+
+.abfe-home-updates__empty {
+  padding: 45px 0;
+  color: #9babb9;
+}
+
+@media (max-width: 700px) {
+  .abfe-home-updates {
+    padding: 75px 20px;
+  }
+
+  .abfe-home-updates__header {
+    display: block;
+  }
+
+  .abfe-home-updates__header > a {
+    display: inline-block;
+    margin-top: 20px;
+  }
+
+  .abfe-home-update {
+    grid-template-columns: 35px minmax(0, 1fr) 20px;
+    gap: 12px;
+  }
+
+  .abfe-home-update p {
+    display: none;
+  }
+}
+</style>
