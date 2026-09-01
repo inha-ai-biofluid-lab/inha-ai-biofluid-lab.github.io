@@ -1,0 +1,106 @@
+<section class="abfe-home-v2">
+
+  <div class="abfe-home-v2__background" aria-hidden="true">
+    <span class="abfe-home-v2__glow abfe-home-v2__glow--one"></span>
+    <span class="abfe-home-v2__glow abfe-home-v2__glow--two"></span>
+    <span class="abfe-home-v2__flow abfe-home-v2__flow--one"></span>
+    <span class="abfe-home-v2__flow abfe-home-v2__flow--two"></span>
+    <span class="abfe-home-v2__flow abfe-home-v2__flow--three"></span>
+  </div>
+
+  <div class="abfe-home-v2__inner">
+
+    <div class="abfe-home-v2__copy">
+
+      <p class="abfe-home-v2__eyebrow">
+        INHA UNIVERSITY · AI / BIO FLUID ENGINEERING LABORATORY
+      </p>
+
+      <h1>
+        <span>AI로 생체유동을 이해하고,</span>
+        <strong>의료의 미래를 설계합니다.</strong>
+      </h1>
+
+      <p class="abfe-home-v2__description">
+        We integrate biofluid mechanics, computational fluid dynamics,
+        and data-driven modeling to develop patient-specific engineering
+        and biomedical solutions.
+      </p>
+
+      <div class="abfe-home-v2__actions">
+        <a
+          class="abfe-home-v2__button abfe-home-v2__button--primary"
+          href="{{ "/research/" | relLangURL }}"
+        >
+          Explore Research
+          <span aria-hidden="true">→</span>
+        </a>
+
+        <a
+          class="abfe-home-v2__button abfe-home-v2__button--secondary"
+          href="{{ "/members/" | relLangURL }}"
+        >
+          Meet Our Members
+        </a>
+      </div>
+
+      <div class="abfe-home-v2__pi">
+        <span>PRINCIPAL INVESTIGATOR</span>
+        <strong>Prof. Kyung Eun Lee</strong>
+      </div>
+
+    </div>
+
+    <div class="abfe-home-v2__visual">
+
+      {{ $heroImage := resources.GetMatch "media/home/aorta-hero.*" }}
+
+      {{ if $heroImage }}
+
+        <img
+          class="abfe-home-v2__image"
+          src="{{ $heroImage.RelPermalink }}"
+          alt="Biofluid mechanics research visualization"
+        >
+
+      {{ else }}
+
+        <div class="abfe-home-v2__visual-fallback" aria-hidden="true">
+
+          <span class="abfe-home-v2__orbit abfe-home-v2__orbit--one"></span>
+          <span class="abfe-home-v2__orbit abfe-home-v2__orbit--two"></span>
+          <span class="abfe-home-v2__orbit abfe-home-v2__orbit--three"></span>
+
+          <div class="abfe-home-v2__visual-core">
+            <span>AI</span>
+            <strong>BIOFLUID</strong>
+          </div>
+
+          <span class="abfe-home-v2__keyword abfe-home-v2__keyword--cfd">
+            CFD
+          </span>
+
+          <span class="abfe-home-v2__keyword abfe-home-v2__keyword--twin">
+            MEDICAL TWIN
+          </span>
+
+          <span class="abfe-home-v2__keyword abfe-home-v2__keyword--data">
+            DATA-DRIVEN
+          </span>
+
+        </div>
+
+      {{ end }}
+
+    </div>
+
+  </div>
+
+  <div class="abfe-home-v2__topics">
+    <span>Biofluid Mechanics</span>
+    <span>AI-based CFD</span>
+    <span>Medical Twin</span>
+    <span>Patient-specific Analysis</span>
+  </div>
+
+</section>
