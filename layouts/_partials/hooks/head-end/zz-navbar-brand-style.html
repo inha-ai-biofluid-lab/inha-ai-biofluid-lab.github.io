@@ -1,0 +1,42 @@
+<style>
+/* Navbar laboratory branding */
+.navbar-brand {
+  display: inline-flex !important;
+  align-items: baseline !important;
+  gap: 11px !important;
+  white-space: nowrap !important;
+  font-size: 0 !important;
+  line-height: 1 !important;
+}
+
+/* Short laboratory name */
+.navbar-brand::before {
+  content: "AIBFEL";
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+/* Full laboratory name */
+.navbar-brand::after {
+  content: "AI / BIO FLUID ENGINEERING LABORATORY";
+  color: rgba(255, 255, 255, 0.48);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+}
+
+/* Hide the full name when the screen becomes narrow */
+@media (max-width: 1050px) {
+  .navbar-brand::after {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .navbar-brand::before {
+    font-size: 16px;
+  }
+}
+</style>
