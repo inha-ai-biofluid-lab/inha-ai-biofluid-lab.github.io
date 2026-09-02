@@ -125,6 +125,64 @@
                 </a>
               {{ end }}
             {{ end }}
+            {{ with $person.profile }}
+            <button
+            type="button"
+            class="abfe-member-profile-toggle"
+            aria-expanded="false"
+            aria-controls="member-profile-{{ $slug }}"
+          >
+            <span>View Profile</span>
+            <strong>+</strong>
+          </button>
+
+          <div
+            id="member-profile-{{ $slug }}"
+            class="abfe-member-profile-panel"
+            hidden
+          >
+            {{ with .achievements }}
+              <div class="abfe-member-profile-section">
+                <p class="abfe-member-profile-heading">
+                  AWARDS &amp; ACHIEVEMENTS
+                </p>
+
+                <ul class="abfe-member-achievement-list">
+                  {{ range . }}
+                    <li>
+                      <time>{{ .date }}</time>
+
+                      <div>
+                        <strong>{{ .title }}</strong>
+
+                        <span>
+                          {{ .type }}
+                          {{ with .detail }} · {{ . }}{{ end }}
+                        </span>
+                      </div>
+                    </li>
+                  {{ end }}
+                </ul>
+              </div>
+            {{ end }}
+
+            {{ with .publications }}
+              {{ if gt (len .) 0 }}
+                <div class="abfe-member-profile-section">
+                  <p class="abfe-member-profile-heading">
+                    SELECTED PUBLICATIONS
+                  </p>
+
+                  <ul class="abfe-member-publication-list">
+                    {{ range . }}
+                      <li>{{ . }}</li>
+                    {{ end }}
+                  </ul>
+                </div>
+              {{ end }}
+            {{ end }}
+          </div>
+        {{ end }}
           </div>
         </article>
       {{ end }}
