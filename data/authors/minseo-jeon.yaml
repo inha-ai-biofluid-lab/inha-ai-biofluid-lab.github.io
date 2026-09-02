@@ -24,11 +24,3 @@ links:
   - icon: at-symbol
     url: mailto:mseo0113@inha.edu
     label: Email
-
-profile:
-  achievements:
-    - date: "2026.05"
-      title: "전국 Vibe Coding 경진대회 1위 금상"
-      type: "Award"
-
-  publications: []
