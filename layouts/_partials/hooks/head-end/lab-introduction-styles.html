@@ -658,4 +658,27 @@
       gap: 0.35rem;
     }
   }
+
+/* Publications CTA alignment */
+.abfe-publication-cta .abfe-publication-copy {
+  flex: 1 1 auto;
+  width: auto;
+  max-width: none;
+  min-width: 0;
+}
+
+.abfe-publication-copy h2,
+.abfe-publication-description {
+  white-space: nowrap;
+}
+
+/* Allow natural wrapping on smaller screens */
+@media (max-width: 1199px) {
+  .abfe-publication-copy h2,
+  .abfe-publication-description {
+    white-space: normal;
+    word-break: keep-all;
+  }
+}
+  
 </style>
