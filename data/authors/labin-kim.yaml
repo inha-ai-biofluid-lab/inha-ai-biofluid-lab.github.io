@@ -24,3 +24,24 @@ links:
   - icon: at-symbol
     url: mailto:enabio@inha.edu
     label: Email
+
+profile:
+  achievements:
+    - date: "2026.05"
+      title: "대한기계학회 80주년 학술대회 우수논문상"
+      type: "Award"
+
+    - date: "2025.07"
+      title: "International Conference of Fluid Flow, Heat and Mass Transfer Best Paper Award"
+      type: "Award"
+
+    - date: "2025.04"
+      title: "WISET 여대학원생 공학연구팀제 지원사업 선정 및 연구비 수주"
+      type: "Research Project"
+      detail: "책임연구자"
+
+    - date: "2024.07"
+      title: "한국유체공학 학술대회 우수논문상"
+      type: "Award"
+
+  publications: []
