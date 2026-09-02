@@ -24,3 +24,12 @@ links:
   - icon: at-symbol
     url: mailto:thdtmdgh7929@inha.edu
     label: Email
+
+profile:
+  achievements:
+    - date: "2025.04"
+      title: "WISET 여대학원생 공학연구팀제 지원사업 선정 및 연구비 수주"
+      type: "Research Project"
+      detail: "연구팀 참여"
+
+  publications: []
