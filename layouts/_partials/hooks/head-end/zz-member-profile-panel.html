@@ -1,0 +1,205 @@
+<style>
+/* Expandable member profile */
+.abfe-member-card:has(.abfe-member-profile-toggle) {
+  cursor: pointer;
+}
+
+.abfe-member-profile-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 20px;
+  padding: 13px 0;
+  color: #0d7188;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-align: left;
+  border: 0;
+  border-top: 1px solid #d8e2e8;
+  background: transparent;
+  cursor: pointer;
+}
+
+.abfe-member-profile-toggle strong {
+  color: #19aebe;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.abfe-member-profile-toggle:hover {
+  color: #19aebe;
+}
+
+.abfe-member-profile-panel {
+  margin-top: 4px;
+  padding-top: 20px;
+  cursor: default;
+}
+
+.abfe-member-profile-panel[hidden] {
+  display: none !important;
+}
+
+.abfe-member-profile-heading {
+  margin: 0 0 14px !important;
+  color: #1397aa !important;
+  font-size: 10px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.12em;
+}
+
+.abfe-member-achievement-list,
+.abfe-member-publication-list {
+  margin: 0 !important;
+  padding: 0 !important;
+  list-style: none !important;
+}
+
+.abfe-member-achievement-list li {
+  display: grid;
+  grid-template-columns: 58px minmax(0, 1fr);
+  gap: 12px;
+  padding: 14px 0;
+  border-top: 1px solid #e0e7ec;
+}
+
+.abfe-member-achievement-list time {
+  color: #159caf;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.abfe-member-achievement-list li div {
+  min-width: 0;
+}
+
+.abfe-member-achievement-list li strong {
+  display: block;
+  color: #11283d;
+  font-size: 13px;
+  line-height: 1.5;
+  word-break: keep-all;
+}
+
+.abfe-member-achievement-list li span {
+  display: block;
+  margin-top: 5px;
+  color: #7a8a98;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.abfe-member-publication-list li {
+  padding: 13px 0;
+  color: #526577;
+  font-size: 12px;
+  line-height: 1.6;
+  border-top: 1px solid #e0e7ec;
+}
+
+.abfe-member-card.is-profile-open {
+  border-color: #22b8c7;
+}
+
+@media (max-width: 640px) {
+  .abfe-member-achievement-list li {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+}
+</style>
+
+<script>
+(function () {
+  function setupMemberProfiles() {
+    const profileButtons = document.querySelectorAll(
+      '.abfe-member-profile-toggle'
+    );
+
+    profileButtons.forEach(function (button) {
+      if (button.dataset.profileReady === 'true') return;
+      button.dataset.profileReady = 'true';
+
+      const panelId = button.getAttribute('aria-controls');
+      const panel = document.getElementById(panelId);
+      const card = button.closest('.abfe-member-card');
+      const symbol = button.querySelector('strong');
+
+      if (!panel || !card) return;
+
+      function closeProfile() {
+        panel.hidden = true;
+        button.setAttribute('aria-expanded', 'false');
+        card.classList.remove('is-profile-open');
+
+        if (symbol) {
+          symbol.textContent = '+';
+        }
+      }
+
+      function openProfile() {
+        document
+          .querySelectorAll('.abfe-member-profile-toggle')
+          .forEach(function (otherButton) {
+            if (otherButton === button) return;
+
+            const otherPanel = document.getElementById(
+              otherButton.getAttribute('aria-controls')
+            );
+
+            const otherCard = otherButton.closest('.abfe-member-card');
+            const otherSymbol = otherButton.querySelector('strong');
+
+            if (otherPanel) otherPanel.hidden = true;
+            if (otherCard) otherCard.classList.remove('is-profile-open');
+
+            otherButton.setAttribute('aria-expanded', 'false');
+
+            if (otherSymbol) {
+              otherSymbol.textContent = '+';
+            }
+          });
+
+        panel.hidden = false;
+        button.setAttribute('aria-expanded', 'true');
+        card.classList.add('is-profile-open');
+
+        if (symbol) {
+          symbol.textContent = '−';
+        }
+      }
+
+      button.addEventListener('click', function (event) {
+        event.stopPropagation();
+
+        const isOpen =
+          button.getAttribute('aria-expanded') === 'true';
+
+        if (isOpen) {
+          closeProfile();
+        } else {
+          openProfile();
+        }
+      });
+
+      card.addEventListener('click', function (event) {
+        if (event.target.closest('a')) return;
+        if (event.target.closest('button')) return;
+        if (event.target.closest('.abfe-member-profile-panel')) return;
+
+        button.click();
+      });
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setupMemberProfiles);
+  } else {
+    setupMemberProfiles();
+  }
+})();
+</script>
