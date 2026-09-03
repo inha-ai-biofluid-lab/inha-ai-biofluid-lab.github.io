@@ -34,20 +34,10 @@ main:
     url: /members/#professor
     weight: 21
 
-  - name: Graduate Students
+  - name: Students
     parent: members
     url: /members/#graduate-students
     weight: 22
-
-  - name: Undergraduate
-    parent: members
-    url: /members/#undergraduate
-    weight: 23
-
-  - name: Alumni
-    parent: members
-    url: /members/#alumni
-    weight: 24
 
   - name: RESEARCH
     identifier: research
