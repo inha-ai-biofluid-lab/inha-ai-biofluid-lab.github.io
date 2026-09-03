@@ -8,17 +8,20 @@
     </h2>
 
     <p class="abfe-home-contact__description">
-      AI, 생체유체역학, 전산유체역학 및 메디컬 트윈 연구에 관심 있는
-      학부연구생과 대학원생의 지원을 기다립니다.
+      AI, 생체유체역학, 전산유체역학 및 메디컬 트윈 연구에<br>
+      관심 있는 학부연구생과 대학원생의 지원을 기다립니다.
     </p>
 
     <div class="abfe-home-contact__actions">
-      <a
+      <button
+        type="button"
         class="abfe-home-contact__email"
-        href="mailto:bfmec@inha.ac.kr"
+        data-email="bfmec@inha.ac.kr"
       >
-        bfmec@inha.ac.kr →
-      </a>
+        <span class="abfe-home-contact__email-label">
+          bfmec@inha.ac.kr →
+        </span>
+      </button>
 
       <a
         class="abfe-home-contact__location"
@@ -29,3 +32,64 @@
     </div>
   </div>
 </section>
+
+<script>
+(function () {
+  function initializeEmailCopy() {
+    const button = document.querySelector(
+      ".abfe-home-contact__email"
+    );
+
+    if (!button || button.dataset.copyReady === "true") {
+      return;
+    }
+
+    button.dataset.copyReady = "true";
+
+    button.addEventListener("click", async function () {
+      const email = button.dataset.email;
+      const label = button.querySelector(
+        ".abfe-home-contact__email-label"
+      );
+
+      try {
+        if (navigator.clipboard && window.isSecureContext) {
+          await navigator.clipboard.writeText(email);
+        } else {
+          const temporaryInput = document.createElement("textarea");
+
+          temporaryInput.value = email;
+          temporaryInput.setAttribute("readonly", "");
+          temporaryInput.style.position = "fixed";
+          temporaryInput.style.opacity = "0";
+
+          document.body.appendChild(temporaryInput);
+          temporaryInput.select();
+          document.execCommand("copy");
+          temporaryInput.remove();
+        }
+
+        label.textContent = "이메일 주소가 복사되었습니다!";
+        button.classList.add("is-copied");
+
+        window.setTimeout(function () {
+          label.textContent = "bfmec@inha.ac.kr →";
+          button.classList.remove("is-copied");
+        }, 2000);
+      } catch (error) {
+        label.textContent = "bfmec@inha.ac.kr";
+      }
+    });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener(
+      "DOMContentLoaded",
+      initializeEmailCopy,
+      { once: true }
+    );
+  } else {
+    initializeEmailCopy();
+  }
+})();
+</script>
