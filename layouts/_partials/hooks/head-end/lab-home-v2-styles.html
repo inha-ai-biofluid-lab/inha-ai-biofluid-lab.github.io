@@ -535,5 +535,56 @@
     font-size: clamp(1.5rem, 7.4vw, 2.1rem);
   }
 }
+
+/* Wide desktop hero layout */
+@media (min-width: 1500px) {
+  .abfe-home-v2__inner {
+    grid-template-columns:
+      minmax(0, 1.12fr)
+      minmax(500px, 0.88fr);
+    gap: clamp(70px, 6vw, 115px);
+    width: min(1600px, calc(100% - 120px));
+  }
+
+  .abfe-home-v2__copy {
+    max-width: 840px;
+  }
+
+  .abfe-home-v2__eyebrow {
+    font-size: 0.78rem;
+  }
+
+  .abfe-home-v2__copy h1 .abfe-home-v2__title-en {
+    font-size: clamp(2rem, 2.1vw, 2.45rem);
+  }
+
+  .abfe-home-v2__copy h1 .abfe-home-v2__title-ko {
+    font-size: clamp(3.4rem, 3.6vw, 4.35rem);
+  }
+
+  .abfe-home-v2__description {
+    max-width: 720px;
+    font-size: 1.08rem;
+  }
+
+  .abfe-home-v2__button {
+    min-height: 52px;
+    padding-right: 25px;
+    padding-left: 25px;
+    font-size: 0.84rem;
+  }
+
+  .abfe-home-v2__visual {
+    height: min(640px, 70vh);
+  }
+
+  .abfe-home-v2__image {
+    max-width: 680px;
+  }
+
+  .abfe-home-v2__visual-fallback {
+    width: min(600px, 38vw);
+  }
+}
   
 </style>
