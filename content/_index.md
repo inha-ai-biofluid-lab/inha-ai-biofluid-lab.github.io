@@ -17,6 +17,9 @@ sections:
 
         {{< lab-home-updates >}}
 
+        {{< lab-home-contact >}}
+
+
     design:
       columns: '1'
       spacing:
