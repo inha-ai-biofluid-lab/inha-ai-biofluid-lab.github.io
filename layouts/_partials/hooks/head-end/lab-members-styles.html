@@ -449,4 +449,176 @@
       gap: 0.5rem;
     }
   }
+/* Professor detailed history */
+.abfe-professor-history {
+  width: 100%;
+  margin-top: 30px;
+  border-top: 1px solid #d6e1e8;
+}
+
+.abfe-professor-history__toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 0;
+  color: #08a9b8;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  list-style: none;
+}
+
+.abfe-professor-history__toggle::-webkit-details-marker {
+  display: none;
+}
+
+.abfe-professor-history__toggle strong {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  color: #08a9b8;
+  font-size: 22px;
+  line-height: 1;
+  transition: transform 0.2s ease;
+}
+
+.abfe-professor-history[open]
+.abfe-professor-history__toggle strong {
+  transform: rotate(45deg);
+}
+
+.abfe-professor-history__content {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  padding: 5px 0 30px;
+}
+
+.abfe-professor-history__section {
+  padding: 28px;
+  background: #f4f8fa;
+}
+
+.abfe-professor-history__section:nth-child(3),
+.abfe-professor-history__section:nth-child(4) {
+  grid-column: 1 / -1;
+}
+
+.abfe-professor-history__section h3 {
+  margin: 0 0 22px;
+  color: #08768e;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.abfe-professor-history__section h4 {
+  margin: 24px 0 12px;
+  color: #11283d;
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.abfe-professor-history__entry {
+  display: grid;
+  grid-template-columns: 54px minmax(0, 1fr);
+  gap: 14px;
+  margin-bottom: 22px;
+}
+
+.abfe-professor-history__entry:last-child {
+  margin-bottom: 0;
+}
+
+.abfe-professor-history__entry time,
+.abfe-professor-history__awards time {
+  color: #08a9b8;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.abfe-professor-history__entry strong {
+  color: #11283d;
+  font-size: 15px;
+}
+
+.abfe-professor-history__entry p {
+  margin: 8px 0 0;
+  color: #687b8c;
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+.abfe-professor-history__list,
+.abfe-professor-history__courses,
+.abfe-professor-history__awards {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.abfe-professor-history__list li,
+.abfe-professor-history__courses li {
+  padding: 10px 0;
+  color: #11283d;
+  font-size: 14px;
+  line-height: 1.6;
+  border-bottom: 1px solid #d6e1e8;
+}
+
+.abfe-professor-history__list li:last-child,
+.abfe-professor-history__courses li:last-child {
+  border-bottom: none;
+}
+
+.abfe-professor-history__list span {
+  display: block;
+  margin-top: 3px;
+  color: #738697;
+}
+
+.abfe-professor-history__courses strong {
+  display: inline-block;
+  min-width: 82px;
+  color: #08768e;
+}
+
+.abfe-professor-history__awards li {
+  display: grid;
+  grid-template-columns: 58px minmax(0, 1fr);
+  gap: 14px;
+  padding: 11px 0;
+  color: #11283d;
+  font-size: 14px;
+  line-height: 1.55;
+  border-bottom: 1px solid #d6e1e8;
+}
+
+.abfe-professor-history__awards li:last-child {
+  border-bottom: none;
+}
+
+@media (max-width: 800px) {
+  .abfe-professor-history__content {
+    grid-template-columns: 1fr;
+  }
+
+  .abfe-professor-history__section:nth-child(3),
+  .abfe-professor-history__section:nth-child(4) {
+    grid-column: auto;
+  }
+
+  .abfe-professor-history__section {
+    padding: 22px 18px;
+  }
+
+  .abfe-professor-history__entry {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+}
+  
 </style>
