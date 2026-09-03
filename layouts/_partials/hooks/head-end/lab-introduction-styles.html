@@ -680,5 +680,31 @@
     word-break: keep-all;
   }
 }
+
+.abfe-project-item {
+  grid-template-columns: 50px minmax(0, 1fr) 190px;
+  transition: none;
+}
+
+.abfe-project-item:hover {
+  padding-left: 0;
+  color: var(--abfe-text);
+}
+
+.abfe-project-footer {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 28px;
+}
+
+.abfe-project-footer a {
+  color: var(--abfe-blue);
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.abfe-project-footer a:hover {
+  color: var(--abfe-cyan);
+}
   
 </style>
