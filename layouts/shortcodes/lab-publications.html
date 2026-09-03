@@ -12,9 +12,9 @@
   {{ $publications := where site.RegularPages "Section" "publications" }}
   {{ $publications = $publications.ByDate.Reverse }}
 
-  <div class="abfe-publications__content">
+  {{ if gt (len $publications) 0 }}
 
-    {{ if gt (len $publications) 0 }}
+    <div class="abfe-publications__content">
 
       {{ range $publications.GroupByDate "2006" }}
         <section class="abfe-publications__year">
@@ -90,18 +90,8 @@
         </section>
       {{ end }}
 
-    {{ else }}
-
-      <div class="abfe-publications__empty">
-        <span>PUBLICATION LIST</span>
-        <h2>Publication list is being updated.</h2>
-        <p>
-          최신 논문 목록을 정리하고 있습니다.<br>
-          연구 성과는 순차적으로 업데이트될 예정입니다.
-        </p>
-      </div>
-
-    {{ end }}
-
   </div>
+
+{{ end }}
+
 </section>
