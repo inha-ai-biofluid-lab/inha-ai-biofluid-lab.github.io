@@ -270,4 +270,46 @@
       transition: none;
     }
   }
+
+/* Static research overview items */
+.abfe-home-research__item {
+  grid-template-columns:
+    52px
+    minmax(290px, 0.95fr)
+    minmax(280px, 1.05fr);
+  transition: none;
+}
+
+.abfe-home-research__item::before {
+  display: none;
+}
+
+.abfe-home-research__item:hover {
+  color: #10243b;
+}
+
+.abfe-home-research__item:hover .abfe-home-research__number {
+  color: #0b8f96;
+}
+
+.abfe-home-research__item:hover .abfe-home-research__title span {
+  color: #708194;
+}
+
+.abfe-home-research__item:hover > p {
+  color: #68798b;
+}
+
+@media (max-width: 900px) {
+  .abfe-home-research__item {
+    grid-template-columns: 44px minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .abfe-home-research__item {
+    grid-template-columns: 34px minmax(0, 1fr);
+  }
+}
+  
 </style>
