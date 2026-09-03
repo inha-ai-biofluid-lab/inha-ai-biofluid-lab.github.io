@@ -5,15 +5,13 @@
     {{ $optimized := .Resize "1600x webp q85" }}
 
     <figure class="abfe-gallery__item">
-      <a href="{{ .RelPermalink }}" target="_blank">
-        <img
-          src="{{ $optimized.RelPermalink }}"
-          width="{{ $optimized.Width }}"
-          height="{{ $optimized.Height }}"
-          alt="AI / Bio Fluid Engineering Laboratory graduate students in 2026"
-          loading="lazy"
-        >
-      </a>
+      <img
+        src="{{ $optimized.RelPermalink }}"
+        width="{{ $optimized.Width }}"
+        height="{{ $optimized.Height }}"
+        alt="AI Biofluid Engineering Laboratory graduate students in 2026"
+        loading="lazy"
+      >
 
       <figcaption>
         <strong>Graduate Students</strong>
