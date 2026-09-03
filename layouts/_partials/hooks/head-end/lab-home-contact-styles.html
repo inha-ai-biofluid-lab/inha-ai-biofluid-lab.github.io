@@ -37,10 +37,10 @@
 }
 
 .abfe-home-contact__description {
-  max-width: 720px;
+  max-width: 920px;
   margin: 30px auto 0;
   color: #aab8c5;
-  font-size: 17px;
+  font-size: 18px;
   line-height: 1.8;
   word-break: keep-all;
 }
@@ -72,9 +72,17 @@
 }
 
 .abfe-home-contact__email {
+  appearance: none;
   color: #061c2e;
   background: #26c3c8;
   border: 1px solid #26c3c8;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.abfe-home-contact__email.is-copied {
+  background: #ffffff;
+  border-color: #ffffff;
 }
 
 .abfe-home-contact__email:hover {
