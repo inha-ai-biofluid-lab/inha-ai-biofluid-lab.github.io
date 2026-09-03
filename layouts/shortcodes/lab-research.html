@@ -223,21 +223,88 @@
   <section class="abfe-research-footer">
     <div>
       <p>RESEARCH OUTCOMES</p>
+
       <h2>
         <span style="display: inline-block; white-space: nowrap; font-size: clamp(28px, 2.4vw, 36px);">
           연구성과를 확인하세요
         </span>
       </h2>
 
-      <a href="/publications/">
+      <a href="{{ "/publications/" | relLangURL }}">
         View Publications →
       </a>
     </div>
 
     <div>
       <p>RESEARCH COLLABORATION</p>
+
       <h2>
-  <span style="display: inline-block; white-space: nowrap; font-size: clamp(28px, 2.4vw, 36px);">
-    공동연구 및 연구 참여 문의
-  </span>
-</h2>
+        <span style="display: inline-block; white-space: nowrap; font-size: clamp(28px, 2.4vw, 36px);">
+          공동연구 및 연구 참여 문의
+        </span>
+      </h2>
+
+      <button
+        type="button"
+        class="abfe-research-copy-email"
+        data-email="bfmec@inha.ac.kr"
+      >
+        <span class="abfe-research-copy-email__label">
+          bfmec@inha.ac.kr →
+        </span>
+      </button>
+    </div>
+  </section>
+
+</div>
+
+<script>
+  (() => {
+    const button = document.querySelector(".abfe-research-copy-email");
+
+    if (!button || button.dataset.copyReady === "true") {
+      return;
+    }
+
+    button.dataset.copyReady = "true";
+
+    const label = button.querySelector(
+      ".abfe-research-copy-email__label"
+    );
+
+    const originalText = label.textContent.trim();
+    const email = button.dataset.email;
+
+    const fallbackCopy = () => {
+      const textarea = document.createElement("textarea");
+      textarea.value = email;
+      textarea.style.position = "fixed";
+      textarea.style.opacity = "0";
+
+      document.body.appendChild(textarea);
+      textarea.select();
+      document.execCommand("copy");
+      textarea.remove();
+    };
+
+    button.addEventListener("click", async () => {
+      try {
+        if (navigator.clipboard && window.isSecureContext) {
+          await navigator.clipboard.writeText(email);
+        } else {
+          fallbackCopy();
+        }
+
+        button.classList.add("is-copied");
+        label.textContent = "이메일 주소가 복사되었습니다!";
+
+        window.setTimeout(() => {
+          button.classList.remove("is-copied");
+          label.textContent = originalText;
+        }, 2000);
+      } catch (error) {
+        fallbackCopy();
+      }
+    });
+  })();
+</script>
