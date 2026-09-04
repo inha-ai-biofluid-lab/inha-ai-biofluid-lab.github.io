@@ -12,7 +12,7 @@ name:
   pronouns: ''
 
 postnominals: []
-role: M.S. Course Researcher
+role: M.E. Candidate('25.3 ~)
 
 affiliations:
   - name: Inha University
@@ -24,3 +24,26 @@ links:
   - icon: at-symbol
     url: mailto:abcdef6629@inha.edu
     label: Email
+
+profile:
+  research_interests:
+    - Computational Fluid Dynamics
+    - Cardiovascular Hemodynamics
+    - Computational Modeling of Tumor Vascular Morphology
+
+  awards:
+    - "우수상, 2023년 11월, ICT멘토링 학술대회 (ACK 2023), 신수현(인하대학교), 김하정(인하대학교), 김유진(인하대학교), 김도운(인하대학교), 한동균(인하대학교), SLAM을 이용한 물류 운반 처리 로봇"
+    - "입선, 2023년 12월, 2023 한이음 ICT멘토링 공모전, 김유진(인하대학교), 김하정(인하대학교), 김도운(인하대학교), 한동균(인하대학교), 신수현(인하대학교), 창고 자동화를 위한 스마트 운송 로봇"
+    - "대상, 2022년 5월, 2022학년도 1학기 다학년 연구프로젝트 성과발표회, 서슬빈(인하대학교), 권도형(인하대학교), 김유진(인하대학교), 김채연(인하대학교), 임인재(인하대학교), 김호찬(인하대학교), 시각장애인을 위한 휴대용 컬러 인식 장치"
+
+  journals: []
+
+  conferences:
+    - "The Eleventh JSME-KSME Thermal and Fluids Engineering Conference, Yujin Jeon(Inha University), Minseo Jeon(Inha University), Yujin Kim(Inha University), Labin Kim(Inha University), Kyung Eun Lee(Inha University, CA), HEMODYNAMIC IMPACT OF GEOMETRIC SYMMETRY AND STENOSIS LOCATION IN TANDEM CORONARY ARTERY STENOSIS MODELS (23 Oct 2025)"
+    - "The Eleventh JSME-KSME Thermal and Fluids Engineering Conference, Minseo Jeon(Inha University), Labin Kim(Inha University), Yujin Kim(Inha University), Yujin Jeon(Inha University), Kyung Eun Lee(Inha University, CA), HEMODYNAMIC SIMULATIONS OF FLOWS IN A PATIENT-SPECIFIC AORTIC DISSECTION BY USING VARIOUS OUTLET BOUNDARY CONDITIONS (23 Oct 2025)"
+    - "The Eleventh JSME-KSME Thermal and Fluids Engineering Conference, Yujin Kim(Inha University), Yujin Jeon(Inha University), Minseo Jeon(Inha University), Labin Kim(Inha University), Kyung Eun Lee(Inha University, CA), DEVELOPMENT OF A VASCULAR STRUCTURE GENERATION ALGORITHM REFLECTING THE PHYSIOLOGICAL MECHANISMS OF SPROUTING ANGIOGENESIS IN CANCER (23 Oct 2025)"
+    - "대한기계학회 유체공학부문 2025년 춘계학술대회 및 강습회, 전유진(인하대학교), 김유진(인하대학교), 김라빈(인하대학교), 이경은(인하대학교, CA), 협착의 비대칭성과 길이가 혈류 분포 및 유동 역학에 미치는 영향 (3 Apr 2025)"
+    - "대한기계학회 바이오공학부문 2025년 춘계학술대회, 전유진(인하대학교), 김유진(인하대학교), 김라빈(인하대학교), 이경은(인하대학교, CA), 협착의 대칭성과 연속 협착의 위치에 따른 관상동맥 내 혈류에 미치는 영향 분석 (22 May 2025)"
+    - "대한기계학회 창립 80주년 기념 학술대회, 김유진(인하대학교), 이경은(인하대학교, CA), 종양 발아 혈관신생 기전에 기반한 혈관 구조 모델링 알고리즘 개발 (10 Dec 2025)"
+    - "대한기계학회 창립 80주년 기념 학술대회, 전유진(인하대학교), 김유진(인하대학교), 김라빈(인하대학교), 이경은(인하대학교, CA), 관상동맥 이중 협착에서 기하학적 대칭성과 위치 변화가 혈류역학에 미치는 영향 (11 Dec 2025)"
+    - "대한기계학회 창립 80주년 기념 학술대회, 김유진(인하대학교), 김라빈(인하대학교), 이경은(인하대학교, CA), 대동맥 박리에서 내막 파열의 위치와 개수가 박동성 혈류역학적 특성에 미치는 영향 (11 Dec 2025)"

@@ -361,22 +361,6 @@
                 class="abfe-member-profile-panel"
               >
 
-                {{ with .thesis }}
-                  <section class="abfe-member-profile-section">
-                    <p
-                      class="abfe-member-profile-heading abfe-profile-blue"
-                    >
-                      @ Thesis
-                    </p>
-
-                    <ul class="abfe-member-profile-dash-list">
-                      {{ range . }}
-                        <li>{{ . }}</li>
-                      {{ end }}
-                    </ul>
-                  </section>
-                {{ end }}
-
                 {{ with .research_interests }}
                   <section class="abfe-member-profile-section">
                     <p

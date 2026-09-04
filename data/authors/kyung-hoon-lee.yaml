@@ -26,9 +26,6 @@ links:
     label: Email
 
 profile:
-  thesis:
-    - "[B.E., '26.2] Dept. of mechanical engineering, Inha University"
-
   research_interests:
     - Physics-Informed Neural Networks
     - Scientific Machine Learning
