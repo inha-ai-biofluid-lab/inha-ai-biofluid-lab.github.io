@@ -265,64 +265,141 @@
               {{ end }}
             {{ end }}
             {{ with $person.profile }}
-            <button
-            type="button"
-            class="abfe-member-profile-toggle"
-            aria-expanded="false"
-            aria-controls="member-profile-{{ $slug }}"
-          >
-            <span>View Profile</span>
-            <strong>+</strong>
-          </button>
+              <button
+                type="button"
+                class="abfe-member-profile-toggle"
+                aria-expanded="false"
+                aria-controls="member-profile-{{ $slug }}"
+              >
+                <span>View Profile</span>
+                <strong>+</strong>
+              </button>
+            {{ end }}
+          </div>
 
-          <div
-            id="member-profile-{{ $slug }}"
-            class="abfe-member-profile-panel"
-            hidden
-          >
-            {{ with .achievements }}
-              <div class="abfe-member-profile-section">
-                <p class="abfe-member-profile-heading">
-                  AWARDS &amp; ACHIEVEMENTS
-                </p>
+          {{ with $person.profile }}
+            <div
+              id="member-profile-{{ $slug }}"
+              class="abfe-member-profile-panel"
+              hidden
+            >
+              <div class="abfe-member-profile-grid">
+                {{ with .education }}
+                  <section class="abfe-member-profile-section">
+                    <p class="abfe-member-profile-heading">EDUCATION</p>
 
-                <ul class="abfe-member-achievement-list">
-                  {{ range . }}
-                    <li>
-                      <time>{{ .date }}</time>
+                    <ul class="abfe-member-education-list">
+                      {{ range . }}
+                        <li>
+                          <strong>{{ .degree }} in {{ .field }}</strong>
+                          <span>{{ .institution }} · {{ .date }}</span>
+                        </li>
+                      {{ end }}
+                    </ul>
+                  </section>
+                {{ end }}
 
-                      <div>
-                        <strong>{{ .title }}</strong>
+                {{ with .research_interests }}
+                  <section class="abfe-member-profile-section">
+                    <p class="abfe-member-profile-heading">RESEARCH INTERESTS</p>
 
-                        <span>
-                          {{ .type }}
-                          {{ with .detail }} · {{ . }}{{ end }}
-                        </span>
-                      </div>
-                    </li>
+                    <ul class="abfe-member-interest-list">
+                      {{ range . }}
+                        <li>{{ . }}</li>
+                      {{ end }}
+                    </ul>
+                  </section>
+                {{ end }}
+
+                {{ with .achievements }}
+                  <section class="abfe-member-profile-section abfe-member-profile-section--wide">
+                    <p class="abfe-member-profile-heading">AWARDS &amp; ACHIEVEMENTS</p>
+
+                    <ul class="abfe-member-achievement-list">
+                      {{ range . }}
+                        <li>
+                          <time>{{ .date }}</time>
+
+                          <div>
+                            <strong>{{ .title }}</strong>
+
+                            <span>
+                              {{ .type }}
+                              {{ with .event }} · {{ . }}{{ end }}
+                              {{ with .detail }} · {{ . }}{{ end }}
+                            </span>
+
+                            {{ with .authors }}<p>{{ . }}</p>{{ end }}
+                            {{ with .work_title }}<p class="abfe-member-work-title">{{ . }}</p>{{ end }}
+                          </div>
+                        </li>
+                      {{ end }}
+                    </ul>
+                  </section>
+                {{ end }}
+
+                {{ with .publications }}
+                  {{ if gt (len .) 0 }}
+                    <section class="abfe-member-profile-section abfe-member-profile-section--wide">
+                      <p class="abfe-member-profile-heading">SELECTED PUBLICATIONS</p>
+
+                      <ul class="abfe-member-publication-list">
+                        {{ range . }}
+                          <li>{{ . }}</li>
+                        {{ end }}
+                      </ul>
+                    </section>
                   {{ end }}
-                </ul>
-              </div>
-            {{ end }}
+                {{ end }}
 
-            {{ with .publications }}
-              {{ if gt (len .) 0 }}
-                <div class="abfe-member-profile-section">
-                  <p class="abfe-member-profile-heading">
-                    SELECTED PUBLICATIONS
-                  </p>
+                {{ with .conferences }}
+                  <section class="abfe-member-profile-section abfe-member-profile-section--wide">
+                    <p class="abfe-member-profile-heading">CONFERENCE PRESENTATIONS</p>
 
-                  <ul class="abfe-member-publication-list">
-                    {{ range . }}
-                      <li>{{ . }}</li>
+                    <ol class="abfe-member-conference-list">
+                      {{ range . }}
+                        <li>
+                          <div>
+                            <strong>{{ .title }}</strong>
+                            <span>{{ .event }} · {{ .date }}</span>
+                            <p>{{ .authors }}</p>
+                          </div>
+                        </li>
+                      {{ end }}
+                    </ol>
+                  </section>
+                {{ end }}
+
+                {{ with .experience }}
+                  <section class="abfe-member-profile-section">
+                    <p class="abfe-member-profile-heading">RESEARCH EXPERIENCE</p>
+
+                    <ul class="abfe-member-experience-list">
+                      {{ range . }}
+                        <li>
+                          <strong>{{ .role }}</strong>
+                          <span>{{ .organization }} · {{ .period }}</span>
+                          {{ with .detail }}<p>{{ . }}</p>{{ end }}
+                        </li>
+                      {{ end }}
+                    </ul>
+                  </section>
+                {{ end }}
+
+                <section class="abfe-member-profile-section">
+                  <p class="abfe-member-profile-heading">CONTACT</p>
+
+                  {{ range $person.links }}
+                    {{ if hasPrefix .url "mailto:" }}
+                      <a class="abfe-member-profile-email" href="{{ .url }}">
+                        {{ strings.TrimPrefix "mailto:" .url }}
+                      </a>
                     {{ end }}
-                  </ul>
-                </div>
-              {{ end }}
-            {{ end }}
-          </div>
-        {{ end }}
-          </div>
+                  {{ end }}
+                </section>
+              </div>
+            </div>
+          {{ end }}
         </article>
       {{ end }}
     </div>
