@@ -12,7 +12,7 @@ name:
   pronouns: ''
 
 postnominals: []
-role: M.S. Course researcher
+role: "B.E. & M.E. Course ('26.03 ~)"
 
 affiliations:
   - name: Inha University
@@ -24,3 +24,15 @@ links:
   - icon: at-symbol
     url: mailto:yhk0702123@inha.edu
     label: Email
+
+profile:
+  research_interests:
+    - "Cardiovascular Hemodynamics & Patient-Specific CFD"
+    - AI-Based Medical Imaging for Hemodynamic Analysis
+    - Particle Transport in Multiphase Flows
+
+  awards:
+    - "동상, 2026년, 인하대학교 2026 아이디어 경진대회, 김영현(인하대학교), 세탁 폐수 내 미세플라스틱 저감을 위한 AI 기반 생체모방 필터 설계 최적화"
+
+  journals: []
+  conferences: []
