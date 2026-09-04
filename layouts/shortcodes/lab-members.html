@@ -364,7 +364,7 @@
                 {{ with .research_interests }}
                   <section class="abfe-member-profile-section">
                     <p
-                      class="abfe-member-profile-heading abfe-profile-blue"
+                      class="abfe-member-profile-heading abfe-profile-research"
                     >
                       @ Research interests
                     </p>
@@ -380,14 +380,21 @@
                 {{ with .awards }}
                   <section class="abfe-member-profile-section">
                     <p
-                      class="abfe-member-profile-heading abfe-profile-blue"
+                      class="abfe-member-profile-heading abfe-profile-award"
                     >
                       @ Award ({{ len . }})
                     </p>
 
                     <ol class="abfe-member-profile-number-list">
                       {{ range . }}
-                        <li>{{ . }}</li>
+                        {{ $entry := . }}
+                        {{ if $person.name.alternate }}
+                          {{ $entry = replace $entry $person.name.alternate (printf "<strong>%s</strong>" $person.name.alternate) }}
+                        {{ end }}
+                        {{ if $person.name.display }}
+                          {{ $entry = replace $entry $person.name.display (printf "<strong>%s</strong>" $person.name.display) }}
+                        {{ end }}
+                        <li>{{ $entry | safeHTML }}</li>
                       {{ end }}
                     </ol>
                   </section>
@@ -397,7 +404,7 @@
                   {{ with .achievements }}
                     <section class="abfe-member-profile-section">
                       <p
-                        class="abfe-member-profile-heading abfe-profile-blue"
+                        class="abfe-member-profile-heading abfe-profile-award"
                       >
                         @ Award ({{ len . }})
                       </p>
@@ -421,14 +428,21 @@
                   {{ if gt (len .) 0 }}
                     <section class="abfe-member-profile-section">
                       <p
-                        class="abfe-member-profile-heading abfe-profile-green"
+                        class="abfe-member-profile-heading abfe-profile-output"
                       >
                         @ Journals ({{ len . }})
                       </p>
 
                       <ol class="abfe-member-profile-number-list">
                         {{ range . }}
-                          <li>{{ . }}</li>
+                          {{ $entry := . }}
+                          {{ if $person.name.alternate }}
+                            {{ $entry = replace $entry $person.name.alternate (printf "<strong>%s</strong>" $person.name.alternate) }}
+                          {{ end }}
+                          {{ if $person.name.display }}
+                            {{ $entry = replace $entry $person.name.display (printf "<strong>%s</strong>" $person.name.display) }}
+                          {{ end }}
+                          <li>{{ $entry | safeHTML }}</li>
                         {{ end }}
                       </ol>
                     </section>
@@ -439,14 +453,21 @@
                   {{ if gt (len .) 0 }}
                     <section class="abfe-member-profile-section">
                       <p
-                        class="abfe-member-profile-heading abfe-profile-green"
+                        class="abfe-member-profile-heading abfe-profile-output"
                       >
                         @ Journals ({{ len . }})
                       </p>
 
                       <ol class="abfe-member-profile-number-list">
                         {{ range . }}
-                          <li>{{ . }}</li>
+                          {{ $entry := . }}
+                          {{ if $person.name.alternate }}
+                            {{ $entry = replace $entry $person.name.alternate (printf "<strong>%s</strong>" $person.name.alternate) }}
+                          {{ end }}
+                          {{ if $person.name.display }}
+                            {{ $entry = replace $entry $person.name.display (printf "<strong>%s</strong>" $person.name.display) }}
+                          {{ end }}
+                          <li>{{ $entry | safeHTML }}</li>
                         {{ end }}
                       </ol>
                     </section>
@@ -456,14 +477,21 @@
                 {{ with .conferences }}
                   <section class="abfe-member-profile-section">
                     <p
-                      class="abfe-member-profile-heading abfe-profile-green"
+                      class="abfe-member-profile-heading abfe-profile-output"
                     >
                       @ Conferences ({{ len . }})
                     </p>
 
                     <ol class="abfe-member-profile-number-list">
                       {{ range . }}
-                        <li>{{ . }}</li>
+                        {{ $entry := . }}
+                        {{ if $person.name.alternate }}
+                          {{ $entry = replace $entry $person.name.alternate (printf "<strong>%s</strong>" $person.name.alternate) }}
+                        {{ end }}
+                        {{ if $person.name.display }}
+                          {{ $entry = replace $entry $person.name.display (printf "<strong>%s</strong>" $person.name.display) }}
+                        {{ end }}
+                        <li>{{ $entry | safeHTML }}</li>
                       {{ end }}
                     </ol>
                   </section>
@@ -472,14 +500,21 @@
                 {{ with .experience }}
                   <section class="abfe-member-profile-section">
                     <p
-                      class="abfe-member-profile-heading abfe-profile-orange"
+                      class="abfe-member-profile-heading abfe-profile-meta"
                     >
                       @ Experiences
                     </p>
 
                     <ul class="abfe-member-profile-dash-list">
                       {{ range . }}
-                        <li>{{ . }}</li>
+                        {{ $entry := . }}
+                        {{ if $person.name.alternate }}
+                          {{ $entry = replace $entry $person.name.alternate (printf "<strong>%s</strong>" $person.name.alternate) }}
+                        {{ end }}
+                        {{ if $person.name.display }}
+                          {{ $entry = replace $entry $person.name.display (printf "<strong>%s</strong>" $person.name.display) }}
+                        {{ end }}
+                        <li>{{ $entry | safeHTML }}</li>
                       {{ end }}
                     </ul>
                   </section>
@@ -487,7 +522,7 @@
 
                 <section class="abfe-member-profile-section">
                   <p
-                    class="abfe-member-profile-heading abfe-profile-orange"
+                    class="abfe-member-profile-heading abfe-profile-meta"
                   >
                     @ Contact
                   </p>
