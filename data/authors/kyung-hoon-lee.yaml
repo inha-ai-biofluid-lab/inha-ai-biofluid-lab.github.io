@@ -12,7 +12,7 @@ name:
   pronouns: ''
 
 postnominals: []
-role: M.S. Course Researcher
+role: M.E. Candidate (2026.03–Present)
 
 affiliations:
   - name: Inha University
@@ -24,3 +24,41 @@ links:
   - icon: at-symbol
     url: mailto:dlrudgns06@inha.edu
     label: Email
+
+profile:
+  education:
+    - degree: B.E.
+      field: Mechanical Engineering
+      institution: Inha University
+      date: "2026.02"
+
+  research_interests:
+    - Physics-Informed Neural Networks
+    - Scientific Machine Learning
+
+  achievements:
+    - date: "2025.12"
+      title: "장려상"
+      type: "Award"
+      event: "대한기계학회 창립 80주년 기념 학술대회"
+      authors: "이경훈(인하대학교), 이경은(인하대학교)"
+      work_title: "nnU-Net 기반 대동맥 박리 자동 분할 및 혈류 시뮬레이션"
+
+  conferences:
+    - date: "2025.12"
+      event: "대한기계학회 창립 80주년 기념 학술대회"
+      authors: "김라빈(인하대학교), 이경훈(인하대학교), 이경은(인하대학교)"
+      title: "Physics-Informed Neural Network for Aortic Blood Flow Simulation"
+
+    - date: "2025.12"
+      event: "대한기계학회 창립 80주년 기념 학술대회"
+      authors: "이경훈(인하대학교), 이경은(인하대학교)"
+      title: "nnU-Net 기반 대동맥 박리 자동 분할 및 혈류 시뮬레이션"
+
+  experience:
+    - period: "2025.01–2026.02"
+      role: "Undergraduate Researcher"
+      organization: "ABFE Lab., Inha University"
+      detail: "Advised by Prof. Kyung Eun Lee"
+
+  publications: []
