@@ -38,7 +38,16 @@
 .abfe-member-card:hover .abfe-member-photo img {
   transform: none;
 }
-
+.abfe-member-card .abfe-member-photo img,
+.abfe-member-card.is-profile-open .abfe-member-photo img {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  margin: 0 !important;
+  object-fit: cover !important;
+  object-position: center top !important;
+}
+  
 .abfe-member-card .abfe-member-card-copy,
 .abfe-member-card.is-profile-open .abfe-member-card-copy {
   display: flex;
