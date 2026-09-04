@@ -35,8 +35,11 @@
 }
 
 .abfe-member-profile-panel {
-  margin-top: 4px;
-  padding-top: 20px;
+  grid-column: 1 / -1;
+  margin: 0;
+  padding: 30px 32px 34px;
+  border-top: 1px solid #d8e2e8;
+  background: #f7fafb;
   cursor: default;
 }
 
@@ -45,18 +48,76 @@
 }
 
 .abfe-member-profile-heading {
-  margin: 0 0 14px !important;
+  margin: 0 0 16px !important;
   color: #1397aa !important;
-  font-size: 10px !important;
+  font-size: 11px !important;
   font-weight: 800 !important;
   letter-spacing: 0.12em;
 }
 
+.abfe-member-profile-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px 36px;
+}
+
+.abfe-member-profile-section {
+  min-width: 0;
+}
+
+.abfe-member-profile-section--wide {
+  grid-column: 1 / -1;
+}
+
 .abfe-member-achievement-list,
-.abfe-member-publication-list {
+.abfe-member-publication-list,
+.abfe-member-education-list,
+.abfe-member-interest-list,
+.abfe-member-experience-list,
+.abfe-member-conference-list {
   margin: 0 !important;
   padding: 0 !important;
   list-style: none !important;
+}
+
+.abfe-member-education-list li,
+.abfe-member-experience-list li {
+  padding: 14px 0;
+  border-top: 1px solid #e0e7ec;
+}
+
+.abfe-member-education-list strong,
+.abfe-member-experience-list strong {
+  display: block;
+  color: #11283d;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.abfe-member-education-list span,
+.abfe-member-experience-list span {
+  display: block;
+  margin-top: 5px;
+  color: #6f8191;
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.abfe-member-interest-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.abfe-member-interest-list li {
+  padding: 8px 11px;
+  color: #24546a;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.35;
+  border: 1px solid #cfe3e8;
+  border-radius: 999px;
+  background: #ffffff;
 }
 
 .abfe-member-achievement-list li {
@@ -93,6 +154,55 @@
   line-height: 1.5;
 }
 
+.abfe-member-achievement-list li p,
+.abfe-member-conference-list li p,
+.abfe-member-experience-list li p {
+  margin: 7px 0 0 !important;
+  color: #526577;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.abfe-member-achievement-list .abfe-member-work-title {
+  color: #11283d;
+  font-weight: 650;
+}
+
+.abfe-member-conference-list {
+  counter-reset: member-conference;
+}
+
+.abfe-member-conference-list li {
+  counter-increment: member-conference;
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr);
+  gap: 12px;
+  padding: 15px 0;
+  border-top: 1px solid #e0e7ec;
+}
+
+.abfe-member-conference-list li::before {
+  content: counter(member-conference, decimal-leading-zero);
+  color: #159caf;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.abfe-member-conference-list strong {
+  display: block;
+  color: #11283d;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.abfe-member-conference-list span {
+  display: block;
+  margin-top: 5px;
+  color: #6f8191;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
 .abfe-member-publication-list li {
   padding: 13px 0;
   color: #526577;
@@ -102,10 +212,72 @@
 }
 
 .abfe-member-card.is-profile-open {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: minmax(230px, 300px) minmax(0, 1fr);
   border-color: #22b8c7;
+  transform: none;
+  box-shadow: 0 18px 38px rgba(11, 44, 77, 0.11);
+}
+
+.abfe-member-card.is-profile-open:hover {
+  transform: none;
+}
+
+.abfe-member-card.is-profile-open .abfe-member-photo {
+  min-height: 340px;
+  aspect-ratio: auto;
+}
+
+.abfe-member-card.is-profile-open .abfe-member-card-copy {
+  min-height: 340px;
+  padding: 32px;
+}
+
+.abfe-member-profile-email {
+  display: inline-block;
+  color: #526577;
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+
+.abfe-member-profile-email:hover {
+  color: #159caf;
+}
+
+@media (max-width: 900px) {
+  .abfe-member-card.is-profile-open {
+    grid-template-columns: 230px minmax(0, 1fr);
+  }
+
+  .abfe-member-profile-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .abfe-member-profile-section--wide {
+    grid-column: auto;
+  }
 }
 
 @media (max-width: 640px) {
+  .abfe-member-card.is-profile-open {
+    grid-template-columns: 1fr;
+  }
+
+  .abfe-member-card.is-profile-open .abfe-member-photo {
+    min-height: 0;
+    aspect-ratio: 4 / 4.6;
+  }
+
+  .abfe-member-card.is-profile-open .abfe-member-card-copy {
+    min-height: 0;
+    padding: 22px;
+  }
+
+  .abfe-member-profile-panel {
+    padding: 24px 22px 28px;
+  }
+
   .abfe-member-achievement-list li {
     grid-template-columns: 1fr;
     gap: 6px;
