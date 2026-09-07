@@ -54,14 +54,14 @@ main:
     url: /board/
     weight: 50
 
-  - name: Notice
-    parent: board
-    url: /board/#notice
-    weight: 51
-
   - name: News
     parent: board
     url: /board/#news
+    weight: 51
+
+  - name: Notice
+    parent: board
+    url: /board/#notice
     weight: 52
 
   - name: Gallery
