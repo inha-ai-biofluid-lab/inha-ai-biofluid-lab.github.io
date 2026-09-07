@@ -89,7 +89,21 @@
   }
 
   .abfe-about-section {
-    padding-top: clamp(2.5rem, 5vw, 4.5rem);
+    width: 100%;
+    padding: clamp(3rem, 4.5vw, 4.25rem) 0 clamp(3.5rem, 5vw, 4.75rem);
+    border-bottom: 1px solid var(--abfe-line);
+    background:
+      radial-gradient(circle at 88% 8%, rgba(41, 184, 199, 0.11), transparent 28%),
+      linear-gradient(110deg, #eef6f8 0%, #f5f9fa 58%, #ffffff 100%);
+  }
+
+  .abfe-about-inner {
+    width: min(1180px, calc(100% - 3rem));
+    margin: 0 auto;
+  }
+
+  .abfe-about-section .abfe-section-heading {
+    margin-bottom: clamp(2rem, 3vw, 2.8rem);
   }
 
   .abfe-section-heading {
@@ -114,7 +128,7 @@
   .abfe-about-grid {
     display: grid;
     grid-template-columns: 0.9fr 1.1fr;
-    gap: clamp(2rem, 6vw, 6rem);
+    gap: clamp(2rem, 5vw, 4.5rem);
   }
 
   .abfe-about-lead {
@@ -158,9 +172,14 @@
     margin: 0 0 1.2rem;
   }
 
+  .abfe-about-copy p:last-child {
+    margin-bottom: 0;
+  }
+
   /* Research cards */
 
-  .abfe-research-section {
+  .abfe-intro-page .abfe-research-section {
+    padding-top: clamp(3.2rem, 4.5vw, 4.25rem);
     border-top: 1px solid var(--abfe-line);
   }
 
@@ -496,6 +515,15 @@
       width: calc(100% - 2.5rem);
       padding-top: 4rem;
       padding-bottom: 4rem;
+    }
+
+    .abfe-about-section {
+      width: 100%;
+      padding: 3rem 0 3.5rem;
+    }
+
+    .abfe-about-inner {
+      width: calc(100% - 2.5rem);
     }
 
     .abfe-intro-button {
