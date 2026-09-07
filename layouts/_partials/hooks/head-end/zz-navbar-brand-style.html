@@ -67,10 +67,19 @@
   }
 }
 
-/* Hide the full name on narrower screens */
-@media (max-width: 1050px) {
-  .navbar-brand::after {
-    display: none;
+/*
+ * Compact browser-window layout.
+ * Keep ABFE, remove the long secondary label, and cancel the desktop
+ * centering offset before the branding and menu can collide.
+ */
+@media (max-width: 1440px) {
+  html body #site-header.header .navbar-brand::after {
+    display: none !important;
+    content: none !important;
+  }
+
+  html body #site-header.header .navbar-nav {
+    left: 0 !important;
   }
 }
 
