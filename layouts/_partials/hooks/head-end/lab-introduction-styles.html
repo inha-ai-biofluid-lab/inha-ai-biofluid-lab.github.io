@@ -29,43 +29,6 @@
     scroll-margin-top: 100px;
   }
 
-  /* Hero */
-
-  .abfe-intro-hero {
-    position: relative;
-    display: grid;
-    grid-template-columns: minmax(0, 1.2fr) minmax(340px, 0.8fr);
-    align-items: center;
-    min-height: 680px;
-    padding:
-      clamp(5rem, 9vw, 8rem)
-      max(1.5rem, calc((100vw - 1180px) / 2));
-    color: #ffffff;
-    background:
-      radial-gradient(circle at 85% 25%, rgba(41, 184, 199, 0.18), transparent 28%),
-      radial-gradient(circle at 55% 90%, rgba(23, 107, 135, 0.24), transparent 32%),
-      linear-gradient(135deg, #06182b 0%, #0b2c4d 58%, #0a3b55 100%);
-  }
-
-  .abfe-intro-hero::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    opacity: 0.18;
-    pointer-events: none;
-    background-image:
-      linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-    background-size: 42px 42px;
-  }
-
-  .abfe-intro-hero-copy,
-  .abfe-intro-hero-visual {
-    position: relative;
-    z-index: 1;
-  }
-
-  .abfe-intro-label,
   .abfe-section-number {
     margin: 0 0 1.2rem;
     color: var(--abfe-cyan);
@@ -73,37 +36,6 @@
     font-weight: 700;
     letter-spacing: 0.15em;
     text-transform: uppercase;
-  }
-
-  .abfe-intro-hero h1 {
-    max-width: 760px;
-    margin: 0;
-    color: #ffffff;
-    font-family: var(--hb-font-heading);
-    font-size: clamp(2.6rem, 5vw, 5.25rem);
-    font-weight: 700;
-    line-height: 1.08;
-    letter-spacing: -0.055em;
-    word-break: keep-all;
-  }
-
-  .abfe-intro-hero h1 span {
-    color: var(--abfe-cyan);
-  }
-
-  .abfe-intro-lead {
-    max-width: 610px;
-    margin: 2rem 0 0;
-    color: rgba(255, 255, 255, 0.72);
-    font-size: clamp(1rem, 1.4vw, 1.15rem);
-    line-height: 1.8;
-  }
-
-  .abfe-intro-actions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.85rem;
-    margin-top: 2.2rem;
   }
 
   .abfe-intro-button {
@@ -148,67 +80,16 @@
     background: rgba(255, 255, 255, 0.1);
   }
 
-  /* Hero graphic */
-
-  .abfe-intro-hero-visual {
-    position: relative;
-    width: min(430px, 100%);
-    aspect-ratio: 1;
-    justify-self: end;
-  }
-
-  .abfe-flow-ring {
-    position: absolute;
-    display: block;
-    border: 1px solid rgba(78, 216, 226, 0.44);
-    border-radius: 50%;
-  }
-
-  .ring-one {
-    inset: 5%;
-  }
-
-  .ring-two {
-    inset: 20%;
-    border-style: dashed;
-  }
-
-  .ring-three {
-    inset: 35%;
-    background:
-      radial-gradient(circle, rgba(41, 184, 199, 0.3), rgba(41, 184, 199, 0.03) 65%);
-    box-shadow: 0 0 80px rgba(41, 184, 199, 0.22);
-  }
-
-  .abfe-visual-caption {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .abfe-visual-caption strong {
-    color: #ffffff;
-    font-size: clamp(1.8rem, 4vw, 3.4rem);
-    letter-spacing: 0.08em;
-  }
-
-  .abfe-visual-caption span {
-    margin-top: 0.5rem;
-    color: var(--abfe-cyan);
-    font-size: 0.7rem;
-    font-weight: 700;
-    letter-spacing: 0.13em;
-  }
-
   /* Shared sections */
 
   .abfe-intro-section {
     width: min(1180px, calc(100% - 3rem));
     margin: 0 auto;
     padding: clamp(4.5rem, 8vw, 7.5rem) 0;
+  }
+
+  .abfe-about-section {
+    padding-top: clamp(2.5rem, 5vw, 4.5rem);
   }
 
   .abfe-section-heading {
@@ -560,17 +441,6 @@
   /* Tablet */
 
   @media (max-width: 900px) {
-    .abfe-intro-hero {
-      grid-template-columns: 1fr;
-      min-height: auto;
-    }
-
-    .abfe-intro-hero-visual {
-      width: min(360px, 75vw);
-      margin-top: 3rem;
-      justify-self: center;
-    }
-
     .abfe-about-grid,
     .abfe-people-layout,
     .abfe-contact-section {
@@ -602,24 +472,10 @@
   /* Mobile */
 
   @media (max-width: 640px) {
-    .abfe-intro-hero {
-      padding-right: 1.25rem;
-      padding-left: 1.25rem;
-    }
-
     .abfe-intro-section {
       width: calc(100% - 2.5rem);
       padding-top: 4rem;
       padding-bottom: 4rem;
-    }
-
-    .abfe-intro-hero h1 {
-      font-size: clamp(2.25rem, 11vw, 3.25rem);
-    }
-
-    .abfe-intro-actions {
-      align-items: stretch;
-      flex-direction: column;
     }
 
     .abfe-intro-button {
