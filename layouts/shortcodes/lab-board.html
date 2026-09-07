@@ -3,13 +3,13 @@
   <div class="abfe-board__hero">
     <div class="abfe-board__eyebrow">BOARD</div>
     <h1>Laboratory Board</h1>
-    <p>
-      연구실 공지사항과 새로운 소식, 연구 활동을 소개합니다.
     </p>
   </div>
 
   {{ $posts := where site.RegularPages "Section" "board" }}
   {{ $posts = $posts.ByDate.Reverse }}
+  {{ $posts = where $posts "Params.board_type" "ne" "news" }}
+  {{ $newsGroups := site.Data.lab_news }}
 
   <div class="abfe-board__content">
 
@@ -26,11 +26,54 @@
       </div>
     </div>
 
-    {{ if gt (len $posts) 0 }}
+    {{ if or (gt (len $posts) 0) $newsGroups }}
 
       <div class="abfe-board__list">
+
+        {{ with $newsGroups }}
+          <section class="abfe-board-news-timeline abfe-board-filter-item">
+            <span
+              class="abfe-board-item__category abfe-board-news-timeline__filter-category"
+              aria-hidden="true"
+            >NEWS</span>
+
+            <div class="abfe-board-news-timeline__intro">
+              <span>LABORATORY NEWS</span>
+              <h3>연구실 주요 소식</h3>
+              <p>
+                AI / Bio Fluid Engineering Laboratory 구성원들의
+                수상 및 연구과제 선정 소식입니다.
+              </p>
+            </div>
+
+            <div class="abfe-board-news-timeline__groups">
+              {{ range . }}
+                <section class="abfe-board-news-year">
+                  <h4>{{ .year }}</h4>
+
+                  <div class="abfe-board-news-year__items">
+                    {{ range .items }}
+                      <article class="abfe-board-news-entry">
+                        <time>{{ .date }}</time>
+
+                        <div>
+                          <h5>{{ .title }}</h5>
+
+                          {{ range .details }}
+                            <p>{{ . }}</p>
+                          {{ end }}
+                        </div>
+                      </article>
+                    {{ end }}
+                  </div>
+                </section>
+              {{ end }}
+            </div>
+          </section>
+        {{ end }}
+
         {{ range $index, $post := first 12 $posts }}
-          <article class="abfe-board-item">
+          <article class="abfe-board-item abfe-board-filter-item">
 
             <div class="abfe-board-item__number">
               {{ printf "%02d" (add $index 1) }}

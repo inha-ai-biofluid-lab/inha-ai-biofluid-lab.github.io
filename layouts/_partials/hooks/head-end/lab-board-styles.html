@@ -90,6 +90,99 @@
     border-top: 2px solid #0b2c4d;
   }
 
+  .abfe-board-filter-item[hidden] {
+    display: none !important;
+  }
+
+  .abfe-board-news-timeline {
+    padding: 52px 0 34px;
+    border-bottom: 1px solid #dce4ea;
+  }
+
+  .abfe-board-news-timeline__filter-category {
+    display: none;
+  }
+
+  .abfe-board-news-timeline__intro {
+    max-width: 720px;
+    margin-bottom: 48px;
+  }
+
+  .abfe-board-news-timeline__intro > span {
+    color: #159b9d;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+  }
+
+  .abfe-board-news-timeline__intro h3 {
+    margin: 12px 0 13px;
+    color: #10243b;
+    font-size: clamp(1.8rem, 3.2vw, 2.75rem);
+    font-weight: 800;
+    letter-spacing: -0.035em;
+    line-height: 1.15;
+  }
+
+  .abfe-board-news-timeline__intro p {
+    margin: 0;
+    color: #71808e;
+    font-size: 0.92rem;
+    line-height: 1.75;
+  }
+
+  .abfe-board-news-year {
+    display: grid;
+    grid-template-columns: 110px minmax(0, 1fr);
+    gap: 30px;
+    border-top: 1px solid #cad7e1;
+  }
+
+  .abfe-board-news-year h4 {
+    margin: 0;
+    padding-top: 27px;
+    color: #0f9aaa;
+    font-size: 1.45rem;
+    font-weight: 800;
+    line-height: 1;
+  }
+
+  .abfe-board-news-entry {
+    display: grid;
+    grid-template-columns: 88px minmax(0, 1fr);
+    gap: 24px;
+    padding: 25px 0;
+    border-bottom: 1px solid #e1e8ee;
+  }
+
+  .abfe-board-news-entry:last-child {
+    border-bottom: 0;
+  }
+
+  .abfe-board-news-entry time {
+    padding-top: 3px;
+    color: #0f9aaa;
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.03em;
+    text-align: left;
+  }
+
+  .abfe-board-news-entry h5 {
+    margin: 0 0 7px;
+    color: #10243b;
+    font-size: 1rem;
+    font-weight: 760;
+    line-height: 1.5;
+  }
+
+  .abfe-board-news-entry p {
+    margin: 2px 0 0;
+    color: #71808e;
+    font-size: 0.84rem;
+    line-height: 1.65;
+  }
+
   .abfe-board-item {
     display: grid;
     grid-template-columns: 48px 92px minmax(0, 1fr) 105px 28px;
@@ -212,6 +305,20 @@
     .abfe-board-item time {
       display: none;
     }
+
+    .abfe-board-news-year {
+      grid-template-columns: 82px minmax(0, 1fr);
+      gap: 20px;
+    }
+
+    .abfe-board-news-entry {
+      grid-template-columns: 76px minmax(0, 1fr);
+      gap: 16px;
+    }
+
+    .abfe-board-news-entry time {
+      display: block;
+    }
   }
 
   @media (max-width: 520px) {
@@ -225,6 +332,31 @@
 
     .abfe-board-item__category {
       grid-column: 1 / -1;
+    }
+
+    .abfe-board-news-timeline {
+      padding-top: 38px;
+    }
+
+    .abfe-board-news-timeline__intro {
+      margin-bottom: 36px;
+    }
+
+    .abfe-board-news-year {
+      display: block;
+    }
+
+    .abfe-board-news-year h4 {
+      padding: 24px 0 7px;
+    }
+
+    .abfe-board-news-entry {
+      display: block;
+      padding: 19px 0;
+    }
+
+    .abfe-board-news-entry time {
+      margin-bottom: 7px;
     }
   }
 </style>
