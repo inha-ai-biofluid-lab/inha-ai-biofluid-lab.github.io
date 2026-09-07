@@ -22,8 +22,8 @@
   /* Research 탭의 Our Vision을 홈에 맞게 압축한 영역 */
   .abfe-home-research__vision {
     display: grid;
-    grid-template-columns: minmax(260px, 0.85fr) minmax(0, 1.15fr);
-    gap: clamp(40px, 7vw, 90px);
+    grid-template-columns: minmax(470px, 1fr) minmax(0, 1fr);
+    gap: clamp(32px, 5vw, 64px);
     align-items: center;
     margin-bottom: 58px;
     padding: clamp(34px, 4.5vw, 52px);
@@ -49,6 +49,11 @@
     font-weight: 750;
     line-height: 1.14;
     letter-spacing: -0.04em;
+  }
+
+  .abfe-home-research__vision h2 span {
+    display: block;
+    white-space: nowrap;
   }
 
   .abfe-home-research__vision-copy p {
@@ -185,8 +190,8 @@
       padding: 30px 24px;
     }
 
-    .abfe-home-research__vision h2 br {
-      display: none;
+    .abfe-home-research__vision h2 span {
+      white-space: normal;
     }
 
     .abfe-home-research__vision-copy p {
