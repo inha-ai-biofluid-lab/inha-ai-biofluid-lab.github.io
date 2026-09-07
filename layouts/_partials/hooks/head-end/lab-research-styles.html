@@ -336,6 +336,11 @@
     line-height: 1.4;
   }
 
+  /* Pull a two-line title up by one line so its description aligns with the others. */
+  .abfe-process-step--multiline strong {
+    margin-top: calc(3rem - 1.4em);
+  }
+
   .abfe-process-grid p {
     margin: 0.7rem 0 0;
     color: var(--research-muted);
@@ -447,6 +452,10 @@
     }
 
     .abfe-process-grid strong {
+      margin-top: 2rem;
+    }
+
+    .abfe-process-step--multiline strong {
       margin-top: 2rem;
     }
 
