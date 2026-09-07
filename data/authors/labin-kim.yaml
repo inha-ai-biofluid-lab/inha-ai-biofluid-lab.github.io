@@ -26,6 +26,11 @@ links:
     label: Email
 
 profile:
+  research_interests:
+    - Cardiovascular Hemodynamics
+    - Computational Fluid Dynamics(CFD)
+    - Physics-Informed Machine Learning for biomedical Fluid Dynamics
+
   awards:
     - "우수논문상, 제13회 한국유체공학 학술대회, 김라빈(인하대학교), 정성훈(인하대학교), 이경은(인하대학교), 파열 특성에 따른 하행 대동맥 박리의 혈류역학적 영향 (26 Jul 2024)"
     - "Best Paper Award, The 12th International Conference of Fluid Flow, Heat and Mass Transfer (FFHMT 2025), Kyung Eun Lee(Inha University, CA), Labin Kim(Inha University), Blood Simulations in an Arterial Model Automatically Reconstructed Using Optical Computed Tomography (15 Jul 2025)"
