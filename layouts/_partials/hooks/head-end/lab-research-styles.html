@@ -30,6 +30,26 @@
     scroll-margin-top: 100px;
   }
 
+  /* Compact page heading */
+
+  .abfe-research-heading {
+    position: relative;
+    margin-bottom: clamp(2rem, 3.5vw, 3rem);
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--research-line);
+  }
+
+  .abfe-research-heading::after {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 90px;
+    height: 3px;
+    background: var(--research-cyan);
+  }
+
+  .abfe-research-heading > p,
   .abfe-research-section-heading > p,
   .abfe-research-vision > div:first-child > p,
   .abfe-research-footer > div > p {
@@ -38,6 +58,16 @@
     font-size: 0.72rem;
     font-weight: 700;
     letter-spacing: 0.14em;
+  }
+
+  .abfe-research-heading h1 {
+    margin: 0;
+    color: var(--research-text);
+    font-family: var(--hb-font-heading);
+    font-size: clamp(2.4rem, 4vw, 3.8rem);
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -0.05em;
   }
 
   /* Research vision */
