@@ -127,6 +127,26 @@
     word-break: keep-all;
   }
 
+  .abfe-about-lead-line {
+    display: inline;
+  }
+
+  @media (min-width: 1280px) {
+    .abfe-about-grid {
+      grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+      gap: clamp(3rem, 5vw, 4rem);
+    }
+
+    .abfe-about-lead {
+      font-size: 1.7rem;
+    }
+
+    .abfe-about-lead-line {
+      display: block;
+      white-space: nowrap;
+    }
+  }
+
   .abfe-about-copy {
     color: var(--abfe-muted);
     font-size: 1rem;
