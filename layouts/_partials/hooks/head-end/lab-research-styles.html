@@ -11,7 +11,7 @@
 
     width: min(1180px, calc(100vw - 3rem));
     margin-left: 50%;
-    padding: clamp(4rem, 7vw, 7rem) 0;
+    padding: clamp(2.5rem, 5vw, 5rem) 0 clamp(4rem, 7vw, 7rem);
     color: var(--research-text);
     transform: translateX(-50%);
   }
@@ -30,26 +30,6 @@
     scroll-margin-top: 100px;
   }
 
-  /* Page heading */
-
-  .abfe-research-heading {
-    position: relative;
-    margin-bottom: clamp(4rem, 8vw, 7rem);
-    padding-bottom: 3rem;
-    border-bottom: 1px solid var(--research-line);
-  }
-
-  .abfe-research-heading::after {
-    content: "";
-    position: absolute;
-    bottom: -1px;
-    left: 0;
-    width: 100px;
-    height: 3px;
-    background: var(--research-cyan);
-  }
-
-  .abfe-research-heading > p,
   .abfe-research-section-heading > p,
   .abfe-research-vision > div:first-child > p,
   .abfe-research-footer > div > p {
@@ -58,27 +38,6 @@
     font-size: 0.72rem;
     font-weight: 700;
     letter-spacing: 0.14em;
-  }
-
-  .abfe-research-heading h1 {
-    max-width: 880px;
-    margin: 0;
-    color: var(--research-text);
-    font-family: var(--hb-font-heading);
-    font-size: clamp(2.7rem, 5.5vw, 5rem);
-    font-weight: 700;
-    line-height: 1.08;
-    letter-spacing: -0.055em;
-    word-break: keep-all;
-  }
-
-  .abfe-research-heading > span {
-    display: block;
-    max-width: 720px;
-    margin-top: 1.6rem;
-    color: var(--research-muted);
-    font-size: 1rem;
-    line-height: 1.8;
   }
 
   /* Research vision */
@@ -421,10 +380,6 @@
       width: calc(100vw - 2.5rem);
       padding-top: 3.5rem;
       padding-bottom: 5rem;
-    }
-
-    .abfe-research-heading h1 {
-      font-size: clamp(2.3rem, 11vw, 3.3rem);
     }
 
     .abfe-research-vision,
