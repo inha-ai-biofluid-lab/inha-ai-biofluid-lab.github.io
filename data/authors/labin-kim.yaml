@@ -12,7 +12,7 @@ name:
   pronouns: ''
 
 postnominals: []
-role: Ph.D. Course Researcher
+role: "Ph.D. Course ('23.3 ~)"
 
 affiliations:
   - name: Inha University
@@ -26,22 +26,39 @@ links:
     label: Email
 
 profile:
-  achievements:
-    - date: "2026.05"
-      title: "대한기계학회 80주년 학술대회 우수논문상"
-      type: "Award"
+  awards:
+    - "우수논문상, 제13회 한국유체공학 학술대회, 김라빈(인하대학교), 정성훈(인하대학교), 이경은(인하대학교), 파열 특성에 따른 하행 대동맥 박리의 혈류역학적 영향 (26 Jul 2024)"
+    - "Best Paper Award, The 12th International Conference of Fluid Flow, Heat and Mass Transfer (FFHMT 2025), Kyung Eun Lee(Inha University, CA), Labin Kim(Inha University), Blood Simulations in an Arterial Model Automatically Reconstructed Using Optical Computed Tomography (15 Jul 2025)"
+    - "우수논문상, 대한기계학회 창립 80주년 기념 학술대회, 김라빈(인하대학교), 이경은(인하대학교), Effects of Intimal Tear Configuration on the Progression and Flow Patterns of Descending Aortic Dissection (23 Dec 2025)"
 
-    - date: "2025.07"
-      title: "International Conference of Fluid Flow, Heat and Mass Transfer Best Paper Award"
-      type: "Award"
+  journals:
+    - "Labin Kim(Inha University), Suk-Hee Park(Pusan National University), Seong Hoon Jeong(Inha University), Yeong-Seo Kim(Pusan National University), Ju Ran Kim(KITECH, CA), Kyung Eun Lee(Inha University, CA), Image-based CFD Analysis of Blood Flow in Non-Porous and Porous Prosthetic Vascular Grafts, Bioengineering (2026), 13(8):915."
 
-    - date: "2025.04"
-      title: "WISET 여대학원생 공학연구팀제 지원사업 선정 및 연구비 수주"
-      type: "Research Project"
-      detail: "책임연구자"
-
-    - date: "2024.07"
-      title: "한국유체공학 학술대회 우수논문상"
-      type: "Award"
-
-  publications: []
+  conferences:
+    - "12th International Conference on Computational Fluid Dynamics (ICCFD12), Seong Hoon Jeong(Inha University), Labin Kim(Inha University), Kyung Eun Lee(Inha University, CA), Simulation-Based Blood Flow Analysis using a Machine-Learning Vascular Model (15 Jul 2024)"
+    - "12th International Conference on Computational Fluid Dynamics (ICCFD12), Labin Kim(Inha University), Seong Hoon Jeong(Inha University), Kyung Eun Lee(Inha University, CA), Numerical Analysis of Steady Flows in a porous and permeable scaffold (18 Jul 2024)"
+    - "46th Annual International Conference of the IEEE Engineering in Medicine and Biology Society (IEEE EMBC), Labin Kim(Inha University), Kyung Eun Lee(Inha University, CA), Numerical Simulations of Blood Flow in Aortic Models with Intimal Tears in the Context of Aortic Dissection (18 Jul 2024)"
+    - "The 26th International Congress of Theoretical and Applied Mechanics (ICTAM 2024), Labin Kim(Inha University), Seong Hoon Jeong(Inha University), Kyung Eun Lee(Inha University, CA), Impact of the Position and the Quantity of Intimal Tear on Blood Flow Dynamics and Aortic Dissection Propagation (27 Aug 2024)"
+    - "The 26th International Congress of Theoretical and Applied Mechanics (ICTAM 2024), Seong Hoon Jeong(Inha University), Labin Kim(Inha University), Kyung Eun Lee(Inha University, CA), Numerical Simulations for Non-Invasive Optical Coherence Tomography Fractional Flow Reserve (27 Aug 2024)"
+    - "The 12th International Conference of Fluid Flow, Heat and Mass Transfer (FFHMT 2025), Kyung Eun Lee(Inha University, CA), Labin Kim(Inha University), Blood Simulations in an Arterial Model Automatically Reconstructed Using Optical Computed Tomography (17 Jul 2025)"
+    - "The Eleventh JSME-KSME Thermal and Fluids Engineering Conference, Labin Kim(Inha University), Kyung Eun Lee(Inha University, CA), Hemodynamic Effects of Intimal Tear Configuration on the Progression of Descending Aortic Dissection (23 Oct 2025)"
+    - "The Eleventh JSME-KSME Thermal and Fluids Engineering Conference, Yujin Jeon(Inha University), Minseo Jeon(Inha University), Yujin Kim(Inha University), Labin Kim(Inha University), Kyung Eun Lee(Inha University, CA), HEMODYNAMIC IMPACT OF GEOMETRIC SYMMETRY AND STENOSIS LOCATION IN TANDEM CORONARY ARTERY STENOSIS MODELS (23 Oct 2025)"
+    - "The Eleventh JSME-KSME Thermal and Fluids Engineering Conference, Minseo Jeon(Inha University), Labin Kim(Inha University), Yujin Kim(Inha University), Yujin Jeon(Inha University), Kyung Eun Lee(Inha University, CA), HEMODYNAMIC SIMULATIONS OF FLOWS IN A PATIENT-SPECIFIC AORTIC DISSECTION BY USING VARIOUS OUTLET BOUNDARY CONDITIONS (23 Oct 2025)"
+    - "The Eleventh JSME-KSME Thermal and Fluids Engineering Conference, Yujin Kim(Inha University), Yujin Jeon(Inha University), Minseo Jeon(Inha University), Labin Kim(Inha University), Kyung Eun Lee(Inha University, CA), DEVELOPMENT OF A VASCULAR STRUCTURE GENERATION ALGORITHM REFLECTING THE PHYSIOLOGICAL MECHANISMS OF SPROUTING ANGIOGENESIS IN CANCER (23 Oct 2025)"
+    - "2023 한국가시화정보학회 추계학술대회, 김라빈(인하대학교), 정성훈(인하대학교), 이경은(인하대학교, CA), 나선형 우회로 그래프트 내에서의 혈류 시뮬레이션 (6 Nov 2023)"
+    - "2023 한국가시화정보학회 추계학술대회, 정성훈(인하대학교), 김라빈(인하대학교), 이경은(인하대학교, CA), 머신러닝 기반 환자 맞춤형 혈관 모델링 기술 및 가시화 연구 (6 Nov 2023)"
+    - "2023 순환기의공학회 동계학술대회, 김라빈(인하대학교), 정성훈(인하대학교), 이경은(인하대학교, CA), Flow simulations in an end-to-side anastomosis by using helical grafts (2 Dec 2023)"
+    - "2023 순환기의공학회 동계학술대회, 정성훈(인하대학교), 김라빈(인하대학교), 이경은(인하대학교, CA), 머신러닝 기반 환자 맞춤형 혈관 모델링 및 혈류역학 시뮬레이션 연구 (2 Dec 2023)"
+    - "2024 한국가시화정보학회 춘계학술대회, 김라빈(인하대학교), 정성훈(인하대학교), 이경은(인하대학교, CA), 대동맥 박리 내막 파열 위치와 개수가 혈류에 미치는 영향 (2 May 2024)"
+    - "제13회 한국유체공학 학술대회, 김라빈(인하대학교), 정성훈(인하대학교), 이경은(인하대학교, CA), 파열 특성에 따른 하행 대동맥 박리의 혈류역학적 영향 (26 Jul 2024)"
+    - "대한기계학회 2024년 학술대회, 김라빈(인하대학교), 이경은(인하대학교, CA), 내막 파열된 박리된 대동맥 내에서의 혈류 시뮬레이션 (6 Nov 2024)"
+    - "대한기계학회 유체공학부문 2025년 춘계학술대회 및 강습회, 김라빈(인하대학교), 이경은(인하대학교, CA), 내막 파열의 조건에 따른 하행 대동맥 박리의 혈류 시뮬레이션 (3 Apr 2025)"
+    - "대한기계학회 유체공학부문 2025년 춘계학술대회 및 강습회, 전유진(인하대학교), 김유진(인하대학교), 김라빈(인하대학교), 이경은(인하대학교, CA), 협착의 비대칭성과 길이가 혈류 분포 및 유동 역학에 미치는 영향 (3 Apr 2025)"
+    - "대한기계학회 바이오공학부문 2025년 춘계학술대회, 김라빈(인하대학교), 이경은(인하대학교, CA), 하행 대동맥 박리의 내막 파열 특성이 혈류역학 및 진행에 미치는 영향 (22 May 2025)"
+    - "대한기계학회 바이오공학부문 2025년 춘계학술대회, 전민서(인하대학교), 김라빈(인하대학교), 이경은(인하대학교, CA), 환자 맞춤형 대동맥 박리에서 출구 조건이 혈류 분포에 미치는 영향 (22 May 2025)"
+    - "대한기계학회 바이오공학부문 2025년 춘계학술대회, 전유진(인하대학교), 김유진(인하대학교), 김라빈(인하대학교), 이경은(인하대학교, CA), 협착의 대칭성과 연속 협착의 위치에 따른 관상동맥 내 혈류에 미치는 영향 분석 (22 May 2025)"
+    - "대한기계학회 창립 80주년 기념 학술대회, 김라빈(인하대학교), 이경은(인하대학교, CA), Effects of Intimal Tear Configuration on the Progression and Flow Patterns of Descending Aortic Dissection (11 Dec 2025)"
+    - "대한기계학회 창립 80주년 기념 학술대회, 김라빈(인하대학교), 이경훈(인하대학교), 이경은(인하대학교, CA), Physics-Informed Neural Network for Aortic Blood Flow Simulation (11 Dec 2025)"
+    - "대한기계학회 창립 80주년 기념 학술대회, 전민서(인하대학교), 김라빈(인하대학교), 이경은(인하대학교, CA), The Numerical Simulations of a Patient-Specific Aortic Dissection under Different Outlet Boundary Conditions (11 Dec 2025)"
+    - "대한기계학회 창립 80주년 기념 학술대회, 전유진(인하대학교), 김유진(인하대학교), 김라빈(인하대학교), 이경은(인하대학교, CA), 관상동맥 이중 협착에서 기하학적 대칭성과 위치 변화가 혈류역학에 미치는 영향 (11 Dec 2025)"
+    - "대한기계학회 창립 80주년 기념 학술대회, 김유진(인하대학교), 김라빈(인하대학교), 이경은(인하대학교, CA), 대동맥 박리에서 내막 파열의 위치와 개수가 박동성 혈류역학적 특성에 미치는 영향 (11 Dec 2025)"
