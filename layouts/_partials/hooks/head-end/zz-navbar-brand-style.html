@@ -28,6 +28,36 @@
 }
 
 /* Visually center the navigation across the entire screen */
+@media (min-width: 1024px) {
+  /*
+   * Use a real flex gap instead of Tailwind's sibling margins.
+   * This measures dropdown labels together with their arrows, so the
+   * visible space between every complete menu item stays consistent.
+   */
+  header .navbar-nav {
+    column-gap: 1rem !important;
+  }
+
+  header .navbar-nav > .nav-item {
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+  }
+
+  header .navbar-nav > .nav-item > .nav-link {
+    display: inline-flex !important;
+    align-items: center !important;
+    padding-right: 0.5rem !important;
+    padding-left: 0.5rem !important;
+    white-space: nowrap !important;
+  }
+
+  header .navbar-nav > .nav-dropdown > .nav-link > svg,
+  header .navbar-nav > .nav-dropdown > svg {
+    flex: 0 0 auto !important;
+    margin-left: 0.25rem !important;
+  }
+}
+
 @media (min-width: 1100px) {
   header .navbar-nav {
     position: relative !important;
