@@ -1,5 +1,49 @@
 {{ $boardPosts := where site.RegularPages "Section" "board" }}
-{{ $boardPosts = $boardPosts.ByDate.Reverse }}
+{{ $updates := slice }}
+
+{{ range $boardPosts }}
+  {{ $category := "news" }}
+
+  {{ with .Params.board_type }}
+    {{ $category = . }}
+  {{ else }}
+    {{ with .Params.categories }}
+      {{ $category = index . 0 }}
+    {{ end }}
+  {{ end }}
+
+  {{ $updates = $updates | append (dict
+    "category" $category
+    "datekey" (.Date.Format "2006.01.02")
+    "displaydate" (.Date.Format "2006.01.02")
+    "summary" (.Params.summary | default "")
+    "title" .Title
+    "url" .RelPermalink
+  ) }}
+{{ end }}
+
+{{ $newsURL := printf "%s#news" ("/board/" | relLangURL) }}
+
+{{ range site.Data.lab_news }}
+  {{ range .items }}
+    {{ $summary := "" }}
+
+    {{ with .details }}
+      {{ $summary = index . 0 }}
+    {{ end }}
+
+    {{ $updates = $updates | append (dict
+      "category" "news"
+      "datekey" (printf "%s.01" .date)
+      "displaydate" .date
+      "summary" $summary
+      "title" .title
+      "url" $newsURL
+    ) }}
+  {{ end }}
+{{ end }}
+
+{{ $updates = sort $updates "datekey" "desc" }}
 
 <section class="abfe-home-updates">
   <div class="abfe-home-updates__inner">
@@ -16,32 +60,24 @@
     </header>
 
     <div class="abfe-home-updates__list">
-      {{ range $index, $post := first 3 $boardPosts }}
-        <a class="abfe-home-update" href="{{ $post.RelPermalink }}">
+      {{ range $index, $update := first 3 $updates }}
+        <a class="abfe-home-update" href="{{ $update.url }}">
           <span class="abfe-home-update__number">
             {{ printf "%02d" (add $index 1) }}
           </span>
 
           <div class="abfe-home-update__content">
             <div class="abfe-home-update__meta">
-              {{ with $post.Params.board_type }}
-                <span>{{ . | upper }}</span>
-              {{ else }}
-                {{ with $post.Params.categories }}
-                  <span>{{ index . 0 | upper }}</span>
-                {{ else }}
-                  <span>NEWS</span>
-                {{ end }}
-              {{ end }}
+              <span>{{ $update.category | upper }}</span>
 
-              <time datetime="{{ $post.Date.Format "2006-01-02" }}">
-                {{ $post.Date.Format "2006.01.02" }}
+              <time datetime="{{ $update.datekey }}">
+                {{ $update.displaydate }}
               </time>
             </div>
 
-            <h3>{{ $post.Title }}</h3>
+            <h3>{{ $update.title }}</h3>
 
-            {{ with $post.Params.summary }}
+            {{ with $update.summary }}
               <p>{{ . }}</p>
             {{ end }}
           </div>
