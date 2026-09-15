@@ -1,219 +1,26 @@
 <style>
-/* Members are displayed as a continuous academic CV list. */
-.abfe-member-grid {
-  grid-template-columns: 1fr !important;
-  gap: 0 !important;
-  border-top: 1px solid #d8e2e8;
-}
-
-.abfe-member-card,
-.abfe-member-card:hover,
-.abfe-member-card.is-profile-open,
-.abfe-member-card.is-profile-open:hover {
-  display: grid;
-  grid-template-columns: 220px minmax(0, 1fr);
-  align-items: start;
-  overflow: visible;
-  padding: 34px 0;
-  border: 0;
-  border-bottom: 1px solid #d8e2e8;
-  border-radius: 0;
-  background: transparent;
-  box-shadow: none;
-  transform: none;
-  cursor: default;
-}
-
-.abfe-member-card .abfe-member-photo,
-.abfe-member-card.is-profile-open .abfe-member-photo {
-  width: 170px;
-  min-height: 0;
-  height: auto;
-  margin: 0 auto;
-  aspect-ratio: 270 / 400;
-  border-radius: 0;
-  align-self: start;
-}
-
-.abfe-member-card:hover .abfe-member-photo img {
-  transform: none;
-}
-.abfe-member-card .abfe-member-photo img,
-.abfe-member-card.is-profile-open .abfe-member-photo img {
-  display: block !important;
-  width: 100% !important;
-  height: 100% !important;
-  margin: 0 !important;
-  object-fit: cover !important;
-  object-position: center top !important;
-}
-  
-.abfe-member-card .abfe-member-card-copy,
-.abfe-member-card.is-profile-open .abfe-member-card-copy {
-  display: flex;
-  flex-direction: column;
-  min-height: 0;
-  padding: 0 24px 0 10px;
-}
-
-.abfe-member-card .abfe-member-card-copy > h3,
-.abfe-member-card.is-profile-open .abfe-member-card-copy > h3 {
-  order: 1;
-  margin: 0;
-  color: #081c38;
-  font-size: 1.32rem;
-  font-weight: 800;
-  line-height: 1.35;
-}
-
-.abfe-member-card .abfe-member-card-copy > h3 span,
-.abfe-member-card.is-profile-open .abfe-member-card-copy > h3 span {
-  display: inline;
-  margin: 0 0 0 8px;
-  color: #081c38;
-  font-size: 0.88rem;
-  font-style: italic;
-  font-weight: 700;
-}
-
-.abfe-member-card .abfe-member-card-copy > p,
-.abfe-member-card.is-profile-open .abfe-member-card-copy > p {
-  order: 2;
-  margin: 18px 0 0;
-  color: #111827;
-  font-size: 0.82rem;
-  font-weight: 700;
-  letter-spacing: 0;
-  text-transform: none;
-}
-
-.abfe-member-card .abfe-member-card-copy > a {
-  order: 3;
-  margin-top: 12px;
-  color: #526577;
-  font-size: 0.76rem;
-}
-
-.abfe-member-card:has(.abfe-member-profile-panel) .abfe-member-card-copy > a {
-  display: none;
-}
-
-.abfe-member-profile-panel {
-  order: 4;
-  margin: 18px 0 0;
-  padding: 0;
-}
-
-.abfe-member-profile-section {
-  margin: 0 0 5px;
-}
-
-.abfe-member-profile-heading {
-  margin: 0 0 1px !important;
-  font-size: 0.79rem !important;
-  font-weight: 800 !important;
-  letter-spacing: 0 !important;
-  line-height: 1.4;
-  text-transform: none;
-}
-
-.abfe-profile-research {
-  color: #0f9aaa !important;
-}
-
-.abfe-profile-award {
-  color: #b7791f !important;
-}
-
-.abfe-profile-output {
-  color: #315a88 !important;
-}
-
-.abfe-profile-meta {
-  color: #64748b !important;
-}
-
-.abfe-member-profile-dash-list,
-.abfe-member-profile-number-list {
-  margin: 0 !important;
-  padding: 0 !important;
-  list-style: none !important;
-}
-
-.abfe-member-profile-dash-list li,
-.abfe-member-profile-number-list li {
-  position: relative;
-  margin: 0;
-  padding-left: 13px;
-  color: #111827;
-  font-size: 0.76rem;
-  line-height: 1.5;
-  overflow-wrap: anywhere;
-}
-
-.abfe-member-profile-dash-list strong,
-.abfe-member-profile-number-list strong {
-  color: #0b2c4d;
-  font-weight: 800;
-}
-
-.abfe-member-profile-dash-list li::before {
-  content: "-";
-  position: absolute;
-  left: 0;
-}
-
-.abfe-member-profile-number-list {
-  counter-reset: classic-profile-item;
-}
-
-.abfe-member-profile-number-list li {
-  counter-increment: classic-profile-item;
-  padding-left: 25px;
-}
-
-.abfe-member-profile-number-list li::before {
-  content: counter(classic-profile-item, decimal-leading-zero) ".";
-  position: absolute;
-  left: 0;
-}
-
-.abfe-member-profile-panel a {
-  display: inline;
-  margin: 0;
-  color: #175f9c;
-  font-size: inherit;
-}
-
-.abfe-member-profile-panel a:hover {
-  color: #19aebe;
-}
-
-@media (max-width: 760px) {
-  .abfe-member-card,
-  .abfe-member-card:hover,
-  .abfe-member-card.is-profile-open,
-  .abfe-member-card.is-profile-open:hover {
-    grid-template-columns: 1fr;
-    padding: 30px 0;
+  /* Professor page: Education full width, Teaching and Awards side by side. */
+  .abfe-professor-page .abfe-professor-history {
+    margin-top: 30px;
+    padding-top: 0;
   }
 
-  .abfe-member-card .abfe-member-photo,
-  .abfe-member-card.is-profile-open .abfe-member-photo {
-    width: 160px;
-    min-height: 0;
-    margin: 0 auto 24px;
-    aspect-ratio: 270 / 400;
+  .abfe-professor-page .abfe-professor-history__content {
+    padding-bottom: 0;
   }
 
-  .abfe-member-card .abfe-member-card-copy,
-  .abfe-member-card.is-profile-open .abfe-member-card-copy {
-    padding: 0 6px;
+  .abfe-professor-page .abfe-professor-history__education {
+    grid-column: 1 / -1;
   }
 
-  .abfe-member-card .abfe-member-card-copy > h3,
-  .abfe-member-card.is-profile-open .abfe-member-card-copy > h3 {
-    font-size: 1.15rem;
+  .abfe-professor-page .abfe-professor-history__section:nth-child(3) {
+    grid-column: auto;
   }
-}
+
+  @media (max-width: 800px) {
+    .abfe-professor-page .abfe-professor-history__education,
+    .abfe-professor-page .abfe-professor-history__section:nth-child(3) {
+      grid-column: auto;
+    }
+  }
 </style>
