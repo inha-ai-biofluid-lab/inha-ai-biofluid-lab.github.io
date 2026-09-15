@@ -24,47 +24,42 @@ main:
     url: /introduction/#contact
     weight: 14
 
+  - name: PROFESSOR
+    identifier: professor
+    url: /professor/
+    weight: 20
+
   - name: MEMBERS
     identifier: members
     url: /members/
-    weight: 20
-
-  - name: Professor
-    parent: members
-    url: /members/#professor
-    weight: 21
-
-  - name: Students
-    parent: members
-    url: /members/#graduate-students
-    weight: 22
+    weight: 30
 
   - name: RESEARCH
     identifier: research
     url: /research/
-    weight: 30
+    weight: 40
 
   - name: PUBLICATIONS
     identifier: publications
     url: /publications/
-    weight: 40
+    weight: 50
 
   - name: BOARD
     identifier: board
     url: /board/
-    weight: 50
+    weight: 60
 
   - name: News
     parent: board
     url: /board/#news
-    weight: 51
+    weight: 61
 
   - name: Notice
     parent: board
     url: /board/#notice
-    weight: 52
+    weight: 62
 
   - name: Gallery
     parent: board
     url: /board/#gallery
-    weight: 53
+    weight: 63

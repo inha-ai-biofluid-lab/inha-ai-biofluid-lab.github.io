@@ -1,637 +1,188 @@
-{{ $professor := index site.Data.authors "kyung-eun-lee" }}
+<div class="abfe-members-page abfe-student-members-page">
 
-<div class="abfe-members-page">
-
-  <!-- Page heading -->
   <section class="abfe-members-heading">
     <p>MEMBERS</p>
     <h1>연구실 구성원</h1>
-    <span>
-      ABFE의 교수 및 학생 연구원을 소개합니다.
-    </span>
+    <span>ABFE의 대학원 연구원을 과정별로 소개합니다.</span>
   </section>
 
-  <!-- Professor -->
-  <section id="professor" class="abfe-members-section">
-    <div class="abfe-members-section-title">
-      <p>PRINCIPAL INVESTIGATOR</p>
-      <h2>Professor</h2>
-    </div>
+  {{ $memberGroups := slice
+    (dict
+      "id" "doctoral-combined"
+      "eyebrow" "DOCTORAL & B.E.–M.E. COMBINED-COURSE RESEARCHERS"
+      "title" "박사·학석연계과정"
+      "students" (slice "labin-kim" "seungho-song" "younghyun-kim")
+    )
+    (dict
+      "id" "masters"
+      "eyebrow" "MASTER'S RESEARCHERS"
+      "title" "석사과정"
+      "students" (slice "minseo-jeon" "yujin-kim" "yujin-jeon" "kyung-hoon-lee" "yoojin-huh")
+    )
+  }}
 
-    <article class="abfe-professor-profile">
-      <div class="abfe-professor-photo">
-        {{ with resources.GetMatch "media/authors/kyung-eun-lee.*" }}
-          <img
-            src="{{ .RelPermalink }}"
-            alt="Professor Kyung Eun Lee"
-          >
-        {{ else }}
-          <div class="abfe-member-placeholder professor-placeholder">
-            <span>ABFE</span>
-          </div>
-        {{ end }}
-      </div>
-
-      <div class="abfe-professor-information">
-        <p class="abfe-professor-label">Professor</p>
-
-        <h3>
-          이경은
-          <span>Kyung Eun Lee</span>
-        </h3>
-
-        <p class="abfe-professor-affiliation">
-          Department of Mechanical Engineering<br>
-          Inha University
-        </p>
-
-        <div class="abfe-professor-details">
-          <div>
-            <span>OFFICE</span>
-            <strong>Room 2N269B, Inha University</strong>
-          </div>
-
-          <div>
-            <span>LABORATORY</span>
-            <strong>Room 2N280A, Inha University</strong>
-          </div>
-
-          <div>
-            <span>TELEPHONE</span>
-            <a href="tel:+82328607375">032-860-7375</a>
-          </div>
-
-          <div>
-            <span>EMAIL</span>
-            <a href="mailto:bfmec@inha.ac.kr">bfmec@inha.ac.kr</a>
-          </div>
-
-          <div>
-            <span>RESEARCH</span>
-            <strong>
-              Biofluid Mechanics · AI-based CFD · Medical Twin
-            </strong>
-          </div>
+  {{ range $memberGroups }}
+    <section id="{{ .id }}" class="abfe-members-section">
+      <div class="abfe-members-section-title member-group-title">
+        <div>
+          <p>{{ .eyebrow }}</p>
+          <h2>{{ .title }}</h2>
         </div>
 
-        <details class="abfe-professor-history">
-          <summary class="abfe-professor-history__toggle">
-            <span>View Details</span>
-            <strong aria-hidden="true">+</strong>
-          </summary>
-
-          <div class="abfe-professor-history__content">
-
-            <section class="abfe-professor-history__section">
-              <h3>EDUCATION</h3>
-
-              <div class="abfe-professor-history__entry">
-                <time>2007</time>
-
-                <div>
-                  <strong>
-                    Ph.D., Imperial College London, UK
-                  </strong>
-
-                  <p>
-                    Imperial College of Science, Technology,
-                    and Medicine<br>
-                    복수전공: 항공공학, 바이오엔지니어링<br>
-                    지도교수: Prof. Spencer J. Sherwin
-                    &amp; Prof. Kim H. Parker
-                  </p>
-                </div>
-              </div>
-
-              <div class="abfe-professor-history__entry">
-                <time>2002</time>
-
-                <div>
-                  <strong>
-                    B.Eng., Chung-Ang University
-                  </strong>
-
-                  <p>
-                    기계공학부 복수전공: 기계공학,
-                    메카트로닉스공학<br>
-                    지도교수: Prof. Hong Sun Ryou
-                  </p>
-                </div>
-              </div>
-            </section>
-
-            <section class="abfe-professor-history__section">
-              <h3>RESEARCH EXPERIENCE</h3>
-
-              <ul class="abfe-professor-history__list">
-                <li>
-                  일본 이화학연구소
-                  <span>
-                    理化學硏究所 · RIKEN, Japan
-                  </span>
-                </li>
-
-                <li>
-                  한국생산기술연구원
-                  <span>
-                    Korea Institute of Industrial Technology · KITECH
-                  </span>
-                </li>
-              </ul>
-            </section>
-
-            <section class="abfe-professor-history__section">
-              <h3>TEACHING EXPERIENCE</h3>
-
-              <h4>Undergraduate Courses</h4>
-
-              <ul class="abfe-professor-history__courses">
-                <li>
-                  <strong>MEG2250</strong>
-                  유체역학1 · Fluid Mechanics 1
-                </li>
-
-                <li>
-                  <strong>MEG2270</strong>
-                  파이썬과 머신러닝 · Python and Machine Learning
-                </li>
-
-                <li>
-                  <strong>MEG3079</strong>
-                  기계공학실험B · Mechanical Engineering Experiments B
-                </li>
-
-                <li>
-                  <strong>MEG3151</strong>
-                  유체역학2 · Fluid Mechanics 2
-                </li>
-
-                <li>
-                  <strong>MEG4080</strong>
-                  기계공학종합설계
-                </li>
-
-                <li>
-                  <strong>MEG4254</strong>
-                  전산유체공학 · Computational Fluid Dynamics
-                </li>
-              </ul>
-
-              <h4>Graduate Courses</h4>
-
-              <ul class="abfe-professor-history__courses">
-                <li>
-                  <strong>MEG6001</strong>
-                  고급유체역학 · Advanced Fluid Dynamics
-                </li>
-
-                <li>
-                  <strong>MEG6032</strong>
-                  고급 전산유체공학 · Advanced CFD
-                </li>
-
-                <li>
-                  <strong>EPC6002</strong>
-                  설비 시각화 캡스톤
-                </li>
-
-                <li>
-                  <strong>MEG7047</strong>
-                  인공지능 기반 전산유체역학 · AI-based CFD
-                </li>
-              </ul>
-            </section>
-
-            <section class="abfe-professor-history__section">
-              <h3>SELECTED AWARDS</h3>
-
-              <ul class="abfe-professor-history__awards">
-                <li>
-                  <time>2025</time>
-                  <span>
-                    Best Paper Award, International Conference
-                    of Fluid Flow, Heat and Mass Transfer
-                  </span>
-                </li>
-
-                <li>
-                  <time>2024</time>
-                  <span>한국유체공학학술대회 우수논문상</span>
-                </li>
-
-                <li>
-                  <time>2018</time>
-                  <span>제7회 EDISON SW 활용 경진대회 대상</span>
-                </li>
-
-                <li>
-                  <time>2017</time>
-                  <span>대한기계학회 학술대회 우수논문상</span>
-                </li>
-
-                <li>
-                  <time>2017</time>
-                  <span>제6회 EDISON SW 활용 경진대회 장려상</span>
-                </li>
-
-                <li>
-                  <time>2011</time>
-                  <span>
-                    세계 1위, 가장 빠른 슈퍼컴퓨터 1위 ·
-                    일본 Supercomputer K 프로젝트
-                  </span>
-                </li>
-
-                <li>
-                  <time>2010</time>
-                  <span>RIKEN Cutting Edge Award, Japan</span>
-                </li>
-
-                <li>
-                  <time>2006</time>
-                  <span>Old Centralians’ Trust Award, UK</span>
-                </li>
-
-                <li>
-                  <time>2003</time>
-                  <span>Overseas Research Students Award, UK</span>
-                </li>
-
-                <li>
-                  <time>2003</time>
-                  <span>Henry Smith Kensington Award, UK</span>
-                </li>
-
-                <li>
-                  <time>2002</time>
-                  <span>중앙대학교 대학 수석졸업 학술상</span>
-                </li>
-
-                <li>
-                  <time>2000</time>
-                  <span>
-                    USA–Korea GE Science/Engineering
-                    Undergraduate Award
-                  </span>
-                </li>
-
-                <li>
-                  <time>1998</time>
-                  <span>
-                    대학생 자작자동차대회 1위 · Team Award
-                  </span>
-                </li>
-              </ul>
-            </section>
-
-          </div>
-        </details>
-      </div>
-    </article>
-  </section>
-
-  <!-- Graduate students -->
-  <section
-    id="graduate-students"
-    class="abfe-members-section"
-  >
-    <div
-      class="abfe-members-section-title member-group-title"
-    >
-      <div>
-        <p>GRADUATE RESEARCHERS</p>
-        <h2>대학원생</h2>
+        <span>{{ len .students }} Members</span>
       </div>
 
-      <span>6 Members</span>
-    </div>
+      <div class="abfe-member-grid">
+        {{ range .students }}
+          {{ $slug := . }}
+          {{ $person := index site.Data.authors $slug }}
 
-    <div class="abfe-member-grid">
-      {{ $graduateStudents := slice
-        "labin-kim"
-        "minseo-jeon"
-        "yujin-kim"
-        "yujin-jeon"
-        "kyung-hoon-lee"
-        "yoojin-huh"
-      }}
-
-      {{ range $graduateStudents }}
-        {{ $slug := . }}
-        {{ $person := index site.Data.authors $slug }}
-
-        <article class="abfe-member-card">
-
-          <div class="abfe-member-photo">
-            {{ with resources.GetMatch
-              (printf "media/authors/%s.*" $slug)
-            }}
-              <img
-                src="{{ .RelPermalink }}"
-                alt="{{ $person.name.display }}"
-              >
-            {{ else }}
-              <div class="abfe-member-placeholder">
-                <span>ABFE</span>
-              </div>
-            {{ end }}
-          </div>
-
-          <div class="abfe-member-card-copy">
-            <p>{{ $person.role }}</p>
-
-            <h3>
-              {{ $person.name.alternate }}
-              <span>{{ $person.name.display }}</span>
-            </h3>
-
-            {{ range $person.links }}
-              {{ if hasPrefix .url "mailto:" }}
-                <a href="{{ .url }}">
-                  {{ strings.TrimPrefix "mailto:" .url }}
-                </a>
+          <article class="abfe-member-card">
+            <div class="abfe-member-photo">
+              {{ with resources.GetMatch (printf "media/authors/%s.*" $slug) }}
+                <img src="{{ .RelPermalink }}" alt="{{ $person.name.display }}">
+              {{ else }}
+                <div class="abfe-member-placeholder"><span>ABFE</span></div>
               {{ end }}
-            {{ end }}
+            </div>
 
-            {{ with $person.profile }}
-              <div
-                id="member-profile-{{ $slug }}"
-                class="abfe-member-profile-panel"
-              >
+            <div class="abfe-member-card-copy">
+              <p>{{ $person.role }}</p>
+              <h3>
+                {{ $person.name.alternate }}
+                <span>{{ $person.name.display }}</span>
+              </h3>
+            </div>
 
-                {{ with .research_interests }}
-                  <section class="abfe-member-profile-section">
-                    <p
-                      class="abfe-member-profile-heading abfe-profile-research"
-                    >
-                      @ Research interests
-                    </p>
+            <button
+              type="button"
+              class="abfe-member-detail-button"
+              data-member-dialog-open="member-dialog-{{ $slug }}"
+              aria-haspopup="dialog"
+            >
+              <span>View Details</span>
+              <span aria-hidden="true">→</span>
+            </button>
 
-                    <ul class="abfe-member-profile-dash-list">
-                      {{ range . }}
-                        <li>{{ . }}</li>
-                      {{ end }}
-                    </ul>
-                  </section>
-                {{ end }}
+            <dialog
+              id="member-dialog-{{ $slug }}"
+              class="abfe-member-dialog"
+              aria-labelledby="member-dialog-title-{{ $slug }}"
+            >
+              <div class="abfe-member-dialog__panel">
+                <header class="abfe-member-dialog__header">
+                  <div>
+                    <p>{{ $person.role }}</p>
+                    <h2 id="member-dialog-title-{{ $slug }}">
+                      {{ $person.name.alternate }}
+                      <span>{{ $person.name.display }}</span>
+                    </h2>
+                  </div>
 
-                {{ with .awards }}
-                  <section class="abfe-member-profile-section">
-                    <p
-                      class="abfe-member-profile-heading abfe-profile-award"
-                    >
-                      @ Award ({{ len . }})
-                    </p>
+                  <button
+                    type="button"
+                    class="abfe-member-dialog__close"
+                    data-member-dialog-close
+                    aria-label="Close member details"
+                  >×</button>
+                </header>
 
-                    <ol class="abfe-member-profile-number-list">
-                      {{ range . }}
-                        {{ $entry := . }}
-                        {{ if $person.name.alternate }}
-                          {{ $entry = replace $entry $person.name.alternate (printf "<strong>%s</strong>" $person.name.alternate) }}
-                        {{ end }}
-                        {{ if $person.name.display }}
-                          {{ $entry = replace $entry $person.name.display (printf "<strong>%s</strong>" $person.name.display) }}
-                        {{ end }}
-                        <li>{{ $entry | safeHTML }}</li>
-                      {{ end }}
-                    </ol>
-                  </section>
-
-                {{ else }}
-
-                  {{ with .achievements }}
-                    <section class="abfe-member-profile-section">
-                      <p
-                        class="abfe-member-profile-heading abfe-profile-award"
-                      >
-                        @ Award ({{ len . }})
-                      </p>
-
-                      <ol class="abfe-member-profile-number-list">
-                        {{ range . }}
-                          <li>
-                            {{ .title }}, {{ .date }}
-                            {{ with .detail }}
-                              , {{ . }}
-                            {{ end }}
-                          </li>
-                        {{ end }}
-                      </ol>
-                    </section>
-                  {{ end }}
-
-                {{ end }}
-
-                {{ with .journals }}
-                  {{ if gt (len .) 0 }}
-                    <section class="abfe-member-profile-section">
-                      <p
-                        class="abfe-member-profile-heading abfe-profile-output"
-                      >
-                        @ Journals ({{ len . }})
-                      </p>
-
-                      <ol class="abfe-member-profile-number-list">
-                        {{ range . }}
-                          {{ $entry := . }}
-                          {{ if $person.name.alternate }}
-                            {{ $entry = replace $entry $person.name.alternate (printf "<strong>%s</strong>" $person.name.alternate) }}
-                          {{ end }}
-                          {{ if $person.name.display }}
-                            {{ $entry = replace $entry $person.name.display (printf "<strong>%s</strong>" $person.name.display) }}
-                          {{ end }}
-                          <li>{{ $entry | safeHTML }}</li>
-                        {{ end }}
-                      </ol>
-                    </section>
-                  {{ end }}
-                {{ end }}
-
-                {{ with .publications }}
-                  {{ if gt (len .) 0 }}
-                    <section class="abfe-member-profile-section">
-                      <p
-                        class="abfe-member-profile-heading abfe-profile-output"
-                      >
-                        @ Journals ({{ len . }})
-                      </p>
-
-                      <ol class="abfe-member-profile-number-list">
-                        {{ range . }}
-                          {{ $entry := . }}
-                          {{ if $person.name.alternate }}
-                            {{ $entry = replace $entry $person.name.alternate (printf "<strong>%s</strong>" $person.name.alternate) }}
-                          {{ end }}
-                          {{ if $person.name.display }}
-                            {{ $entry = replace $entry $person.name.display (printf "<strong>%s</strong>" $person.name.display) }}
-                          {{ end }}
-                          <li>{{ $entry | safeHTML }}</li>
-                        {{ end }}
-                      </ol>
-                    </section>
-                  {{ end }}
-                {{ end }}
-
-                {{ with .conferences }}
-                  <section class="abfe-member-profile-section">
-                    <p
-                      class="abfe-member-profile-heading abfe-profile-output"
-                    >
-                      @ Conferences ({{ len . }})
-                    </p>
-
-                    <ol class="abfe-member-profile-number-list">
-                      {{ range . }}
-                        {{ $entry := . }}
-                        {{ if $person.name.alternate }}
-                          {{ $entry = replace $entry $person.name.alternate (printf "<strong>%s</strong>" $person.name.alternate) }}
-                        {{ end }}
-                        {{ if $person.name.display }}
-                          {{ $entry = replace $entry $person.name.display (printf "<strong>%s</strong>" $person.name.display) }}
-                        {{ end }}
-                        <li>{{ $entry | safeHTML }}</li>
-                      {{ end }}
-                    </ol>
-                  </section>
-                {{ end }}
-
-                {{ with .experience }}
-                  <section class="abfe-member-profile-section">
-                    <p
-                      class="abfe-member-profile-heading abfe-profile-meta"
-                    >
-                      @ Experiences
-                    </p>
-
-                    <ul class="abfe-member-profile-dash-list">
-                      {{ range . }}
-                        {{ $entry := . }}
-                        {{ if $person.name.alternate }}
-                          {{ $entry = replace $entry $person.name.alternate (printf "<strong>%s</strong>" $person.name.alternate) }}
-                        {{ end }}
-                        {{ if $person.name.display }}
-                          {{ $entry = replace $entry $person.name.display (printf "<strong>%s</strong>" $person.name.display) }}
-                        {{ end }}
-                        <li>{{ $entry | safeHTML }}</li>
-                      {{ end }}
-                    </ul>
-                  </section>
-                {{ end }}
-
-                <section class="abfe-member-profile-section">
-                  <p
-                    class="abfe-member-profile-heading abfe-profile-meta"
-                  >
-                    @ Contact
-                  </p>
-
-                  <ul class="abfe-member-profile-dash-list">
-                    {{ range $person.links }}
-                      {{ if hasPrefix .url "mailto:" }}
-                        <li>
-                          Email:
-                          <a href="{{ .url }}">
-                            {{ strings.TrimPrefix "mailto:" .url }}
-                          </a>
-                        </li>
-                      {{ end }}
+                {{ with $person.profile }}
+                  <div class="abfe-member-dialog__body">
+                    {{ with .research_interests }}
+                      <section class="abfe-member-profile-section abfe-member-profile-section--wide">
+                        <h3 class="abfe-member-profile-heading abfe-profile-research">Research Interests</h3>
+                        <ul class="abfe-member-profile-dash-list">
+                          {{ range . }}<li>{{ . }}</li>{{ end }}
+                        </ul>
+                      </section>
                     {{ end }}
-                  </ul>
-                </section>
 
+                    {{ with .awards }}
+                      <section class="abfe-member-profile-section">
+                        <h3 class="abfe-member-profile-heading abfe-profile-award">Awards ({{ len . }})</h3>
+                        <ol class="abfe-member-profile-number-list">
+                          {{ range . }}<li>{{ . }}</li>{{ end }}
+                        </ol>
+                      </section>
+                    {{ end }}
+
+                    {{ with .journals }}
+                      <section class="abfe-member-profile-section">
+                        <h3 class="abfe-member-profile-heading abfe-profile-output">Journals ({{ len . }})</h3>
+                        <ol class="abfe-member-profile-number-list">
+                          {{ range . }}<li>{{ . }}</li>{{ end }}
+                        </ol>
+                      </section>
+                    {{ end }}
+
+                    {{ with .conferences }}
+                      <section class="abfe-member-profile-section abfe-member-profile-section--wide">
+                        <h3 class="abfe-member-profile-heading abfe-profile-output">Conferences ({{ len . }})</h3>
+                        <ol class="abfe-member-profile-number-list">
+                          {{ range . }}<li>{{ . }}</li>{{ end }}
+                        </ol>
+                      </section>
+                    {{ end }}
+
+                    {{ with .experience }}
+                      <section class="abfe-member-profile-section abfe-member-profile-section--wide">
+                        <h3 class="abfe-member-profile-heading abfe-profile-meta">Experience</h3>
+                        <ul class="abfe-member-profile-dash-list">
+                          {{ range . }}<li>{{ . }}</li>{{ end }}
+                        </ul>
+                      </section>
+                    {{ end }}
+                  </div>
+                {{ end }}
               </div>
-            {{ end }}
-          </div>
-        </article>
-      {{ end }}
-    </div>
-  </section>
-
-  <!-- Undergraduate researchers -->
-  <section
-    id="undergraduate"
-    class="abfe-members-section"
-  >
-    <div
-      class="abfe-members-section-title member-group-title"
-    >
-      <div>
-        <p>UNDERGRADUATE RESEARCHERS</p>
-        <h2>학부연구생</h2>
+            </dialog>
+          </article>
+        {{ end }}
       </div>
-
-      <span>3 Members</span>
-    </div>
-
-    <div class="abfe-member-grid">
-      {{ $undergraduateStudents := slice
-        "seungho-song"
-        "younghyun-kim"
-        "jiwon-kim"
-      }}
-
-      {{ range $undergraduateStudents }}
-        {{ $slug := . }}
-        {{ $person := index site.Data.authors $slug }}
-
-        <article class="abfe-member-card">
-
-          <div class="abfe-member-photo">
-            {{ with resources.GetMatch
-              (printf "media/authors/%s.*" $slug)
-            }}
-              <img
-                src="{{ .RelPermalink }}"
-                alt="{{ $person.name.display }}"
-              >
-            {{ else }}
-              <div class="abfe-member-placeholder">
-                <span>ABFE</span>
-              </div>
-            {{ end }}
-          </div>
-
-          <div class="abfe-member-card-copy">
-            <p>{{ $person.role }}</p>
-
-            <h3>
-              {{ $person.name.alternate }}
-              <span>{{ $person.name.display }}</span>
-            </h3>
-
-            {{ range $person.links }}
-              {{ if hasPrefix .url "mailto:" }}
-                <a href="{{ .url }}">
-                  {{ strings.TrimPrefix "mailto:" .url }}
-                </a>
-              {{ end }}
-            {{ end }}
-          </div>
-
-        </article>
-      {{ end }}
-    </div>
-  </section>
-
-  <!-- Alumni -->
-  <section
-    id="alumni"
-    class="abfe-members-section abfe-alumni-section"
-  >
-    <div class="abfe-members-section-title">
-      <p>ALUMNI</p>
-      <h2>졸업생</h2>
-    </div>
-
-    <div class="abfe-alumni-empty">
-      <span>
-        Alumni information will be updated.
-      </span>
-
-      <p>
-        졸업생 정보는 추후 업데이트할 예정입니다.
-      </p>
-    </div>
-  </section>
+    </section>
+  {{ end }}
 
 </div>
+
+<script>
+  (() => {
+    const page = document.querySelector('.abfe-student-members-page');
+
+    if (!page || page.dataset.dialogsReady === 'true') return;
+    page.dataset.dialogsReady = 'true';
+
+    const closeDialog = (dialog) => {
+      dialog.close();
+      document.documentElement.classList.remove('abfe-dialog-open');
+    };
+
+    page.querySelectorAll('[data-member-dialog-open]').forEach((button) => {
+      button.addEventListener('click', () => {
+        const dialog = document.getElementById(button.dataset.memberDialogOpen);
+        if (!dialog) return;
+
+        dialog.showModal();
+        document.documentElement.classList.add('abfe-dialog-open');
+      });
+    });
+
+    page.querySelectorAll('.abfe-member-dialog').forEach((dialog) => {
+      const closeButton = dialog.querySelector('[data-member-dialog-close]');
+      closeButton?.addEventListener('click', () => closeDialog(dialog));
+
+      dialog.addEventListener('cancel', () => {
+        document.documentElement.classList.remove('abfe-dialog-open');
+      });
+
+      dialog.addEventListener('click', (event) => {
+        const box = dialog.getBoundingClientRect();
+        const outside =
+          event.clientX < box.left || event.clientX > box.right ||
+          event.clientY < box.top || event.clientY > box.bottom;
+
+        if (outside) closeDialog(dialog);
+      });
+    });
+  })();
+</script>

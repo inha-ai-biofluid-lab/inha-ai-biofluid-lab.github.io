@@ -1,35 +1,17 @@
 ---
-title: 'Professor'
-summary: 'Professor of the AI Biofluid Engineering Laboratory'
+title: ''
+summary: 'Professor of the AI / Bio Fluid Engineering Laboratory'
 type: landing
 
 sections:
-  - block: resume-biography-3
-    content:
-      username: kyung-eun-lee
-      text: ''
-      headings:
-        about: 'Professor'
-        education: ''
-        interests: ''
-    design:
-      name:
-        size: lg
-      avatar:
-        size: large
-        shape: rounded
-
   - block: markdown
+    id: lab-professor
     content:
-      title: 'Contact Information'
-      subtitle: ''
+      title: ''
       text: |-
-        **Kyung Eun Lee, Professor**  
-        Department of Mechanical Engineering, Inha University
-
-        **Office:** Room 2N280A  
-        **Tel:** +82-32-860-7375  
-        **Email:** bfmec@inha.ac.kr
+        {{< lab-professor >}}
     design:
       columns: '1'
+      spacing:
+        padding: ['0', '0', '0', '0']
 ---
