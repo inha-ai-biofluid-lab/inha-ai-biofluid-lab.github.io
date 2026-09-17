@@ -12,7 +12,8 @@ name:
   pronouns: ''
 
 postnominals: []
-role: M.E. Course('26.03 ~)
+
+role: "M.E. Course ('26.03 ~)"
 
 affiliations:
   - name: Inha University
@@ -20,21 +21,18 @@ affiliations:
 user_groups:
   - Graduate Students
 
-links:
-  - icon: at-symbol
-    url: mailto:huhyoo1216@inha.edu
-    label: Email
+links: []
 
 profile:
   research_interests:
-    - Computational Fluid dynamics (CFD)
+    - Computational Fluid Dynamics (CFD)
     - Cardiovascular Hemodynamics
     - Aortic Dissection
 
   awards:
-    - "장려상, 2025년 12월, 대한기계학회 창립 80주년 기념 학술대회, 허유진(인하대학교), 이경은(인하대학교), 스탠퍼드 B형 대동맥 박리의 위치별 혈류역학 특성: 이상적인 대동맥 기반 분석"
+    - "장려상 · 대한기계학회 제17회 유체공학경진대회 · 2025년 12월"
 
   journals: []
 
   conferences:
-    - "대한기계학회 창립 80주년 기념 학술대회, 허유진(인하대학교), 이경은(인하대학교), 스탠퍼드 B형 대동맥 박리의 위치별 혈류역학 특성: 이상적인 대동맥 기반 분석 (12 Dec 2025)"
+    - "스탠퍼드 B형 대동맥 박리의 위치별 혈류역학 특성: 이상적인 대동맥 기반 분석 · 12 Dec 2025"

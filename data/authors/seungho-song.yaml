@@ -12,6 +12,7 @@ name:
   pronouns: ''
 
 postnominals: []
+
 role: "B.E. & M.E. Course ('26.03 ~)"
 
 affiliations:
@@ -20,14 +21,11 @@ affiliations:
 user_groups:
   - Graduate Students
 
-links:
-  - icon: at-symbol
-    url: mailto:thdtmdgh7929@inha.edu
-    label: Email
+links: []
 
 profile:
   research_interests:
-    - Computational Fluid dynamics (CFD)
+    - Computational Fluid Dynamics (CFD)
     - Cardiovascular Hemodynamics
     - Computational Modeling of Idealized Aortic Geometries
 

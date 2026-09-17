@@ -12,6 +12,7 @@ name:
   pronouns: ''
 
 postnominals: []
+
 role: "M.E. Course ('25.03 ~)"
 
 affiliations:
@@ -20,10 +21,7 @@ affiliations:
 user_groups:
   - Graduate Students
 
-links:
-  - icon: at-symbol
-    url: mailto:mseo0113@inha.edu
-    label: Email
+links: []
 
 profile:
   research_interests:
@@ -31,13 +29,13 @@ profile:
     - Physiological Boundary Condition Modeling
 
   awards:
-    - "금상, 2026년 4월, 대한기계학회 IT지능융합부문 2026년도 춘계학술대회 Vibe Coding 경진대회, 전민서(인하대학교), Sigma"
+    - "금상 · 2026 대한기계학회 춘계학술대회 Vibe Coding 경진대회 · 2026년 4월"
 
   journals: []
 
   conferences:
-    - "The Eleventh JSME-KSME Thermal and Fluids Engineering Conference, Minseo Jeon(Inha University), Labin Kim(Inha University), Yujin Kim(Inha University), Yujin Jeon(Inha University), Kyung Eun Lee(Inha University), HEMODYNAMIC SIMULATIONS OF FLOWS IN A PATIENT-SPECIFIC AORTIC DISSECTION BY USING VARIOUS OUTLET BOUNDARY CONDITIONS (23 Oct 2025)"
-    - "The Eleventh JSME-KSME Thermal and Fluids Engineering Conference, Yujin Jeon(Inha University), Minseo Jeon(Inha University), Yujin Kim(Inha University), Labin Kim(Inha University), Kyung Eun Lee(Inha University), HEMODYNAMIC IMPACT OF GEOMETRIC SYMMETRY AND STENOSIS LOCATION IN TANDEM CORONARY ARTERY STENOSIS MODELS (23 Oct 2025)"
-    - "The Eleventh JSME-KSME Thermal and Fluids Engineering Conference, Yujin Kim(Inha University), Yujin Jeon(Inha University), Minseo Jeon(Inha University), Labin Kim(Inha University), Kyung Eun Lee(Inha University), DEVELOPMENT OF A VASCULAR STRUCTURE GENERATION ALGORITHM REFLECTING THE PHYSIOLOGICAL MECHANISMS OF SPROUTING ANGIOGENESIS IN CANCER (23 Oct 2025)"
-    - "대한기계학회 바이오공학부문 2025년 춘계학술대회, 전민서(인하대학교), 김라빈(인하대학교), 이경은(인하대학교), 환자 맞춤형 대동맥 박리에서 출구 조건이 혈류 분포에 미치는 영향 (May 2025)"
-    - "대한기계학회 창립 80주년 기념 학술대회, 전민서(인하대학교), 김라빈(인하대학교), 이경은(인하대학교), 출구 조건에 따른 환자 맞춤형 대동맥 박리 혈관 혈류 시뮬레이션 (Dec 2025)"
+    - "Hemodynamic Simulations of Flows in a Patient-Specific Aortic Dissection by Using Various Outlet Boundary Conditions · 23 Oct 2025"
+    - "Hemodynamic Impact of Geometric Symmetry and Stenosis Location in Tandem Coronary Artery Stenosis Models · 23 Oct 2025"
+    - "Development of a Vascular Structure Generation Algorithm Reflecting the Physiological Mechanisms of Sprouting Angiogenesis in Cancer · 23 Oct 2025"
+    - "환자 맞춤형 대동맥 박리에서 출구 조건이 혈류 분포에 미치는 영향 · 22 May 2025"
+    - "출구 조건에 따른 환자 맞춤형 대동맥 박리 혈관 혈류 시뮬레이션 · 11 Dec 2025"
