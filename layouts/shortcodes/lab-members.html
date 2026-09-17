@@ -56,22 +56,18 @@
 
                 <p class="abfe-roster-card__role">{{ $person.role }}</p>
 
-                {{ with $person.profile.research_interests }}
-                  <p class="abfe-roster-card__focus">{{ index . 0 }}</p>
-                {{ end }}
+                <button
+                  type="button"
+                  class="abfe-roster-card__button"
+                  data-member-dialog-open="{{ $dialogID }}"
+                  aria-haspopup="dialog"
+                  aria-controls="{{ $dialogID }}"
+                >
+                  <span>VIEW RESEARCH PROFILE</span>
+                  <span aria-hidden="true">→</span>
+                </button>
               </div>
             </div>
-
-            <button
-              type="button"
-              class="abfe-roster-card__button"
-              data-member-dialog-open="{{ $dialogID }}"
-              aria-haspopup="dialog"
-              aria-controls="{{ $dialogID }}"
-            >
-              <span>VIEW MEMBER PROFILE</span>
-              <span aria-hidden="true">→</span>
-            </button>
           </article>
 
           <dialog
@@ -100,23 +96,29 @@
 
                 <div class="abfe-roster-dialog__identity">
                   <p>AI / BIO FLUID ENGINEERING LABORATORY</p>
+
                   <h2 id="{{ $dialogID }}-title">
                     {{ $person.name.display }}
                     <span>{{ $person.name.alternate }}</span>
                   </h2>
+
                   <strong>{{ $person.role }}</strong>
                 </div>
               </header>
 
               <div class="abfe-roster-dialog__content">
+
                 {{ with $person.profile.research_interests }}
                   <section class="abfe-roster-panel abfe-roster-panel--research">
                     <div class="abfe-roster-panel__heading">
                       <p>RESEARCH INTERESTS</p>
                       <span>{{ len . | printf "%02d" }}</span>
                     </div>
+
                     <ul class="abfe-roster-interest-list">
-                      {{ range . }}<li>{{ . }}</li>{{ end }}
+                      {{ range . }}
+                        <li>{{ . }}</li>
+                      {{ end }}
                     </ul>
                   </section>
                 {{ end }}
@@ -127,8 +129,11 @@
                       <p>AWARDS</p>
                       <span>{{ len . | printf "%02d" }}</span>
                     </div>
+
                     <ol class="abfe-roster-record-list">
-                      {{ range . }}<li>{{ . }}</li>{{ end }}
+                      {{ range . }}
+                        <li>{{ . }}</li>
+                      {{ end }}
                     </ol>
                   </section>
                 {{ end }}
@@ -139,8 +144,11 @@
                       <p>JOURNALS</p>
                       <span>{{ len . | printf "%02d" }}</span>
                     </div>
+
                     <ol class="abfe-roster-record-list">
-                      {{ range . }}<li>{{ . }}</li>{{ end }}
+                      {{ range . }}
+                        <li>{{ . }}</li>
+                      {{ end }}
                     </ol>
                   </section>
                 {{ end }}
@@ -151,8 +159,11 @@
                       <p>CONFERENCES</p>
                       <span>{{ len . | printf "%02d" }}</span>
                     </div>
+
                     <ol class="abfe-roster-record-list abfe-roster-record-list--columns">
-                      {{ range . }}<li>{{ . }}</li>{{ end }}
+                      {{ range . }}
+                        <li>{{ . }}</li>
+                      {{ end }}
                     </ol>
                   </section>
                 {{ end }}
@@ -163,11 +174,15 @@
                       <p>EXPERIENCE</p>
                       <span>{{ len . | printf "%02d" }}</span>
                     </div>
+
                     <ul class="abfe-roster-interest-list">
-                      {{ range . }}<li>{{ . }}</li>{{ end }}
+                      {{ range . }}
+                        <li>{{ . }}</li>
+                      {{ end }}
                     </ul>
                   </section>
                 {{ end }}
+
               </div>
             </div>
           </dialog>
@@ -227,11 +242,10 @@
   }
 
   .abfe-roster-card {
-    display: flex;
+    display: block;
     min-width: 0;
-    min-height: 224px;
+    min-height: 218px;
     overflow: hidden;
-    flex-direction: column;
     border: 1px solid var(--roster-line);
     background: #ffffff;
     box-shadow: none;
@@ -239,17 +253,18 @@
 
   .abfe-roster-card__main {
     display: grid;
-    grid-template-columns: 124px minmax(0, 1fr);
-    flex: 1;
-    gap: 24px;
-    padding: 22px;
+    grid-template-columns: 142px minmax(0, 1fr);
+    align-items: center;
+    gap: 20px;
+    min-height: 218px;
+    padding: 18px;
   }
 
   .abfe-roster-card__photo {
-    width: 124px;
-    height: 158px;
+    width: 142px;
+    height: 182px;
     overflow: hidden;
-    align-self: start;
+    align-self: center;
     background: #eaf1f4;
   }
 
@@ -258,8 +273,10 @@
     display: block;
     width: 100%;
     height: 100%;
+    max-width: none !important;
+    margin: 0 !important;
     object-fit: cover;
-    object-position: center top;
+    object-position: center center;
   }
 
   .abfe-roster-placeholder {
@@ -277,7 +294,7 @@
 
   .abfe-roster-card__copy {
     min-width: 0;
-    padding-top: 8px;
+    padding: 2px 0;
   }
 
   .abfe-roster-card__copy h3 {
@@ -294,61 +311,52 @@
   }
 
   .abfe-roster-card__role {
-    margin: 22px 0 0;
+    margin: 18px 0 0;
     color: var(--roster-text);
     font-size: 0.78rem;
     font-weight: 650;
     line-height: 1.55;
   }
 
-  .abfe-roster-card__focus {
-    margin: 13px 0 0;
-    color: var(--roster-muted);
-    font-size: 0.72rem;
-    line-height: 1.55;
-    overflow-wrap: anywhere;
-  }
-
   .abfe-roster-card__button {
-    position: relative;
-    display: flex;
+    display: inline-flex;
     align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    min-height: 58px;
-    padding: 0 22px;
+    justify-content: flex-start;
+    gap: 9px;
+    width: auto;
+    min-height: 32px;
+    margin-top: 20px;
+    padding: 0;
     border: 0;
-    border-top: 1px solid var(--roster-line);
-    color: var(--roster-text);
-    background: #ffffff;
+    color: #08768a;
+    background: transparent;
     font-family: inherit;
-    font-size: 0.68rem;
+    font-size: 0.64rem;
     font-weight: 800;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.08em;
+    text-align: left;
     cursor: pointer;
   }
 
   .abfe-roster-card__button span:last-child {
-    display: grid;
-    place-items: center;
-    width: 28px;
-    height: 28px;
-    border: 1px solid var(--roster-cyan);
-    border-radius: 50%;
+    display: inline;
+    width: auto;
+    height: auto;
+    border: 0;
     color: var(--roster-cyan);
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     line-height: 1;
   }
 
   .abfe-roster-card__button:hover,
   .abfe-roster-card__button:focus-visible {
     color: var(--roster-blue);
-    background: #eaf3f7;
+    background: transparent;
   }
 
   .abfe-roster-card__button:focus-visible {
     outline: 2px solid var(--roster-cyan);
-    outline-offset: -3px;
+    outline-offset: 4px;
   }
 
   html.abfe-dialog-open {
@@ -383,16 +391,25 @@
   .abfe-roster-dialog__hero {
     position: relative;
     display: grid;
-    grid-template-columns: 138px minmax(0, 1fr);
-    align-items: end;
-    gap: 30px;
-    min-height: 238px;
-    padding: 34px 74px 34px 42px;
+    grid-template-columns: 172px minmax(0, 1fr);
+    align-items: center;
+    gap: 34px;
+    min-height: 246px;
+    padding: 24px 74px 24px 34px;
     overflow: hidden;
     color: #ffffff;
     background:
-      radial-gradient(circle at 86% 15%, rgba(61, 214, 223, 0.24), transparent 31%),
-      linear-gradient(130deg, #061b30 0%, #0b2c4d 63%, #104c67 100%);
+      radial-gradient(
+        circle at 86% 15%,
+        rgba(61, 214, 223, 0.24),
+        transparent 31%
+      ),
+      linear-gradient(
+        130deg,
+        #061b30 0%,
+        #0b2c4d 63%,
+        #104c67 100%
+      );
   }
 
   .abfe-roster-dialog__hero::after {
@@ -409,8 +426,8 @@
   .abfe-roster-dialog__portrait {
     position: relative;
     z-index: 1;
-    width: 138px;
-    height: 176px;
+    width: 172px;
+    height: 216px;
     overflow: hidden;
     border: 1px solid rgba(255, 255, 255, 0.28);
     background: #eaf1f4;
@@ -419,7 +436,7 @@
   .abfe-roster-dialog__identity {
     position: relative;
     z-index: 1;
-    padding-bottom: 8px;
+    padding-bottom: 0;
   }
 
   .abfe-roster-dialog__identity > p {
@@ -493,9 +510,9 @@
 
   .abfe-roster-panel {
     min-width: 0;
-    padding: 26px 28px;
-    background: #ffffff;
+    padding: 23px 28px;
     border: 1px solid #dfe8ec;
+    background: #ffffff;
   }
 
   .abfe-roster-panel--wide,
@@ -512,8 +529,8 @@
     align-items: center;
     justify-content: space-between;
     gap: 18px;
-    margin-bottom: 17px;
-    padding-bottom: 13px;
+    margin-bottom: 13px;
+    padding-bottom: 12px;
     border-bottom: 1px solid var(--roster-line);
   }
 
@@ -521,13 +538,14 @@
   .abfe-roster-panel__heading span {
     margin: 0;
     color: var(--roster-blue);
-    font-size: 0.7rem;
+    font-size: 0.88rem;
     font-weight: 800;
     letter-spacing: 0.12em;
   }
 
   .abfe-roster-panel__heading span {
     color: var(--roster-cyan);
+    font-size: 0.78rem;
   }
 
   .abfe-roster-interest-list,
@@ -539,22 +557,26 @@
 
   .abfe-roster-interest-list {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 0 28px;
+    grid-template-columns: 1fr;
+    gap: 0;
   }
 
   .abfe-roster-interest-list li {
     position: relative;
-    padding: 10px 0 10px 18px;
-    color: #263d50;
-    font-size: 0.86rem;
-    line-height: 1.6;
+    padding: 8px 0 8px 18px;
     border-bottom: 1px solid #edf2f4;
+    color: #263d50;
+    font-size: 0.88rem;
+    line-height: 1.45;
+  }
+
+  .abfe-roster-interest-list li:last-child {
+    border-bottom: 0;
   }
 
   .abfe-roster-interest-list li::before {
     position: absolute;
-    top: 1.05rem;
+    top: 0.95rem;
     left: 0;
     width: 6px;
     height: 6px;
@@ -571,11 +593,11 @@
     position: relative;
     counter-increment: roster-record;
     padding: 12px 0 12px 42px;
+    border-bottom: 1px solid #e8eef1;
     color: #334b5e;
     font-size: 0.82rem;
     line-height: 1.7;
     overflow-wrap: anywhere;
-    border-bottom: 1px solid #e8eef1;
     break-inside: avoid;
   }
 
@@ -626,15 +648,15 @@
     }
 
     .abfe-roster-dialog__hero {
-      grid-template-columns: 98px minmax(0, 1fr);
+      grid-template-columns: 116px minmax(0, 1fr);
       gap: 18px;
-      min-height: 190px;
+      min-height: 206px;
       padding: 62px 20px 24px;
     }
 
     .abfe-roster-dialog__portrait {
-      width: 98px;
-      height: 126px;
+      width: 116px;
+      height: 150px;
     }
 
     .abfe-roster-dialog__identity > p {
@@ -670,10 +692,6 @@
       padding: 22px 18px;
     }
 
-    .abfe-roster-interest-list {
-      grid-template-columns: 1fr;
-    }
-
     .abfe-roster-record-list--columns {
       column-count: 1;
     }
@@ -681,14 +699,14 @@
 
   @media (max-width: 390px) {
     .abfe-roster-card__main {
-      grid-template-columns: 96px minmax(0, 1fr);
+      grid-template-columns: 112px minmax(0, 1fr);
       gap: 14px;
       padding: 14px;
     }
 
     .abfe-roster-card__photo {
-      width: 96px;
-      height: 128px;
+      width: 112px;
+      height: 146px;
     }
 
     .abfe-roster-card__role {
@@ -700,9 +718,13 @@
 <script>
   (() => {
     const page = document.querySelector('.abfe-student-members-page');
-    if (!page || page.dataset.dialogsReady === 'true') return;
+
+    if (!page || page.dataset.dialogsReady === 'true') {
+      return;
+    }
 
     page.dataset.dialogsReady = 'true';
+
     let activeTrigger = null;
 
     const unlockPage = () => {
@@ -710,27 +732,43 @@
     };
 
     const closeDialog = (dialog) => {
-      if (!dialog?.open) return;
+      if (!dialog?.open) {
+        return;
+      }
+
       dialog.close();
       unlockPage();
+
       activeTrigger?.focus();
       activeTrigger = null;
     };
 
     page.querySelectorAll('[data-member-dialog-open]').forEach((button) => {
       button.addEventListener('click', () => {
-        const dialog = document.getElementById(button.dataset.memberDialogOpen);
-        if (!dialog) return;
+        const dialog = document.getElementById(
+          button.dataset.memberDialogOpen
+        );
+
+        if (!dialog) {
+          return;
+        }
 
         activeTrigger = button;
+
         dialog.showModal();
-        document.documentElement.classList.add('abfe-dialog-open');
+
+        document.documentElement.classList.add(
+          'abfe-dialog-open'
+        );
       });
     });
 
     page.querySelectorAll('.abfe-roster-dialog').forEach((dialog) => {
-      dialog.querySelector('[data-member-dialog-close]')
-        ?.addEventListener('click', () => closeDialog(dialog));
+      dialog
+        .querySelector('[data-member-dialog-close]')
+        ?.addEventListener('click', () => {
+          closeDialog(dialog);
+        });
 
       dialog.addEventListener('cancel', (event) => {
         event.preventDefault();
@@ -738,7 +776,9 @@
       });
 
       dialog.addEventListener('click', (event) => {
-        if (event.target === dialog) closeDialog(dialog);
+        if (event.target === dialog) {
+          closeDialog(dialog);
+        }
       });
     });
   })();
