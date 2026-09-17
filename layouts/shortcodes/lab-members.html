@@ -1,3 +1,4 @@
+<!-- MEMBERS_SOURCE_REVISION: doctoral=labin-kim-only; masters-last=seungho-song,younghyun-kim -->
 <div class="abfe-members-page abfe-student-members-page">
 
   <section class="abfe-members-heading">
@@ -8,136 +9,168 @@
 
   {{ $memberGroups := slice
     (dict
-      "id" "doctoral-combined"
-      "eyebrow" "DOCTORAL & B.E.–M.E. COMBINED-COURSE RESEARCHERS"
-      "title" "박사·학석연계과정"
-      "students" (slice "labin-kim" "seungho-song" "younghyun-kim")
+      "id" "doctoral-integrated"
+      "eyebrow" "DOCTORAL & M.S.–PH.D. INTEGRATED COURSE"
+      "title" "박사·석-박 연계과정"
+      "students" (slice "labin-kim")
     )
     (dict
       "id" "masters"
-      "eyebrow" "MASTER'S RESEARCHERS"
+      "eyebrow" "MASTER'S COURSE"
       "title" "석사과정"
-      "students" (slice "minseo-jeon" "yujin-kim" "yujin-jeon" "kyung-hoon-lee" "yoojin-huh")
+      "students" (slice "minseo-jeon" "yujin-kim" "yujin-jeon" "kyung-hoon-lee" "yoojin-huh" "seungho-song" "younghyun-kim")
     )
   }}
 
   {{ range $memberGroups }}
-    <section id="{{ .id }}" class="abfe-members-section">
-      <div class="abfe-members-section-title member-group-title">
+    <section id="{{ .id }}" class="abfe-members-section abfe-roster-section">
+      <div class="abfe-members-section-title abfe-roster-section__heading">
         <div>
           <p>{{ .eyebrow }}</p>
           <h2>{{ .title }}</h2>
         </div>
-
         <span>{{ len .students }} Members</span>
       </div>
 
-      <div class="abfe-member-grid">
+      <div class="abfe-roster-grid">
         {{ range .students }}
           {{ $slug := . }}
           {{ $person := index site.Data.authors $slug }}
+          {{ $dialogID := printf "member-dialog-%s" $slug }}
 
-          <article class="abfe-member-card">
-            <div class="abfe-member-photo">
-              {{ with resources.GetMatch (printf "media/authors/%s.*" $slug) }}
-                <img src="{{ .RelPermalink }}" alt="{{ $person.name.display }}">
-              {{ else }}
-                <div class="abfe-member-placeholder"><span>ABFE</span></div>
-              {{ end }}
-            </div>
+          <article class="abfe-roster-card">
+            <div class="abfe-roster-card__main">
+              <div class="abfe-roster-card__photo">
+                {{ with resources.GetMatch (printf "media/authors/%s.*" $slug) }}
+                  <img src="{{ .RelPermalink }}" alt="{{ $person.name.display }}">
+                {{ else }}
+                  <div class="abfe-roster-placeholder" aria-hidden="true">ABFE</div>
+                {{ end }}
+              </div>
 
-            <div class="abfe-member-card-copy">
-              <p>{{ $person.role }}</p>
-              <h3>
-                {{ $person.name.alternate }}
-                <span>{{ $person.name.display }}</span>
-              </h3>
+              <div class="abfe-roster-card__copy">
+                <h3>
+                  {{ $person.name.display }}
+                  <span>({{ $person.name.alternate }})</span>
+                </h3>
+
+                <p class="abfe-roster-card__role">{{ $person.role }}</p>
+
+                {{ with $person.profile.research_interests }}
+                  <p class="abfe-roster-card__focus">{{ index . 0 }}</p>
+                {{ end }}
+              </div>
             </div>
 
             <button
               type="button"
-              class="abfe-member-detail-button"
-              data-member-dialog-open="member-dialog-{{ $slug }}"
+              class="abfe-roster-card__button"
+              data-member-dialog-open="{{ $dialogID }}"
               aria-haspopup="dialog"
+              aria-controls="{{ $dialogID }}"
             >
-              <span>View Details</span>
+              <span>VIEW MEMBER PROFILE</span>
               <span aria-hidden="true">→</span>
             </button>
+          </article>
 
-            <dialog
-              id="member-dialog-{{ $slug }}"
-              class="abfe-member-dialog"
-              aria-labelledby="member-dialog-title-{{ $slug }}"
-            >
-              <div class="abfe-member-dialog__panel">
-                <header class="abfe-member-dialog__header">
-                  <div>
-                    <p>{{ $person.role }}</p>
-                    <h2 id="member-dialog-title-{{ $slug }}">
-                      {{ $person.name.alternate }}
-                      <span>{{ $person.name.display }}</span>
-                    </h2>
-                  </div>
+          <dialog
+            id="{{ $dialogID }}"
+            class="abfe-roster-dialog"
+            aria-labelledby="{{ $dialogID }}-title"
+          >
+            <div class="abfe-roster-dialog__shell">
+              <header class="abfe-roster-dialog__hero">
+                <button
+                  type="button"
+                  class="abfe-roster-dialog__close"
+                  data-member-dialog-close
+                  aria-label="Close member details"
+                >
+                  <span aria-hidden="true">×</span>
+                </button>
 
-                  <button
-                    type="button"
-                    class="abfe-member-dialog__close"
-                    data-member-dialog-close
-                    aria-label="Close member details"
-                  >×</button>
-                </header>
+                <div class="abfe-roster-dialog__portrait">
+                  {{ with resources.GetMatch (printf "media/authors/%s.*" $slug) }}
+                    <img src="{{ .RelPermalink }}" alt="">
+                  {{ else }}
+                    <div class="abfe-roster-placeholder" aria-hidden="true">ABFE</div>
+                  {{ end }}
+                </div>
 
-                {{ with $person.profile }}
-                  <div class="abfe-member-dialog__body">
-                    {{ with .research_interests }}
-                      <section class="abfe-member-profile-section abfe-member-profile-section--wide">
-                        <h3 class="abfe-member-profile-heading abfe-profile-research">Research Interests</h3>
-                        <ul class="abfe-member-profile-dash-list">
-                          {{ range . }}<li>{{ . }}</li>{{ end }}
-                        </ul>
-                      </section>
-                    {{ end }}
+                <div class="abfe-roster-dialog__identity">
+                  <p>AI / BIO FLUID ENGINEERING LABORATORY</p>
+                  <h2 id="{{ $dialogID }}-title">
+                    {{ $person.name.display }}
+                    <span>{{ $person.name.alternate }}</span>
+                  </h2>
+                  <strong>{{ $person.role }}</strong>
+                </div>
+              </header>
 
-                    {{ with .awards }}
-                      <section class="abfe-member-profile-section">
-                        <h3 class="abfe-member-profile-heading abfe-profile-award">Awards ({{ len . }})</h3>
-                        <ol class="abfe-member-profile-number-list">
-                          {{ range . }}<li>{{ . }}</li>{{ end }}
-                        </ol>
-                      </section>
-                    {{ end }}
+              <div class="abfe-roster-dialog__content">
+                {{ with $person.profile.research_interests }}
+                  <section class="abfe-roster-panel abfe-roster-panel--research">
+                    <div class="abfe-roster-panel__heading">
+                      <p>RESEARCH INTERESTS</p>
+                      <span>{{ len . | printf "%02d" }}</span>
+                    </div>
+                    <ul class="abfe-roster-interest-list">
+                      {{ range . }}<li>{{ . }}</li>{{ end }}
+                    </ul>
+                  </section>
+                {{ end }}
 
-                    {{ with .journals }}
-                      <section class="abfe-member-profile-section">
-                        <h3 class="abfe-member-profile-heading abfe-profile-output">Journals ({{ len . }})</h3>
-                        <ol class="abfe-member-profile-number-list">
-                          {{ range . }}<li>{{ . }}</li>{{ end }}
-                        </ol>
-                      </section>
-                    {{ end }}
+                {{ with $person.profile.awards }}
+                  <section class="abfe-roster-panel">
+                    <div class="abfe-roster-panel__heading">
+                      <p>AWARDS</p>
+                      <span>{{ len . | printf "%02d" }}</span>
+                    </div>
+                    <ol class="abfe-roster-record-list">
+                      {{ range . }}<li>{{ . }}</li>{{ end }}
+                    </ol>
+                  </section>
+                {{ end }}
 
-                    {{ with .conferences }}
-                      <section class="abfe-member-profile-section abfe-member-profile-section--wide">
-                        <h3 class="abfe-member-profile-heading abfe-profile-output">Conferences ({{ len . }})</h3>
-                        <ol class="abfe-member-profile-number-list">
-                          {{ range . }}<li>{{ . }}</li>{{ end }}
-                        </ol>
-                      </section>
-                    {{ end }}
+                {{ with $person.profile.journals }}
+                  <section class="abfe-roster-panel">
+                    <div class="abfe-roster-panel__heading">
+                      <p>JOURNALS</p>
+                      <span>{{ len . | printf "%02d" }}</span>
+                    </div>
+                    <ol class="abfe-roster-record-list">
+                      {{ range . }}<li>{{ . }}</li>{{ end }}
+                    </ol>
+                  </section>
+                {{ end }}
 
-                    {{ with .experience }}
-                      <section class="abfe-member-profile-section abfe-member-profile-section--wide">
-                        <h3 class="abfe-member-profile-heading abfe-profile-meta">Experience</h3>
-                        <ul class="abfe-member-profile-dash-list">
-                          {{ range . }}<li>{{ . }}</li>{{ end }}
-                        </ul>
-                      </section>
-                    {{ end }}
-                  </div>
+                {{ with $person.profile.conferences }}
+                  <section class="abfe-roster-panel abfe-roster-panel--wide">
+                    <div class="abfe-roster-panel__heading">
+                      <p>CONFERENCES</p>
+                      <span>{{ len . | printf "%02d" }}</span>
+                    </div>
+                    <ol class="abfe-roster-record-list abfe-roster-record-list--columns">
+                      {{ range . }}<li>{{ . }}</li>{{ end }}
+                    </ol>
+                  </section>
+                {{ end }}
+
+                {{ with $person.profile.experience }}
+                  <section class="abfe-roster-panel abfe-roster-panel--wide">
+                    <div class="abfe-roster-panel__heading">
+                      <p>EXPERIENCE</p>
+                      <span>{{ len . | printf "%02d" }}</span>
+                    </div>
+                    <ul class="abfe-roster-interest-list">
+                      {{ range . }}<li>{{ . }}</li>{{ end }}
+                    </ul>
+                  </section>
                 {{ end }}
               </div>
-            </dialog>
-          </article>
+            </div>
+          </dialog>
         {{ end }}
       </div>
     </section>
@@ -145,16 +178,543 @@
 
 </div>
 
+<style>
+  .abfe-student-members-page {
+    --roster-navy: #0b2c4d;
+    --roster-blue: #2465d6;
+    --roster-cyan: #24b7c4;
+    --roster-text: #11283d;
+    --roster-muted: #6b7d8c;
+    --roster-line: #d8e3e8;
+    --roster-pale: #f4f8fa;
+  }
+
+  .abfe-roster-section {
+    margin-top: clamp(58px, 7vw, 90px) !important;
+  }
+
+  .abfe-roster-section__heading {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 28px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--roster-line);
+  }
+
+  .abfe-roster-section__heading > div > p {
+    margin: 0 0 10px;
+    color: var(--roster-cyan);
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.13em;
+  }
+
+  .abfe-roster-section__heading > span {
+    color: var(--roster-muted);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .abfe-roster-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 34px 30px !important;
+    width: 100%;
+  }
+
+  .abfe-roster-card {
+    display: flex;
+    min-width: 0;
+    min-height: 224px;
+    overflow: hidden;
+    flex-direction: column;
+    border: 1px solid var(--roster-line);
+    background: #ffffff;
+    box-shadow: none;
+  }
+
+  .abfe-roster-card__main {
+    display: grid;
+    grid-template-columns: 124px minmax(0, 1fr);
+    flex: 1;
+    gap: 24px;
+    padding: 22px;
+  }
+
+  .abfe-roster-card__photo {
+    width: 124px;
+    height: 158px;
+    overflow: hidden;
+    align-self: start;
+    background: #eaf1f4;
+  }
+
+  .abfe-roster-card__photo img,
+  .abfe-roster-dialog__portrait img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+  }
+
+  .abfe-roster-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    color: var(--roster-cyan);
+    background: #eaf1f4;
+    font-size: 0.74rem;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+  }
+
+  .abfe-roster-card__copy {
+    min-width: 0;
+    padding-top: 8px;
+  }
+
+  .abfe-roster-card__copy h3 {
+    margin: 0;
+    color: var(--roster-blue);
+    font-size: clamp(0.98rem, 1.3vw, 1.12rem);
+    font-weight: 800;
+    line-height: 1.45;
+    overflow-wrap: anywhere;
+  }
+
+  .abfe-roster-card__copy h3 span {
+    white-space: nowrap;
+  }
+
+  .abfe-roster-card__role {
+    margin: 22px 0 0;
+    color: var(--roster-text);
+    font-size: 0.78rem;
+    font-weight: 650;
+    line-height: 1.55;
+  }
+
+  .abfe-roster-card__focus {
+    margin: 13px 0 0;
+    color: var(--roster-muted);
+    font-size: 0.72rem;
+    line-height: 1.55;
+    overflow-wrap: anywhere;
+  }
+
+  .abfe-roster-card__button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    min-height: 58px;
+    padding: 0 22px;
+    border: 0;
+    border-top: 1px solid var(--roster-line);
+    color: var(--roster-text);
+    background: #ffffff;
+    font-family: inherit;
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+  }
+
+  .abfe-roster-card__button span:last-child {
+    display: grid;
+    place-items: center;
+    width: 28px;
+    height: 28px;
+    border: 1px solid var(--roster-cyan);
+    border-radius: 50%;
+    color: var(--roster-cyan);
+    font-size: 0.95rem;
+    line-height: 1;
+  }
+
+  .abfe-roster-card__button:hover,
+  .abfe-roster-card__button:focus-visible {
+    color: var(--roster-blue);
+    background: #eaf3f7;
+  }
+
+  .abfe-roster-card__button:focus-visible {
+    outline: 2px solid var(--roster-cyan);
+    outline-offset: -3px;
+  }
+
+  html.abfe-dialog-open {
+    overflow: hidden;
+  }
+
+  .abfe-roster-dialog {
+    width: min(1040px, calc(100vw - 36px));
+    max-width: 1040px;
+    max-height: min(88vh, 900px);
+    margin: auto;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+    border-radius: 14px;
+    color: var(--roster-text);
+    background: #ffffff;
+    box-shadow: 0 34px 100px rgba(2, 18, 34, 0.34);
+  }
+
+  .abfe-roster-dialog::backdrop {
+    background: rgba(4, 22, 39, 0.74);
+    backdrop-filter: blur(5px);
+  }
+
+  .abfe-roster-dialog__shell {
+    max-height: min(88vh, 900px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+
+  .abfe-roster-dialog__hero {
+    position: relative;
+    display: grid;
+    grid-template-columns: 138px minmax(0, 1fr);
+    align-items: end;
+    gap: 30px;
+    min-height: 238px;
+    padding: 34px 74px 34px 42px;
+    overflow: hidden;
+    color: #ffffff;
+    background:
+      radial-gradient(circle at 86% 15%, rgba(61, 214, 223, 0.24), transparent 31%),
+      linear-gradient(130deg, #061b30 0%, #0b2c4d 63%, #104c67 100%);
+  }
+
+  .abfe-roster-dialog__hero::after {
+    position: absolute;
+    right: -85px;
+    bottom: -155px;
+    width: 330px;
+    height: 330px;
+    border: 1px solid rgba(100, 229, 233, 0.18);
+    border-radius: 50%;
+    content: "";
+  }
+
+  .abfe-roster-dialog__portrait {
+    position: relative;
+    z-index: 1;
+    width: 138px;
+    height: 176px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    background: #eaf1f4;
+  }
+
+  .abfe-roster-dialog__identity {
+    position: relative;
+    z-index: 1;
+    padding-bottom: 8px;
+  }
+
+  .abfe-roster-dialog__identity > p {
+    margin: 0 0 16px;
+    color: #62dce3;
+    font-size: 0.65rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+  }
+
+  .abfe-roster-dialog__identity h2 {
+    margin: 0;
+    color: #ffffff;
+    font-size: clamp(2rem, 4vw, 3.15rem);
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -0.045em;
+  }
+
+  .abfe-roster-dialog__identity h2 span {
+    display: inline-block;
+    margin-left: 12px;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.48em;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+  }
+
+  .abfe-roster-dialog__identity strong {
+    display: block;
+    margin-top: 17px;
+    color: rgba(255, 255, 255, 0.82);
+    font-size: 0.84rem;
+    font-weight: 600;
+  }
+
+  .abfe-roster-dialog__close {
+    position: absolute;
+    top: 24px;
+    right: 26px;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    padding: 0;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.04);
+    font-family: inherit;
+    font-size: 1.55rem;
+    line-height: 1;
+    cursor: pointer;
+  }
+
+  .abfe-roster-dialog__close:hover,
+  .abfe-roster-dialog__close:focus-visible {
+    border-color: #62dce3;
+    background: rgba(98, 220, 227, 0.14);
+  }
+
+  .abfe-roster-dialog__content {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    padding: 30px;
+    background: #eef4f7;
+  }
+
+  .abfe-roster-panel {
+    min-width: 0;
+    padding: 26px 28px;
+    background: #ffffff;
+    border: 1px solid #dfe8ec;
+  }
+
+  .abfe-roster-panel--wide,
+  .abfe-roster-panel--research {
+    grid-column: 1 / -1;
+  }
+
+  .abfe-roster-panel--research {
+    border-top: 3px solid var(--roster-cyan);
+  }
+
+  .abfe-roster-panel__heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    margin-bottom: 17px;
+    padding-bottom: 13px;
+    border-bottom: 1px solid var(--roster-line);
+  }
+
+  .abfe-roster-panel__heading p,
+  .abfe-roster-panel__heading span {
+    margin: 0;
+    color: var(--roster-blue);
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+  }
+
+  .abfe-roster-panel__heading span {
+    color: var(--roster-cyan);
+  }
+
+  .abfe-roster-interest-list,
+  .abfe-roster-record-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .abfe-roster-interest-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0 28px;
+  }
+
+  .abfe-roster-interest-list li {
+    position: relative;
+    padding: 10px 0 10px 18px;
+    color: #263d50;
+    font-size: 0.86rem;
+    line-height: 1.6;
+    border-bottom: 1px solid #edf2f4;
+  }
+
+  .abfe-roster-interest-list li::before {
+    position: absolute;
+    top: 1.05rem;
+    left: 0;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--roster-cyan);
+    content: "";
+  }
+
+  .abfe-roster-record-list {
+    counter-reset: roster-record;
+  }
+
+  .abfe-roster-record-list li {
+    position: relative;
+    counter-increment: roster-record;
+    padding: 12px 0 12px 42px;
+    color: #334b5e;
+    font-size: 0.82rem;
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+    border-bottom: 1px solid #e8eef1;
+    break-inside: avoid;
+  }
+
+  .abfe-roster-record-list li:last-child {
+    border-bottom: 0;
+  }
+
+  .abfe-roster-record-list li::before {
+    position: absolute;
+    top: 12px;
+    left: 0;
+    color: var(--roster-cyan);
+    font-size: 0.74rem;
+    font-weight: 800;
+    content: counter(roster-record, decimal-leading-zero);
+  }
+
+  .abfe-roster-record-list--columns {
+    column-count: 2;
+    column-gap: 38px;
+  }
+
+  @media (max-width: 1050px) {
+    .abfe-roster-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
+  }
+
+  @media (max-width: 700px) {
+    .abfe-roster-section__heading {
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .abfe-roster-grid {
+      grid-template-columns: 1fr !important;
+    }
+
+    .abfe-roster-dialog {
+      width: calc(100vw - 20px);
+      max-height: 92vh;
+      border-radius: 8px;
+    }
+
+    .abfe-roster-dialog__shell {
+      max-height: 92vh;
+    }
+
+    .abfe-roster-dialog__hero {
+      grid-template-columns: 98px minmax(0, 1fr);
+      gap: 18px;
+      min-height: 190px;
+      padding: 62px 20px 24px;
+    }
+
+    .abfe-roster-dialog__portrait {
+      width: 98px;
+      height: 126px;
+    }
+
+    .abfe-roster-dialog__identity > p {
+      margin-bottom: 10px;
+      font-size: 0.56rem;
+    }
+
+    .abfe-roster-dialog__identity h2 span {
+      display: block;
+      margin: 7px 0 0;
+    }
+
+    .abfe-roster-dialog__identity strong {
+      margin-top: 12px;
+      font-size: 0.72rem;
+    }
+
+    .abfe-roster-dialog__close {
+      top: 15px;
+      right: 16px;
+    }
+
+    .abfe-roster-dialog__content {
+      grid-template-columns: 1fr;
+      gap: 14px;
+      padding: 14px;
+    }
+
+    .abfe-roster-panel,
+    .abfe-roster-panel--wide,
+    .abfe-roster-panel--research {
+      grid-column: auto;
+      padding: 22px 18px;
+    }
+
+    .abfe-roster-interest-list {
+      grid-template-columns: 1fr;
+    }
+
+    .abfe-roster-record-list--columns {
+      column-count: 1;
+    }
+  }
+
+  @media (max-width: 390px) {
+    .abfe-roster-card__main {
+      grid-template-columns: 96px minmax(0, 1fr);
+      gap: 14px;
+      padding: 14px;
+    }
+
+    .abfe-roster-card__photo {
+      width: 96px;
+      height: 128px;
+    }
+
+    .abfe-roster-card__role {
+      margin-top: 14px;
+    }
+  }
+</style>
+
 <script>
   (() => {
     const page = document.querySelector('.abfe-student-members-page');
-
     if (!page || page.dataset.dialogsReady === 'true') return;
+
     page.dataset.dialogsReady = 'true';
+    let activeTrigger = null;
+
+    const unlockPage = () => {
+      document.documentElement.classList.remove('abfe-dialog-open');
+    };
 
     const closeDialog = (dialog) => {
+      if (!dialog?.open) return;
       dialog.close();
-      document.documentElement.classList.remove('abfe-dialog-open');
+      unlockPage();
+      activeTrigger?.focus();
+      activeTrigger = null;
     };
 
     page.querySelectorAll('[data-member-dialog-open]').forEach((button) => {
@@ -162,26 +722,23 @@
         const dialog = document.getElementById(button.dataset.memberDialogOpen);
         if (!dialog) return;
 
+        activeTrigger = button;
         dialog.showModal();
         document.documentElement.classList.add('abfe-dialog-open');
       });
     });
 
-    page.querySelectorAll('.abfe-member-dialog').forEach((dialog) => {
-      const closeButton = dialog.querySelector('[data-member-dialog-close]');
-      closeButton?.addEventListener('click', () => closeDialog(dialog));
+    page.querySelectorAll('.abfe-roster-dialog').forEach((dialog) => {
+      dialog.querySelector('[data-member-dialog-close]')
+        ?.addEventListener('click', () => closeDialog(dialog));
 
-      dialog.addEventListener('cancel', () => {
-        document.documentElement.classList.remove('abfe-dialog-open');
+      dialog.addEventListener('cancel', (event) => {
+        event.preventDefault();
+        closeDialog(dialog);
       });
 
       dialog.addEventListener('click', (event) => {
-        const box = dialog.getBoundingClientRect();
-        const outside =
-          event.clientX < box.left || event.clientX > box.right ||
-          event.clientY < box.top || event.clientY > box.bottom;
-
-        if (outside) closeDialog(dialog);
+        if (event.target === dialog) closeDialog(dialog);
       });
     });
   })();
