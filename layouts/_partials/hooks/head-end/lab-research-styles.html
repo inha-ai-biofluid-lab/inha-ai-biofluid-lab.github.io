@@ -240,7 +240,7 @@
   }
   
   .abfe-project-number {
-    margin-bottom: 48px;
+    margin-bottom: 30px;
     color: var(--research-cyan);
     font-size: 0.86rem;
     font-weight: 700;
@@ -248,10 +248,12 @@
   }
   
   .abfe-project-description > p {
-    margin: 0 0 12px;
+    min-height: 3em;
+    margin: 0 0 8px;
     color: var(--research-blue);
     font-size: 0.76rem;
     font-weight: 700;
+    line-height: 1.5;
     letter-spacing: 0.1em;
   }
   
@@ -283,6 +285,10 @@
     .abfe-project-detail-list article:nth-child(7) {
       grid-column: 1 / -1;
       min-height: 190px;
+    }
+
+    .abfe-project-description > p {
+      min-height: 0;
     }
   }
 
