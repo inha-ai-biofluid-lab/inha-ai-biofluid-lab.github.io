@@ -85,16 +85,16 @@
   .abfe-intro-section {
     width: min(1180px, calc(100% - 3rem));
     margin: 0 auto;
-    padding: clamp(4.5rem, 8vw, 7.5rem) 0;
+    padding: clamp(3.5rem, 5vw, 5rem) 0;
   }
 
   .abfe-about-section {
     width: 100%;
-    padding: clamp(3rem, 4.5vw, 4.25rem) 0 clamp(3.5rem, 5vw, 4.75rem);
-    border-bottom: 1px solid var(--abfe-line);
+    padding: clamp(3.75rem, 5.5vw, 5.5rem) 0;
+    border-bottom: 3px solid rgba(41, 184, 199, 0.72);
     background:
-      radial-gradient(circle at 88% 8%, rgba(41, 184, 199, 0.11), transparent 28%),
-      linear-gradient(110deg, #eef6f8 0%, #f5f9fa 58%, #ffffff 100%);
+      radial-gradient(circle at 88% 8%, rgba(41, 184, 199, 0.22), transparent 31%),
+      linear-gradient(118deg, #071c31 0%, #0b2c4d 60%, #104963 100%);
   }
 
   .abfe-about-inner {
@@ -103,11 +103,11 @@
   }
 
   .abfe-about-section .abfe-section-heading {
-    margin-bottom: clamp(2rem, 3vw, 2.8rem);
+    margin-bottom: clamp(1.8rem, 2.8vw, 2.4rem);
   }
 
   .abfe-section-heading {
-    margin-bottom: clamp(2.2rem, 4vw, 3.8rem);
+    margin-bottom: clamp(1.9rem, 3vw, 2.8rem);
   }
 
   .abfe-section-heading h2,
@@ -125,18 +125,28 @@
 
   /* About */
 
+  .abfe-about-section .abfe-section-number {
+    color: #4dd3de;
+  }
+
+  .abfe-about-section .abfe-section-heading h2 {
+    color: #ffffff;
+    font-size: clamp(2.35rem, 4vw, 3.8rem);
+  }
+
   .abfe-about-grid {
     display: grid;
     grid-template-columns: 0.9fr 1.1fr;
     gap: clamp(2rem, 5vw, 4.5rem);
+    align-items: start;
   }
 
   .abfe-about-lead {
     margin: 0;
-    color: var(--abfe-text);
-    font-size: clamp(1.35rem, 2.3vw, 2rem);
+    color: #ffffff;
+    font-size: clamp(1.25rem, 2vw, 1.7rem);
     font-weight: 700;
-    line-height: 1.55;
+    line-height: 1.52;
     letter-spacing: -0.025em;
     word-break: keep-all;
   }
@@ -162,9 +172,9 @@
   }
 
   .abfe-about-copy {
-    color: var(--abfe-muted);
-    font-size: 1rem;
-    line-height: 1.95;
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 0.96rem;
+    line-height: 1.85;
     word-break: keep-all;
   }
 
@@ -179,8 +189,7 @@
   /* Research cards */
 
   .abfe-intro-page .abfe-research-section {
-    padding-top: clamp(3.2rem, 4.5vw, 4.25rem);
-    border-top: 1px solid var(--abfe-line);
+    padding-top: clamp(3.5rem, 5vw, 5rem);
   }
 
   .abfe-research-grid {
@@ -191,21 +200,18 @@
 
   .abfe-research-card {
     position: relative;
-    min-height: 330px;
-    padding: 2rem;
+    min-height: 285px;
+    padding: clamp(1.6rem, 2.5vw, 2rem);
     overflow: hidden;
     border: 1px solid var(--abfe-line);
     background: #ffffff;
-    transition:
-      transform 200ms ease,
-      border-color 200ms ease,
-      box-shadow 200ms ease;
+    transition: none;
   }
 
   .abfe-research-card:hover {
-    transform: translateY(-6px);
-    border-color: var(--abfe-cyan);
-    box-shadow: 0 20px 45px rgba(11, 44, 77, 0.1);
+    transform: none;
+    border-color: var(--abfe-line);
+    box-shadow: none;
   }
 
   .abfe-card-number {
@@ -216,14 +222,16 @@
   }
 
   .abfe-research-card h3 {
-    margin: 3.5rem 0 0.4rem;
+    min-height: 2.6em;
+    margin: 2.35rem 0 0.4rem;
     color: var(--abfe-text);
-    font-size: 1.45rem;
+    font-size: clamp(1.2rem, 1.7vw, 1.45rem);
     font-weight: 700;
+    line-height: 1.3;
   }
 
   .abfe-card-ko {
-    margin: 0 0 1.4rem !important;
+    margin: 0 0 1.05rem !important;
     color: var(--abfe-blue) !important;
     font-weight: 700;
   }
@@ -231,7 +239,8 @@
   .abfe-research-card p {
     margin: 0;
     color: var(--abfe-muted);
-    line-height: 1.8;
+    font-size: 0.92rem;
+    line-height: 1.72;
     word-break: keep-all;
   }
 
@@ -249,7 +258,11 @@
   /* Projects */
 
   .abfe-project-section {
+    width: 100%;
+    padding-right: max(1.5rem, calc((100% - 1180px) / 2));
+    padding-left: max(1.5rem, calc((100% - 1180px) / 2));
     border-top: 1px solid var(--abfe-line);
+    background: #f5f8fa;
   }
 
   .abfe-project-list {
@@ -258,11 +271,11 @@
 
   .abfe-project-item {
     display: grid;
-    grid-template-columns: 50px minmax(0, 1fr) 190px 25px;
+    grid-template-columns: 50px minmax(0, 1fr) 190px;
     gap: 1rem;
     align-items: center;
-    min-height: 92px;
-    padding: 1rem 0;
+    min-height: 72px;
+    padding: 0.75rem 0;
     color: var(--abfe-text);
     border-bottom: 1px solid var(--abfe-line);
     transition: padding 180ms ease;
@@ -288,11 +301,6 @@
     color: var(--abfe-muted);
     font-size: 0.82rem;
     font-style: normal;
-  }
-
-  .abfe-project-item b {
-    color: var(--abfe-cyan);
-    font-size: 1.2rem;
   }
 
   /* People */
@@ -373,7 +381,7 @@
   }
 
   .abfe-capability-grid article {
-    min-height: 210px;
+    min-height: 180px;
     padding: 2rem;
     background: #ffffff;
   }
@@ -513,13 +521,19 @@
   @media (max-width: 640px) {
     .abfe-intro-section {
       width: calc(100% - 2.5rem);
-      padding-top: 4rem;
-      padding-bottom: 4rem;
+      padding-top: 3.25rem;
+      padding-bottom: 3.25rem;
     }
 
     .abfe-about-section {
       width: 100%;
-      padding: 3rem 0 3.5rem;
+      padding: 3.25rem 0;
+    }
+
+    .abfe-project-section {
+      width: 100%;
+      padding-right: 1.25rem;
+      padding-left: 1.25rem;
     }
 
     .abfe-about-inner {
@@ -554,7 +568,7 @@
     }
 
     .abfe-project-item {
-      min-height: 84px;
+      min-height: 70px;
     }
 
     .abfe-contact-details div {
@@ -598,7 +612,7 @@
 .abfe-project-footer {
   display: flex;
   justify-content: flex-end;
-  padding-top: 28px;
+  padding-top: 20px;
 }
 
 .abfe-project-footer a {
