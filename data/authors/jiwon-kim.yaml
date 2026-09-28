@@ -24,3 +24,13 @@ links:
   - icon: at-symbol
     url: mailto:dnjsrhkd7515@inha.edu
     label: Email
+
+profile:
+  research_interests:
+    - Computational Fluid Dynamics (CFD)
+    - Medical Image-Based Hemodynamic Analysis
+    - High-Resolution Reconstruction of Medical Images Using Physics-Informed Neural Networks
+
+  awards: []
+  journals: []
+  conferences: []
